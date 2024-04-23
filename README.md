@@ -8,7 +8,7 @@
 
 ## Especificación detallada del sistema
 
-Para la implementación del proyecto del Tamagotchi, se planea utilizar los siguientes periféricos:
+Para la implementación del proyecto del Tamagotchi, se utilizará el lenguaje de Verilog. Además, se planea emplear los siguientes periféricos:
 
 * La matriz 8x8 MAX7219 tiene la función de mostrar animaciones de la mascota cuando se realice alguna acción o actividad con ella. Esta matriz de LED ofrece la capacidad de visualizar de manera dinámica las diferentes interacciones con la mascota.
 
@@ -25,6 +25,21 @@ Para la implementación del proyecto del Tamagotchi, se planea utilizar los sigu
     * Jugar: Iniciará una sesión de juego con la mascota.
 
     * Reset: Se utilizará un botón de reset para reiniciar todas las estadísticas de la mascota y volver a su estado inicial.
+
+### Caja negra
+
+![Imagen](/pictures/CajaNegraGeneral.png)
+
+Desde la caja negra, donde se integran los módulos que se utilizarán en la implementación del proyecto, se dispone de lo siguiente:
+
+* Sensor de infrarrojo: Este módulo se encargará de desarrollar el controlador necesario para permitir la captura de datos externos a través de un sensor de infrarrojo, los cuales posteriormente serán almacenados en el banco de registros.
+* Banco de registros: En este módulo se almacenará la información obtenida del jugador, con el propósito de ser procesada y guardada. Además, esta información será compartida con los módulos siguientes para su visualización.
+* 7 segmentos: Como se mencionó anteriormente, este módulo será utilizado para mostrar las estadísticas de la mascota, presentando sus valores en formato decimal mediante cuatro displays de siete segmentos.
+* Matriz 8*8: En este módulo, se generará una animación para la mascota conforme el usuario interactúe, reflejando tanto las estadísticas de la mascota como su evolución a lo largo del tiempo.
+
+
+
+
 
 
 
