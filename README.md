@@ -26,7 +26,10 @@ Para la implementación del proyecto del Tamagotchi, se utilizará el lenguaje d
 
     * Reset: Se utilizará un botón de reset para reiniciar todas las estadísticas de la mascota y volver a su estado inicial.
 
-### Caja negra
+### Sensor Infrarojo
+![Imagen](/pictures/Sensor.png)
+
+### Caja negra general
 
 ![Imagen](/pictures/CajaNegraGeneral.png)
 
