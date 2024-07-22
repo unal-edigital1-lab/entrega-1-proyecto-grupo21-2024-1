@@ -1,0 +1,25 @@
+module top_level (
+    input wire clk,
+    input wire rst,
+    inout wire i2c_sda,
+    inout wire i2c_scl,
+    output wire i2c_detected,
+    input wire start_write,
+    input wire [7:0] write_data,
+    input wire start_read,
+    output wire [7:0] read_data
+);
+
+Adafruit_I2CDevice i2c_device (
+    .clk(clk),
+    .rst(rst),
+    .i2c_sda(i2c_sda),
+    .i2c_scl(i2c_scl),
+    .i2c_detected(i2c_detected),
+    .start_write(start_write),
+    .write_data(write_data),
+    .start_read(start_read),
+    .read_data(read_data)
+);
+
+endmodule
