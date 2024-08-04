@@ -10,11 +10,13 @@
 
 Para la implementación del proyecto del Tamagotchi, se utilizará el lenguaje de Verilog. Además, se planea emplear los siguientes periféricos:
 
-* La matriz 8x8 MAX7219 tiene la función de mostrar animaciones de la mascota cuando se realice alguna acción o actividad con ella. Esta matriz de LED ofrece la capacidad de visualizar de manera dinámica las diferentes interacciones con la mascota.
+* La Pantalla TFT ILI9163 tiene tiene una resolucion 128x128 pxls. Se comunica mediante el protocolo SPI, lo que la hace compatible con microcontroladores como Arduino y PIC. Su tamaño es de 1.44 pulgadas, y su efecto visual es mucho mejor que otras pantallas pequeñas. Además, admite voltajes de entrada de 5V y 3.3V.
 
-* Sensor de infrarrojo: Se utilizará un sensor de infrarrojo para detectar movimientos frente al sensor y enviar una señal para activar (despertar) la mascota.
+* El sensor infrarrojo FC-51 es un dispositivo de proximidad que funciona mediante un transmisor que emite luz infrarroja (IR) y un receptor que detecta la energía reflejada por objetos cercanos. El sensor utiliza el comparador LM393 para proporcionar una lectura digital cuando se supera un rango predefinido.
 
-* Display siete segmentos: Para la visualización de las estadísticas, se implementarán displays de siete segmentos. Estos displays permitirán ver las estadísticas actuales de la mascota en tiempo real, y se actualizarán automáticamente a medida que pase el tiempo o cuando se realice alguna acción con la mascota. Esta función proporcionará una manera clara y fácil de monitorear el estado y el progreso de la mascota en cualquier momento.
+* El sensor LDR (Light Dependent Resistor) es un componente que permite medir la intensidad de luz en su entorno. Funciona como una resistencia variable cuya conductividad cambia según la cantidad de luz que incide sobre él. Aquí tienes los detalles clave:
+
+* El sensor de temperatura infrarrojo MLX90614 es un dispositivo diseñado para medir la temperatura de objetos a distancia, sin necesidad de contacto físico. Puede medir temperaturas desde -70°C hasta 380°C con una precisión de ±0.5°C. Utiliza un protocolo de comunicación SMBus (I2C) para la transmisión de datos.
 
 * Además de estos periféricos, se utilizarán interruptores o botones como entradas para las siguientes funciones:
 
@@ -31,7 +33,7 @@ Para la implementación del proyecto del Tamagotchi, se utilizará el lenguaje d
 
 ### Caja negra general
 
-![Imagen](/pictures/CajaNegraGeneral.png)
+![Imagen](/pictures/Cajanegrageneral.png )
 
 Desde la caja negra, donde se integran los módulos que se utilizarán en la implementación del proyecto, se dispone de lo siguiente:
 
