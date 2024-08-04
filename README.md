@@ -14,22 +14,26 @@ Para la implementación del proyecto del Tamagotchi, se utilizará el lenguaje d
 
 * El sensor infrarrojo FC-51 es un dispositivo de proximidad que funciona mediante un transmisor que emite luz infrarroja (IR) y un receptor que detecta la energía reflejada por objetos cercanos. El sensor utiliza el comparador LM393 para proporcionar una lectura digital cuando se supera un rango predefinido.
 
+![Imagen](/pictures/fc-51.jpg)
+![Imagen](/pictures/infrarrojo.png)
+
 * El sensor LDR (Light Dependent Resistor) es un componente que permite medir la intensidad de luz en su entorno. Funciona como una resistencia variable cuya conductividad cambia según la cantidad de luz que incide sobre él. Aquí tienes los detalles clave:
 
+![Imagen](/pictures/R.jpeg)
+![Imagen](/pictures/luz.png)
+
 * El sensor de temperatura infrarrojo MLX90614 es un dispositivo diseñado para medir la temperatura de objetos a distancia, sin necesidad de contacto físico. Puede medir temperaturas desde -70°C hasta 380°C con una precisión de ±0.5°C. Utiliza un protocolo de comunicación SMBus (I2C) para la transmisión de datos.
+
+![Imagen](/pictures/temperatura.jpeg)
+![Imagen](/pictures/temp.png)
 
 * Además de estos periféricos, se utilizarán interruptores o botones como entradas para las siguientes funciones:
 
     * Alimentar: Permitirá al usuario alimentar a la mascota virtual.
 
     * Dormir: Activará la función para que la mascota duerma.
-
     * Jugar: Iniciará una sesión de juego con la mascota.
-
     * Reset: Se utilizará un botón de reset para reiniciar todas las estadísticas de la mascota y volver a su estado inicial.
-
-### Sensor Infrarojo
-![Imagen](/pictures/Sensor.png)
 
 ### Caja negra general
 
