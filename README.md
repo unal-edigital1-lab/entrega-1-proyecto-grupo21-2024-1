@@ -80,19 +80,28 @@ A continuación, planteamos una tabla donde podremas ver como estos estados camb
 | Actvidad / sensores  | Salud | Ánimo  | Hambre | Cansansio  | Higiene  |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | 
 | Jugar  | No aplica | +  | -  | +  | -  |
-| Alimentar  | +  | +  | Content Cell  | Content Cell  | Content Cell  | 
-| Curar  | +  | +  | Content Cell  | Content Cell  | Content Cell  |
-| Bañar  | +  | +  | Content Cell  | Content Cell  | Content Cell  |
-| Dormir   | +  | +  | Content Cell  | Content Cell  | Content Cell  |
-| Tiempo  | -  | -  | Content Cell  | Content Cell  | Content Cell  |
-| Temperatura  | -  | -  | Content Cell  | Content Cell  | Content Cell  |
-| Luz  | No aplica  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Alimentar  | +  | +  | +  | No aplica  | -  | 
+| Curar  | +  | +  | No aplica  | No aplica  | No aplica  |
+| Bañar  | +  | +  | No aplica  | No aplica  | +  |
+| Dormir   | +  | +  | -  | -  | No aplica  |
+| Tiempo  | -  | -  | -  | +  | -  |
+| Temperatura  | -  | -  | No aplica  | No aplica  | No aplica  |
+| Luz  | No aplica  | No aplica  | No aplica  | + | No aplica  |
 
 
 ## Caja negra general
+A continuación, se plantea el siguiente diagrama de caja negra donde veremos los diagramas de bloques necesarios para la ejecución de nuestro proyecto:
 
 ![Imagen](/pictures/Cajanegrageneral.png )
 
+### Descripción general 
+
+1. Tendremos nuestras nuestras entradas a través de nuestros botones y sensores.
+2. Todas nuestras entradas irán a una máquina de estados general, donde a partir de cada entrada, la máquina de estados cambiará nuestros estados del Tamagotchi.
+3. Luego pasaremos a una FSM (Máquina de estados finita), la cual nos brindara la animación correspondiente a la acción que este realizando el usuario, permitiendo asi una visuazliación dinámica con el Tamagotchi.
+4. Pasamos a un bloque que llamamos "ILI9163 Controller", en el cual tenemos toda la configuración interna de nuestra pantalla. Además, dentro del mismo, tambien se encuentra un banco de registros.
+5. Luego pasamos al SPI del sistema. El SPI (Serial Peripheral Interface) Master de una pantalla TFT ILI9163 es el dispositivo que controla la comunicación serie SPI entre la pantalla y nyestra lógica anteriormente mencionada. El SPI es un protocolo de comunicación sincrónica que permite la transferencia de datos en serie, y en este caso, se utiliza para enviar comandos y datos a la pantalla TFT ILI9163.
+6. Por último, tendriamos nuestra visualización en la pantalla TFT ILI9163.
 
 ## Arquitectura del sistema: 
 [Aporte de Hernan Beltran]: # 
