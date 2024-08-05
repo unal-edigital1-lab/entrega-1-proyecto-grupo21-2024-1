@@ -16,7 +16,8 @@
     * Curar: Permitirá al usuario dar medicina a la mascota virtual.
     * Jugar: Iniciará una sesión de juego con la mascota.
 
-Además, tendremos estos dos botones (los cuales seran usados directamente de nuestra FPGA) que son requisitos esenciales en nuestro sistema.
+* Además, tendremos estos dos botones (los cuales seran usados directamente de nuestra FPGA) que son requisitos esenciales en nuestro sistema.
+
     * Reset: Se utilizará un botón de reset para reiniciar todas las estadísticas de la mascota y volver a su estado inicial.
     * Test: Activa el modo de prueba al mantener pulsado por al menos 5 segundos, permitiendo al usuario navegar entre los diferentes estados del Tamagotchi con cada pulsación.
 
