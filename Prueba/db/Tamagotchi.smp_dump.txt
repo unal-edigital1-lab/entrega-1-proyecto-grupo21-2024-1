@@ -1,7 +1,0 @@
-
-State Machine - |top_level|Adafruit_I2CDevice:i2c_device|state
-Name state.READ state.WRITE state.ADDR_DETECT state.IDLE 
-state.IDLE 0 0 0 0 
-state.ADDR_DETECT 0 0 1 1 
-state.WRITE 0 1 0 1 
-state.READ 1 0 0 1 
