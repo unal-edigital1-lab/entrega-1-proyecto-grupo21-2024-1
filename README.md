@@ -35,6 +35,12 @@ Para la implementación del proyecto del Tamagotchi, se utilizará el lenguaje d
     * Jugar: Iniciará una sesión de juego con la mascota.
     * Reset: Se utilizará un botón de reset para reiniciar todas las estadísticas de la mascota y volver a su estado inicial.
 
+
+## Caja negra general
+
+![Imagen](/pictures/Cajanegrageneral.png )
+
+
 ## Arquitectura del sistema: 
 [Aporte de Hernan Beltran]: # 
 
@@ -72,17 +78,6 @@ Módulo de Temporización: Implementará los temporizadores necesarios para cont
 * Modelo de la Mascota: Definirá las características de la mascota, como su especie, edad y personalidad. Este modelo se utilizará para personalizar el comportamiento de la mascota.
 * Modelo del Ambiente: Simulará el entorno de la mascota, incluyendo la temperatura, la luz y la presencia de otros objetos.
 Modelo de Interacción: Describirá cómo el usuario interactúa con la mascota y cómo estas interacciones afectan el estado de la mascota.
-
-## Caja negra general
-
-![Imagen](/pictures/Cajanegrageneral.png )
-
-Desde la caja negra, donde se integran los módulos que se utilizarán en la implementación del proyecto, se dispone de lo siguiente:
-
-* Sensor de infrarrojo: Este módulo se encargará de desarrollar el controlador necesario para permitir la captura de datos externos a través de un sensor de infrarrojo, los cuales posteriormente serán almacenados en el banco de registros.
-* Banco de registros: En este módulo se almacenará la información obtenida del jugador, con el propósito de ser procesada y guardada. Además, esta información será compartida con los módulos siguientes para su visualización.
-* 7 segmentos: Como se mencionó anteriormente, este módulo será utilizado para mostrar las estadísticas de la mascota, presentando sus valores en formato decimal mediante cuatro displays de siete segmentos.
-* Matriz 8*8: En este módulo, se generará una animación para la mascota conforme el usuario interactúe, reflejando tanto las estadísticas de la mascota como su evolución a lo largo del tiempo.
 
 
 
