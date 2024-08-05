@@ -8,11 +8,24 @@
 
 ## Especificación detallada del sistema
 
-Para la implementación del proyecto del Tamagotchi, se utilizará el lenguaje de Verilog. Además, se planea emplear los siguientes periféricos:
+### Sistema de botones 
 
-* La Pantalla TFT ILI9163 tiene tiene una resolucion 128x128 pxls. Se comunica mediante el protocolo SPI, lo que la hace compatible con microcontroladores como Arduino y PIC. Su tamaño es de 1.44 pulgadas, y su efecto visual es mucho mejor que otras pantallas pequeñas. Además, admite voltajes de entrada de 5V y 3.3V.
+* Realizaremos el uso de sensores infrarrojos FC-51 como botones para las siguientes funciones:
 
-* El sensor infrarrojo FC-51 es un dispositivo de proximidad que funciona mediante un transmisor que emite luz infrarroja (IR) y un receptor que detecta la energía reflejada por objetos cercanos. El sensor utiliza el comparador LM393 para proporcionar una lectura digital cuando se supera un rango predefinido.
+    * Alimentar: Permitirá al usuario alimentar a la mascota virtual.
+    * Curar: Permitirá al usuario dar medicina a la mascota virtual.
+    * Jugar: Iniciará una sesión de juego con la mascota.
+
+Además, tendremos estos dos botones (los cuales seran usados directamente de nuestra FPGA) que son requisitos esenciales en nuestro sistema.
+    * Reset: Se utilizará un botón de reset para reiniciar todas las estadísticas de la mascota y volver a su estado inicial.
+    * Test: Activa el modo de prueba al mantener pulsado por al menos 5 segundos, permitiendo al usuario navegar entre los diferentes estados del Tamagotchi con cada pulsación.
+
+### Sistena de Sensado
+
+Para nuestro proyecto de Tamagotchi, se plantea la implementación de 5 sensores, para que de esta forma el usuario llegue a tener mas interacción con el mismo. 
+
+
+* El sensor infrarrojo FC-51 es un dispositivo de proximidad que funciona mediante un transmisor que emite luz infrarroja (IR) y un receptor que detecta la energía reflejada por objetos cercanos. El sensor utiliza el comparador LM393 para proporcionar una lectura digital cuando se supera un rango predefinido. Realizaremos uso de tres de los mismos, ya que seran implementados como nuestros botones de interacción con el Tamagotchi.
 
 ![Imagen](/pictures/fc-51.jpg)
 ![Imagen](/pictures/infrarrojo.png)
@@ -22,19 +35,54 @@ Para la implementación del proyecto del Tamagotchi, se utilizará el lenguaje d
 ![Imagen](/pictures/R.jpeg)
 ![Imagen](/pictures/luz.png)
 
+Sera utilizado con el fin de simular los ciclos de día y noche, influyendo en las rutinas de actividad y descanso de la mascota.
+
 * El sensor de temperatura infrarrojo MLX90614 es un dispositivo diseñado para medir la temperatura de objetos a distancia, sin necesidad de contacto físico. Puede medir temperaturas desde -70°C hasta 380°C con una precisión de ±0.5°C. Utiliza un protocolo de comunicación SMBus (I2C) para la transmisión de datos.
 
 ![Imagen](/pictures/temperatura.jpeg)
 ![Imagen](/pictures/temp.png)
 
-* Además de estos periféricos, se utilizarán interruptores o botones como entradas para las siguientes funciones:
+### Sistema de Visualización
 
-    * Alimentar: Permitirá al usuario alimentar a la mascota virtual.
+Realizaremos el uso del siguiente periférico como sistema de visualización, donde podremos representar visualmente nuestro Tamagotchi, además de los niveles de cada estado del mismo.
 
-    * Dormir: Activará la función para que la mascota duerma.
-    * Jugar: Iniciará una sesión de juego con la mascota.
-    * Reset: Se utilizará un botón de reset para reiniciar todas las estadísticas de la mascota y volver a su estado inicial.
+* La Pantalla TFT ILI9163 tiene tiene una resolucion 128x128 pxls. Se comunica mediante el protocolo SPI, lo que la hace compatible con microcontroladores como Arduino y PIC. Su tamaño es de 1.44 pulgadas, y su efecto visual es mucho mejor que otras pantallas pequeñas. Además, admite voltajes de entrada de 5V y 3.3V.
 
+## Estados 
+El Tamagotchi operará a través de una serie de estados que reflejan las necesidades físicas y emocionales de la mascota virtual, a saber:
+
+* Hambriento: Este estado alerta sobre la necesidad de alimentar a la mascota. La falta de atención a esta necesidad puede desencadenar un estado de enfermedad.
+
+* Diversión: Denota la necesidad de entretenimiento de la mascota. La inactividad prolongada puede llevar a estados de aburrimiento o tristeza.
+
+* Descansar: Identifica cuando la mascota requiere reposo para recuperar energía, especialmente después de períodos de actividad intensa o durante la noche, limitando la interacción del usuario durante estas fases.
+
+* Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requiriendo intervenciones específicas para su recuperación.
+
+* Feliz: Refleja el bienestar general de la mascota como resultado de satisfacer adecuadamente sus necesidades básicas.
+
+* Higiene: Subraya la importancia de mantener la limpieza de la mascota, introduciendo otra dimensión al cuidado requerido.
+
+## Transiciones
+
+* Temporizadores:
+
+Se implementarán temporizadores para simular el avance temporal, afectando las necesidades básicas del Tamagotchi. A medida que el tiempo progresa, ciertas necesidades como el hambre incrementarán de forma gradual, requiriendo intervención del usuario para suministrar alimento a la mascota y mantener su estado de salud óptimo.
+
+* Interacciones:
+
+Las transiciones entre diferentes estados de la mascota se desencadenarán por interacciones directas del usuario, utilizando botones y sensores. Estas acciones permitirán al usuario influir activamente en el bienestar y comportamiento de la mascota virtual.
+
+* Sistema de Niveles o Puntos:
+
+Se desarrollará un sistema de niveles o puntuación que reflejará la calidad del cuidado proporcionado al Tamagotchi. Aspectos como el nivel de hambre y ánimo fluctuarán en una escala de 1 a 3, donde acciones positivas como alimentar o interactuar con la mascota incrementarán dichos niveles, mientras que la inactividad o negligencia resultará en su disminución. Este mecanismo brindará retroalimentación constante al usuario sobre la condición actual de la mascota virtual.
+
+A continuación, planteamos una tabla donde podremas ver como estos estados cambian de manera dinámica, dependiendo de cada acción que realice el usuario:
+
+| First Header  | Second Header | 
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 ## Caja negra general
 
@@ -77,7 +125,7 @@ Módulo de Temporización: Implementará los temporizadores necesarios para cont
 ### Modelos
 * Modelo de la Mascota: Definirá las características de la mascota, como su especie, edad y personalidad. Este modelo se utilizará para personalizar el comportamiento de la mascota.
 * Modelo del Ambiente: Simulará el entorno de la mascota, incluyendo la temperatura, la luz y la presencia de otros objetos.
-Modelo de Interacción: Describirá cómo el usuario interactúa con la mascota y cómo estas interacciones afectan el estado de la mascota.
+* Modelo de Interacción: Describirá cómo el usuario interactúa con la mascota y cómo estas interacciones afectan el estado de la mascota.
 
 
 
