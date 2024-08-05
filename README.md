@@ -53,13 +53,11 @@ El Tamagotchi operará a través de una serie de estados que reflejan las necesi
 
 * Hambriento: Este estado alerta sobre la necesidad de alimentar a la mascota. La falta de atención a esta necesidad puede desencadenar un estado de enfermedad.
 
-* Diversión: Denota la necesidad de entretenimiento de la mascota. La inactividad prolongada puede llevar a estados de aburrimiento o tristeza.
+* Ánimo : Denota la necesidad de cariño de la mascota. Refleja el bienestar general de la mascota como resultado de satisfacer adecuadamente sus necesidades básicas.
 
 * Descansar: Identifica cuando la mascota requiere reposo para recuperar energía, especialmente después de períodos de actividad intensa o durante la noche, limitando la interacción del usuario durante estas fases.
 
 * Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requiriendo intervenciones específicas para su recuperación.
-
-* Feliz: Refleja el bienestar general de la mascota como resultado de satisfacer adecuadamente sus necesidades básicas.
 
 * Higiene: Subraya la importancia de mantener la limpieza de la mascota, introduciendo otra dimensión al cuidado requerido.
 
@@ -79,10 +77,17 @@ Se desarrollará un sistema de niveles o puntuación que reflejará la calidad d
 
 A continuación, planteamos una tabla donde podremas ver como estos estados cambian de manera dinámica, dependiendo de cada acción que realice el usuario:
 
-| First Header  | Second Header | 
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Actvidad / sensores  | Salud | Ánimo  | Hambre | Cansansio  | Higiene  |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | 
+| Jugar  | No aplica | +  | -  | +  | -  |
+| Alimentar  | +  | +  | Content Cell  | Content Cell  | Content Cell  | 
+| Curar  | +  | +  | Content Cell  | Content Cell  | Content Cell  |
+| Bañar  | +  | +  | Content Cell  | Content Cell  | Content Cell  |
+| Dormir   | +  | +  | Content Cell  | Content Cell  | Content Cell  |
+| Tiempo  | -  | -  | Content Cell  | Content Cell  | Content Cell  |
+| Temperatura  | -  | -  | Content Cell  | Content Cell  | Content Cell  |
+| Luz  | No aplica  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+
 
 ## Caja negra general
 
