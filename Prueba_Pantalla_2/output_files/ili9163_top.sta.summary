@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'freq_divider:freq_divider20MHz|clk_out'
+Slack : -6.741
+TNS   : -273.115
+
+Type  : Slow 1200mV 85C Model Setup 'ili9163_controller:ili9163|data_byte_flag'
+Slack : -1.698
+TNS   : -20.067
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -1.316
+TNS   : -1.316
+
+Type  : Slow 1200mV 85C Model Hold 'freq_divider:freq_divider20MHz|clk_out'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ili9163_controller:ili9163|data_byte_flag'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -5.974
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'freq_divider:freq_divider20MHz|clk_out'
+Slack : -1.487
+TNS   : -107.064
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ili9163_controller:ili9163|data_byte_flag'
+Slack : -1.487
+TNS   : -23.792
+
+Type  : Slow 1200mV 0C Model Setup 'freq_divider:freq_divider20MHz|clk_out'
+Slack : -6.330
+TNS   : -252.856
+
+Type  : Slow 1200mV 0C Model Setup 'ili9163_controller:ili9163|data_byte_flag'
+Slack : -1.520
+TNS   : -16.900
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -1.199
+TNS   : -1.199
+
+Type  : Slow 1200mV 0C Model Hold 'ili9163_controller:ili9163|data_byte_flag'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'freq_divider:freq_divider20MHz|clk_out'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -5.974
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'freq_divider:freq_divider20MHz|clk_out'
+Slack : -1.487
+TNS   : -107.064
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ili9163_controller:ili9163|data_byte_flag'
+Slack : -1.487
+TNS   : -23.792
+
+Type  : Fast 1200mV 0C Model Setup 'freq_divider:freq_divider20MHz|clk_out'
+Slack : -2.405
+TNS   : -79.147
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.385
+TNS   : -0.385
+
+Type  : Fast 1200mV 0C Model Setup 'ili9163_controller:ili9163|data_byte_flag'
+Slack : -0.185
+TNS   : -0.703
+
+Type  : Fast 1200mV 0C Model Hold 'freq_divider:freq_divider20MHz|clk_out'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ili9163_controller:ili9163|data_byte_flag'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -5.128
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'freq_divider:freq_divider20MHz|clk_out'
+Slack : -1.000
+TNS   : -72.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ili9163_controller:ili9163|data_byte_flag'
+Slack : -1.000
+TNS   : -16.000
+
+------------------------------------------------------------
