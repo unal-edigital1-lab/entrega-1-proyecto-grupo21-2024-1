@@ -1,0 +1,465 @@
+Analysis & Synthesis report for ili9163_top
+Mon Sep  2 10:32:13 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ili9163_top|ili9163_controller:ili9163|fsm_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |ili9163_top
+ 14. Parameter Settings for User Entity Instance: freq_divider:freq_divider20MHz
+ 15. Parameter Settings for User Entity Instance: ili9163_controller:ili9163
+ 16. Parameter Settings for User Entity Instance: ili9163_controller:ili9163|spi_master:spi
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Sep  2 10:32:13 2024          ;
+; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                      ; ili9163_top                                    ;
+; Top-level Entity Name              ; ili9163_top                                    ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 277                                            ;
+;     Total combinational functions  ; 265                                            ;
+;     Dedicated logic registers      ; 90                                             ;
+; Total registers                    ; 90                                             ;
+; Total pins                         ; 6                                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE10E22C8       ;                    ;
+; Top-level entity name                                            ; ili9163_top        ; ili9163_top        ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+---------+
+; ili9163_top.v                    ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v        ;         ;
+; freq_divider.v                   ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/usuario/Documents/Prueba_Pantalla_2/freq_divider.v       ;         ;
+; ili9163_controller.v             ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_controller.v ;         ;
+; spi_master.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/usuario/Documents/Prueba_Pantalla_2/spi_master.v         ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 277       ;
+;                                             ;           ;
+; Total combinational functions               ; 265       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 171       ;
+;     -- 3 input functions                    ; 39        ;
+;     -- <=2 input functions                  ; 55        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 226       ;
+;     -- arithmetic mode                      ; 39        ;
+;                                             ;           ;
+; Total registers                             ; 90        ;
+;     -- Dedicated logic registers            ; 90        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 6         ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 90        ;
+; Total fan-out                               ; 1267      ;
+; Average fan-out                             ; 3.45      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                         ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                    ; Entity Name        ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------------+--------------+
+; |ili9163_top                        ; 265 (19)            ; 90 (16)                   ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |ili9163_top                                           ; ili9163_top        ; work         ;
+;    |freq_divider:freq_divider20MHz| ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ili9163_top|freq_divider:freq_divider20MHz            ; freq_divider       ; work         ;
+;    |ili9163_controller:ili9163|     ; 244 (231)           ; 72 (55)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ili9163_top|ili9163_controller:ili9163                ; ili9163_controller ; work         ;
+;       |spi_master:spi|              ; 13 (13)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ili9163_top|ili9163_controller:ili9163|spi_master:spi ; spi_master         ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ili9163_top|ili9163_controller:ili9163|fsm_state                                                                                                                                                                                                  ;
++------------------------+----------------------+----------------------+-----------------------+------------------------+-----------------+----------------------+-----------------+-----------------------+-----------------+---------------------+-----------------+
+; Name                   ; fsm_state.WAIT_FRAME ; fsm_state.FRAME_LOOP ; fsm_state.SET_ADRRESS ; fsm_state.SET_ROTATION ; fsm_state.WAIT3 ; fsm_state.DISPLAY_ON ; fsm_state.WAIT2 ; fsm_state.SEND_CONFIG ; fsm_state.WAIT1 ; fsm_state.SEND_INIT ; fsm_state.START ;
++------------------------+----------------------+----------------------+-----------------------+------------------------+-----------------+----------------------+-----------------+-----------------------+-----------------+---------------------+-----------------+
+; fsm_state.START        ; 0                    ; 0                    ; 0                     ; 0                      ; 0               ; 0                    ; 0               ; 0                     ; 0               ; 0                   ; 0               ;
+; fsm_state.SEND_INIT    ; 0                    ; 0                    ; 0                     ; 0                      ; 0               ; 0                    ; 0               ; 0                     ; 0               ; 1                   ; 1               ;
+; fsm_state.WAIT1        ; 0                    ; 0                    ; 0                     ; 0                      ; 0               ; 0                    ; 0               ; 0                     ; 1               ; 0                   ; 1               ;
+; fsm_state.SEND_CONFIG  ; 0                    ; 0                    ; 0                     ; 0                      ; 0               ; 0                    ; 0               ; 1                     ; 0               ; 0                   ; 1               ;
+; fsm_state.WAIT2        ; 0                    ; 0                    ; 0                     ; 0                      ; 0               ; 0                    ; 1               ; 0                     ; 0               ; 0                   ; 1               ;
+; fsm_state.DISPLAY_ON   ; 0                    ; 0                    ; 0                     ; 0                      ; 0               ; 1                    ; 0               ; 0                     ; 0               ; 0                   ; 1               ;
+; fsm_state.WAIT3        ; 0                    ; 0                    ; 0                     ; 0                      ; 1               ; 0                    ; 0               ; 0                     ; 0               ; 0                   ; 1               ;
+; fsm_state.SET_ROTATION ; 0                    ; 0                    ; 0                     ; 1                      ; 0               ; 0                    ; 0               ; 0                     ; 0               ; 0                   ; 1               ;
+; fsm_state.SET_ADRRESS  ; 0                    ; 0                    ; 1                     ; 0                      ; 0               ; 0                    ; 0               ; 0                     ; 0               ; 0                   ; 1               ;
+; fsm_state.FRAME_LOOP   ; 0                    ; 1                    ; 0                     ; 0                      ; 0               ; 0                    ; 0               ; 0                     ; 0               ; 0                   ; 1               ;
+; fsm_state.WAIT_FRAME   ; 1                    ; 0                    ; 0                     ; 0                      ; 0               ; 0                    ; 0               ; 0                     ; 0               ; 0                   ; 1               ;
++------------------------+----------------------+----------------------+-----------------------+------------------------+-----------------+----------------------+-----------------+-----------------------+-----------------+---------------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; current_pixel[11..15]                  ; Stuck at GND due to stuck port data_in ;
+; current_pixel[0]                       ; Merged with current_pixel[1]           ;
+; current_pixel[1]                       ; Merged with current_pixel[2]           ;
+; current_pixel[2]                       ; Merged with current_pixel[3]           ;
+; current_pixel[3]                       ; Merged with current_pixel[4]           ;
+; current_pixel[4]                       ; Merged with current_pixel[5]           ;
+; current_pixel[5]                       ; Merged with current_pixel[6]           ;
+; current_pixel[6]                       ; Merged with current_pixel[7]           ;
+; current_pixel[7]                       ; Merged with current_pixel[8]           ;
+; current_pixel[8]                       ; Merged with current_pixel[9]           ;
+; current_pixel[9]                       ; Merged with current_pixel[10]          ;
+; ili9163_controller:ili9163|fsm_state~4 ; Lost fanout                            ;
+; ili9163_controller:ili9163|fsm_state~5 ; Lost fanout                            ;
+; ili9163_controller:ili9163|fsm_state~6 ; Lost fanout                            ;
+; ili9163_controller:ili9163|fsm_state~7 ; Lost fanout                            ;
+; Total Number of Removed Registers = 19 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 90    ;
+; Number of registers using Synchronous Clear  ; 22    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 90    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 61    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------+
+; Inverted Register Statistics                                ;
++---------------------------------------------------+---------+
+; Inverted Register                                 ; Fan out ;
++---------------------------------------------------+---------+
+; ili9163_controller:ili9163|spi_master:spi|sck_reg ; 6       ;
+; ili9163_controller:ili9163|spi_master:spi|spi_dc  ; 1       ;
+; ili9163_controller:ili9163|spi_master:spi|idle    ; 37      ;
+; ili9163_controller:ili9163|data_byte_flag         ; 18      ;
+; Total number of inverted registers = 4            ;         ;
++---------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |ili9163_top|ili9163_controller:ili9163|next_config[3] ;
+; 26:1               ; 2 bits    ; 34 LEs        ; 16 LEs               ; 18 LEs                 ; Yes        ; |ili9163_top|ili9163_controller:ili9163|spi_data[2]    ;
+; 26:1               ; 3 bits    ; 51 LEs        ; 18 LEs               ; 33 LEs                 ; Yes        ; |ili9163_top|ili9163_controller:ili9163|spi_data[7]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ili9163_top ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; RESOLUTION     ; 16384 ; Signed Integer                                     ;
+; PIXEL_SIZE     ; 16    ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: freq_divider:freq_divider20MHz ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; DIVIDER        ; 2     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ili9163_controller:ili9163 ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; DATA_SIZE      ; 9     ; Signed Integer                                 ;
+; STATES         ; 12    ; Signed Integer                                 ;
+; PIXEL_SIZE     ; 16    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ili9163_controller:ili9163|spi_master:spi ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; DATA_SIZE      ; 9     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 6                           ;
+; cycloneiii_ff         ; 90                          ;
+;     CLR               ; 28                          ;
+;     CLR SLD           ; 1                           ;
+;     ENA CLR           ; 39                          ;
+;     ENA CLR SCLR      ; 22                          ;
+; cycloneiii_lcell_comb ; 267                         ;
+;     arith             ; 39                          ;
+;         2 data inputs ; 37                          ;
+;         3 data inputs ; 2                           ;
+;     normal            ; 228                         ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 37                          ;
+;         4 data inputs ; 171                         ;
+;                       ;                             ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 4.56                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Mon Sep  2 10:31:51 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ili9163 -c ili9163_top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning (12125): Using design file ili9163_top.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ili9163_top File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 4
+Info (12127): Elaborating entity "ili9163_top" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at ili9163_top.v(58): truncated value with size 32 to match size of target (14) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 58
+Warning (10240): Verilog HDL Always Construct warning at ili9163_top.v(48): inferring latch(es) for variable "AMARILLO", which holds its previous value in one or more paths through the always construct File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 48
+Info (10041): Inferred latch for "AMARILLO[0]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[1]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[2]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[3]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[4]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[5]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[6]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[7]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[8]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[9]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[10]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[11]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[12]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[13]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[14]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Info (10041): Inferred latch for "AMARILLO[15]" at ili9163_top.v(55) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 55
+Warning (12125): Using design file freq_divider.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: freq_divider File: C:/Users/usuario/Documents/Prueba_Pantalla_2/freq_divider.v Line: 1
+Info (12128): Elaborating entity "freq_divider" for hierarchy "freq_divider:freq_divider20MHz" File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 45
+Warning (10230): Verilog HDL assignment warning at freq_divider.v(23): truncated value with size 32 to match size of target (1) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/freq_divider.v Line: 23
+Warning (12125): Using design file ili9163_controller.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ili9163_controller File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_controller.v Line: 3
+Warning (10236): Verilog HDL Implicit Net warning at ili9163_controller.v(55): created implicit net for "idle" File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_controller.v Line: 55
+Info (12128): Elaborating entity "ili9163_controller" for hierarchy "ili9163_controller:ili9163" File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_top.v Line: 77
+Warning (10230): Verilog HDL assignment warning at ili9163_controller.v(241): truncated value with size 32 to match size of target (22) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_controller.v Line: 241
+Warning (10230): Verilog HDL assignment warning at ili9163_controller.v(296): truncated value with size 32 to match size of target (7) File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_controller.v Line: 296
+Warning (10030): Net "INIT_SEQ.data_a" at ili9163_controller.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_controller.v Line: 25
+Warning (10030): Net "INIT_SEQ.waddr_a" at ili9163_controller.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_controller.v Line: 25
+Warning (10030): Net "INIT_SEQ.we_a" at ili9163_controller.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_controller.v Line: 25
+Warning (12125): Using design file spi_master.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: spi_master File: C:/Users/usuario/Documents/Prueba_Pantalla_2/spi_master.v Line: 1
+Info (12128): Elaborating entity "spi_master" for hierarchy "ili9163_controller:ili9163|spi_master:spi" File: C:/Users/usuario/Documents/Prueba_Pantalla_2/ili9163_controller.v Line: 56
+Critical Warning (127005): Memory depth (128) in the design file differs from memory depth (84) in the Memory Initialization File "C:/Users/usuario/Documents/Prueba_Pantalla_2/db/ili9163_top.ram0_ili9163_controller_1316e1cd.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/usuario/Documents/Prueba_Pantalla_2/db/ili9163_top.ram0_ili9163_controller_1316e1cd.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (13000): Registers with preset signals will power-up high File: C:/Users/usuario/Documents/Prueba_Pantalla_2/spi_master.v Line: 15
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/usuario/Documents/Prueba_Pantalla_2/output_files/ili9163_top.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 294 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 4 output pins
+    Info (21061): Implemented 288 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4741 megabytes
+    Info: Processing ended: Mon Sep  2 10:32:13 2024
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:50
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/usuario/Documents/Prueba_Pantalla_2/output_files/ili9163_top.map.smsg.
+
+
