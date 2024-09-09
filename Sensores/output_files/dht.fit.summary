@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Sep  4 21:20:21 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : dht
+Top-level Entity Name : top
+Family : Cyclone IV E
+Device : EP4CE10E22C8
+Timing Models : Final
+Total logic elements : 635 / 10,320 ( 6 % )
+    Total combinational functions : 607 / 10,320 ( 6 % )
+    Dedicated logic registers : 219 / 10,320 ( 2 % )
+Total registers : 219
+Total pins : 22 / 92 ( 24 % )
+Total virtual pins : 0
+Total memory bits : 0 / 423,936 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

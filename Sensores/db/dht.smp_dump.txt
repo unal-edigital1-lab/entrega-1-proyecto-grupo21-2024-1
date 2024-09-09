@@ -1,0 +1,10 @@
+
+State Machine - |top|dht:u1|state
+Name state.PROCESS_DATA state.WAIT state.READ_DATA state.WAIT_RESPONSE_LOW state.WAIT_RESPONSE_HIGH state.START_SIGNAL state.ENABLE 
+state.ENABLE 0 0 0 0 0 0 0 
+state.START_SIGNAL 0 0 0 0 0 1 1 
+state.WAIT_RESPONSE_HIGH 0 0 0 0 1 0 1 
+state.WAIT_RESPONSE_LOW 0 0 0 1 0 0 1 
+state.READ_DATA 0 0 1 0 0 0 1 
+state.WAIT 0 1 0 0 0 0 1 
+state.PROCESS_DATA 1 0 0 0 0 0 1 

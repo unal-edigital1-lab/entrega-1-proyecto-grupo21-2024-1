@@ -1,0 +1,139 @@
+m255
+K4
+z2
+Z0 !s12c _opt1
+Z1 !s99 nomlopt
+R0
+R1
+!s12c _opt
+R1
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/simulation/questa
+T_opt
+!s110 1725300316
+V9KJoMQ[O^nn]iRO<TKR5Z1
+Z3 04 6 4 work dht_TB fast 0
+=1-c80aa9e36a32-66d5fe5b-295-241c
+R1
+Z4 !s12b OEM100
+Z5 !s124 OEM10U11 
+Z6 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work +acc
+Z7 tCvgOpt 0
+n@_opt
+Z8 OL;O;2023.3;77
+R2
+T_opt1
+!s110 1725481619
+VTa_W[NVf:i9o<K]oVd^6]2
+R3
+=1-c80aa9e36a32-66d8c291-104-1da0
+R1
+R4
+R5
+R6
+R7
+n@_opt1
+R8
+vbcd_to_7seg
+2C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/bcd_to_7seg.v
+Z9 !s110 1725481615
+!i10b 1
+!s100 CodTd7<;<YCK7UPRGeAmK1
+IgYYS<anLLLDmF;[lB41603
+R2
+w1724282920
+8C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/bcd_to_7seg.v
+FC:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/bcd_to_7seg.v
+!i122 2
+L0 1 26
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+Z11 OL;L;2023.3;77
+r1
+!s85 0
+31
+Z12 !s108 1725481614.000000
+!s107 C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/bcd_to_7seg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura|C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/bcd_to_7seg.v|
+!i113 0
+Z13 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z14 !s92 -vlog01compat -work work {+incdir+C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R7
+vdht
+2C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/dht.v
+Z15 !s110 1725481614
+!i10b 1
+!s100 I_f=3Yk:c7BX8B4e@`RoW3
+I9gD3nfei8]?>N?L6g;90h3
+R2
+w1725481276
+8C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/dht.v
+FC:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/dht.v
+!i122 1
+L0 3 189
+R10
+R11
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/dht.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura|C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/dht.v|
+!i113 0
+R13
+R14
+R7
+vdht_TB
+2C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/dht_TB.v
+R9
+!i10b 1
+!s100 ]NcTV<ZPLMQZXD9Y856jk2
+I]S[eo04OWDQTafLHUMh:Z0
+R2
+w1725475685
+8C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/dht_TB.v
+FC:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/dht_TB.v
+!i122 3
+L0 4 65
+R10
+R11
+r1
+!s85 0
+31
+!s108 1725481615.000000
+!s107 C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/dht_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura|C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/dht_TB.v|
+!i113 0
+R13
+R14
+R7
+ndht_@t@b
+vdisplay_controller
+2C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/display_controller.v
+R15
+!i10b 1
+!s100 nB6US42`SiZPLE0deo`ij3
+IYeES5kX2OjKmdY8L<5PRz0
+R2
+w1725475698
+8C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/display_controller.v
+FC:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/display_controller.v
+!i122 0
+L0 3 51
+R10
+R11
+r1
+!s85 0
+31
+!s108 1725481613.000000
+!s107 C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/display_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura|C:/Users/crist/OneDrive/Escritorio/Sensor de temperatura/display_controller.v|
+!i113 0
+R13
+R14
+R7
