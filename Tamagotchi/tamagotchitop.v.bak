@@ -1,0 +1,102 @@
+// Archivo: tamagotchitop.v
+
+module tamagotchitop(
+    input wire clk,               // Reloj del sistema
+    input wire rst,               // Señal de reinicio
+    input wire btn_next,          // Botón para avanzar al siguiente registro
+    input wire btn_prev,          // Botón para retroceder al registro anterior
+    input wire btn_inc,           // Botón para incrementar el valor del registro actual
+    input wire btn_dec,           // Botón para decrementar el valor del registro actual
+    output reg [2:0] led_display  // LEDs para mostrar el valor del registro actual (0 a 7, usar 3 bits para más registros)
+);
+
+    // Definición de registros con un rango de 0 a 5
+    reg [2:0] SALUD;   // Registro de 3 bits (0 a 5)
+    reg [2:0] ANIMO;   // Registro de 3 bits (0 a 5)
+    reg [2:0] COMIDA;  // Registro de 3 bits (0 a 5)
+    reg [2:0] ENERGIA; // Registro de 3 bits (0 a 5)
+    reg [2:0] INTEGRIDAD; // Registro de 3 bits (0 a 4)
+
+    // Registro para el índice del registro actual
+    reg [1:0] current_reg; // 2 bits para seleccionar uno de los 4 registros
+
+    // Inicializar los registros y el índice del registro actual
+    initial begin
+        SALUD   = 3'd5;
+        ANIMO   = 3'd5;
+        COMIDA  = 3'd5;
+        ENERGIA = 3'd5;
+        INTEGRIDAD = 3'd4; // Inicialmente, INTEGRIDAD es 4, el valor máximo
+        current_reg = 2'd0;
+        led_display = 3'd0; // Inicializa la visualización LED
+    end
+
+    // Bloque always para manejar la lógica del módulo
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            // En caso de reinicio, reiniciar los registros y el índice
+            SALUD   <= 3'd5;
+            ANIMO   <= 3'd5;
+            COMIDA  <= 3'd5;
+            ENERGIA <= 3'd5;
+            INTEGRIDAD <= 3'd4; // Reiniciar INTEGRIDAD al valor máximo
+            current_reg <= 2'd0;
+            led_display <= 3'd0;
+        end else begin
+            // Navegación entre registros
+            if (btn_next) begin
+                current_reg <= current_reg + 1;
+                if (current_reg == 2'd3) begin
+                    current_reg <= 2'd0; // Volver al primer registro si se pasa del último
+                end
+            end else if (btn_prev) begin
+                if (current_reg == 2'd0) begin
+                    current_reg <= 2'd3; // Volver al último registro si se retrocede desde el primero
+                end else begin
+                    current_reg <= current_reg - 1;
+                end
+            end
+
+            // Incrementar y decrementar el valor del registro actual
+            if (btn_inc) begin
+                case (current_reg)
+                    2'd0: if (SALUD < 3'd5) SALUD <= SALUD + 1;
+                    2'd1: if (ANIMO < 3'd5) ANIMO <= ANIMO + 1;
+                    2'd2: if (COMIDA < 3'd5) COMIDA <= COMIDA + 1;
+                    2'd3: if (ENERGIA < 3'd5) ENERGIA <= ENERGIA + 1;
+                endcase
+            end else if (btn_dec) begin
+                case (current_reg)
+                    2'd0: if (SALUD > 3'd0) SALUD <= SALUD - 1;
+                    2'd1: if (ANIMO > 3'd0) ANIMO <= ANIMO - 1;
+                    2'd2: if (COMIDA > 3'd0) COMIDA <= COMIDA - 1;
+                    2'd3: if (ENERGIA > 3'd0) ENERGIA <= ENERGIA - 1;
+                endcase
+            end
+
+            // Actualizar la INTEGRIDAD en base a los valores de los registros
+            if (SALUD < 3'd3) INTEGRIDAD <= INTEGRIDAD - 1;
+            if (ANIMO < 3'd3) INTEGRIDAD <= INTEGRIDAD - 1;
+            if (COMIDA < 3'd3) INTEGRIDAD <= INTEGRIDAD - 1;
+            if (ENERGIA < 3'd3) INTEGRIDAD <= INTEGRIDAD - 1;
+
+            if (SALUD >= 3'd3) INTEGRIDAD <= INTEGRIDAD + 1;
+            if (ANIMO >= 3'd3) INTEGRIDAD <= INTEGRIDAD + 1;
+            if (COMIDA >= 3'd3) INTEGRIDAD <= INTEGRIDAD + 1;
+            if (ENERGIA >= 3'd3) INTEGRIDAD <= INTEGRIDAD + 1;
+
+            // Limitar INTEGRIDAD entre 0 y 4
+            if (INTEGRIDAD > 3'd4) INTEGRIDAD <= 3'd4;
+            if (INTEGRIDAD < 3'd0) INTEGRIDAD <= 3'd0;
+
+            // Actualizar la visualización LED para mostrar el valor del registro actual
+            case (current_reg)
+                2'd0: led_display <= SALUD;
+                2'd1: led_display <= ANIMO;
+                2'd2: led_display <= COMIDA;
+                2'd3: led_display <= ENERGIA;
+            endcase
+        end
+    end
+
+endmodule

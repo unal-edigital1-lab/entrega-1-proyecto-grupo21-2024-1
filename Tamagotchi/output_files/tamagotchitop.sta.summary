@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'display:displayh|cfreq[16]'
+Slack : -8.727
+TNS   : -40.073
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -4.213
+TNS   : -84.199
+
+Type  : Slow 1200mV 85C Model Setup 'BancoRegistro:registros|divisor:div1|clk2'
+Slack : -3.406
+TNS   : -110.313
+
+Type  : Slow 1200mV 85C Model Hold 'BancoRegistro:registros|divisor:div1|clk2'
+Slack : 0.434
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'display:displayh|cfreq[16]'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.719
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -63.967
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BancoRegistro:registros|divisor:div1|clk2'
+Slack : -1.487
+TNS   : -59.480
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'display:displayh|cfreq[16]'
+Slack : -1.487
+TNS   : -20.818
+
+Type  : Slow 1200mV 0C Model Setup 'display:displayh|cfreq[16]'
+Slack : -8.003
+TNS   : -36.080
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -3.893
+TNS   : -72.759
+
+Type  : Slow 1200mV 0C Model Setup 'BancoRegistro:registros|divisor:div1|clk2'
+Slack : -3.071
+TNS   : -100.700
+
+Type  : Slow 1200mV 0C Model Hold 'BancoRegistro:registros|divisor:div1|clk2'
+Slack : 0.384
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'display:displayh|cfreq[16]'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.669
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -63.967
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BancoRegistro:registros|divisor:div1|clk2'
+Slack : -1.487
+TNS   : -59.513
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'display:displayh|cfreq[16]'
+Slack : -1.487
+TNS   : -20.818
+
+Type  : Fast 1200mV 0C Model Setup 'display:displayh|cfreq[16]'
+Slack : -3.054
+TNS   : -12.032
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -1.265
+TNS   : -14.266
+
+Type  : Fast 1200mV 0C Model Setup 'BancoRegistro:registros|divisor:div1|clk2'
+Slack : -0.920
+TNS   : -25.296
+
+Type  : Fast 1200mV 0C Model Hold 'BancoRegistro:registros|divisor:div1|clk2'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'display:displayh|cfreq[16]'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.287
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -46.715
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BancoRegistro:registros|divisor:div1|clk2'
+Slack : -1.000
+TNS   : -40.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'display:displayh|cfreq[16]'
+Slack : -1.000
+TNS   : -14.000
+
+------------------------------------------------------------
