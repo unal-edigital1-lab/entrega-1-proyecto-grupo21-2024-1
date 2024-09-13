@@ -8,10 +8,10 @@ module dht#(
     input wire rst,                // Reset del sistema
     inout wire dht11,              // Línea de datos del sensor DHT11
     output reg valid_data,         // Indicador de datos válidos
-    output reg led,
+    output reg led
     //--------------------------- 7 segmentos----------------------
-    output wire [6:0] seg,        // Conectar a los pines del display de 7 segmentos
-    output [7:0] an
+    //output wire [6:0] seg,        // Conectar a los pines del display de 7 segmentos
+    //output [7:0] an
 );
 
     // Registros internos
@@ -189,11 +189,11 @@ module dht#(
     end
 
     // Instanciación del controlador de display
-    display_controller display_ctrl (
+    /*display_controller display_ctrl (
         .clk(clk),
         .value1(humidity),
         .value2(temperature),
         .an(an),
         .seg(seg)
-    );
+    );*/
 endmodule

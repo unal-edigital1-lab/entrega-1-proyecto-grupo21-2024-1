@@ -3,7 +3,7 @@
 
 
 module ili9341_top #(parameter RESOLUTION = 128*128, parameter PIXEL_SIZE = 16)(
-        input wire clk, //125MHz
+        input wire clk, //50MHz
         input wire rst,
         output wire spi_mosi,
         output wire spi_cs,
@@ -13,7 +13,6 @@ module ili9341_top #(parameter RESOLUTION = 128*128, parameter PIXEL_SIZE = 16)(
 
     wire clk_out;
     wire clk_input_data;
-	 //reg [PIXEL_SIZE-1:0] AMARILLO;
     reg [PIXEL_SIZE-1:0] current_pixel;
     reg [PIXEL_SIZE-1:0] pixel_data_mem[0:RESOLUTION-1];
 
@@ -22,12 +21,12 @@ module ili9341_top #(parameter RESOLUTION = 128*128, parameter PIXEL_SIZE = 16)(
 
     initial begin
         current_pixel <= 'b0;
-        $readmemh("C:/Users/usuario/Documents/Prueba_2/Red_Prueba.txt", pixel_data_mem);
+        $readmemh("C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/Red_Prueba.txt", pixel_data_mem);
         pixel_counter <= 'b0;
         transmission_done <= 'b0; 
     end
 
-    freq_divider #(4) freq_divider20MHz (
+    freq_divider #(2) freq_divider20MHz (
         .clk(clk),
         .rst(rst),
         .clk_out(clk_out)

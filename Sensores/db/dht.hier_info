@@ -1,30 +1,17 @@
 |top
-clk => clk.IN2
-rst => rst.IN2
+clk => clk.IN3
+rst => rst.IN3
 dht11 <> dht:u1.dht11
-valid_data << dht:u1.valid_data
-led << dht:u1.led
-seg[0] << dht:u1.seg
-seg[1] << dht:u1.seg
-seg[2] << dht:u1.seg
-seg[3] << dht:u1.seg
-seg[4] << dht:u1.seg
-seg[5] << dht:u1.seg
-seg[6] << dht:u1.seg
-an[0] << dht:u1.an
-an[1] << dht:u1.an
-an[2] << dht:u1.an
-an[3] << dht:u1.an
-an[4] << dht:u1.an
-an[5] << dht:u1.an
-an[6] << dht:u1.an
-an[7] << dht:u1.an
+valid_data <= dht:u1.valid_data
+led <= dht:u1.led
 IR => IR.IN1
-Salida_contador << contador:u2.Salida_contador
+Salida_contador <= contador:u2.Salida_contador
+FR => FR.IN1
+Salida_contadorFR <= contadorFR:u3.Salida_contadorFR
 
 
 |top|dht:u1
-clk => clk.IN2
+clk => clk.IN1
 rst => counter.OUTPUTSELECT
 rst => counter.OUTPUTSELECT
 rst => counter.OUTPUTSELECT
@@ -90,55 +77,7 @@ rst => timer[28].ACLR
 rst => timer[29].ACLR
 rst => timer[30].ACLR
 rst => timer[31].ACLR
-rst => temperature[0].OUTPUTSELECT
-rst => temperature[1].OUTPUTSELECT
-rst => temperature[2].OUTPUTSELECT
-rst => temperature[3].OUTPUTSELECT
-rst => temperature[4].OUTPUTSELECT
-rst => temperature[5].OUTPUTSELECT
-rst => temperature[6].OUTPUTSELECT
-rst => temperature[7].OUTPUTSELECT
-rst => temperature[8].OUTPUTSELECT
-rst => temperature[9].OUTPUTSELECT
-rst => temperature[10].OUTPUTSELECT
-rst => temperature[11].OUTPUTSELECT
-rst => temperature[12].OUTPUTSELECT
-rst => temperature[13].OUTPUTSELECT
-rst => temperature[14].OUTPUTSELECT
-rst => temperature[15].OUTPUTSELECT
-rst => humidity[0].OUTPUTSELECT
-rst => humidity[1].OUTPUTSELECT
-rst => humidity[2].OUTPUTSELECT
-rst => humidity[3].OUTPUTSELECT
-rst => humidity[4].OUTPUTSELECT
-rst => humidity[5].OUTPUTSELECT
-rst => humidity[6].OUTPUTSELECT
-rst => humidity[7].OUTPUTSELECT
-rst => humidity[8].OUTPUTSELECT
-rst => humidity[9].OUTPUTSELECT
-rst => humidity[10].OUTPUTSELECT
-rst => humidity[11].OUTPUTSELECT
-rst => humidity[12].OUTPUTSELECT
-rst => humidity[13].OUTPUTSELECT
-rst => humidity[14].OUTPUTSELECT
-rst => humidity[15].OUTPUTSELECT
 rst => state~10.DATAIN
-rst => data[39].ENA
-rst => data[38].ENA
-rst => data[37].ENA
-rst => data[36].ENA
-rst => data[35].ENA
-rst => data[34].ENA
-rst => data[33].ENA
-rst => data[32].ENA
-rst => data[31].ENA
-rst => data[30].ENA
-rst => data[29].ENA
-rst => data[28].ENA
-rst => data[27].ENA
-rst => data[26].ENA
-rst => data[25].ENA
-rst => data[24].ENA
 rst => data[23].ENA
 rst => data[22].ENA
 rst => data[21].ENA
@@ -162,7 +101,6 @@ rst => data[4].ENA
 rst => data[3].ENA
 rst => data[2].ENA
 rst => data[1].ENA
-rst => valid_data~reg0.ENA
 rst => data[0].ENA
 rst => aju_t[7].ENA
 rst => aju_t[6].ENA
@@ -171,25 +109,11 @@ rst => aju_t[4].ENA
 rst => aju_t[3].ENA
 rst => aju_t[2].ENA
 rst => aju_t[1].ENA
+rst => valid_data~reg0.ENA
 rst => aju_t[0].ENA
 dht11 <> dht11
 valid_data <= valid_data~reg0.DB_MAX_OUTPUT_PORT_TYPE
 led <= led~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seg[0] <= display_controller:display_ctrl.seg
-seg[1] <= display_controller:display_ctrl.seg
-seg[2] <= display_controller:display_ctrl.seg
-seg[3] <= display_controller:display_ctrl.seg
-seg[4] <= display_controller:display_ctrl.seg
-seg[5] <= display_controller:display_ctrl.seg
-seg[6] <= display_controller:display_ctrl.seg
-an[0] <= display_controller:display_ctrl.an
-an[1] <= display_controller:display_ctrl.an
-an[2] <= display_controller:display_ctrl.an
-an[3] <= display_controller:display_ctrl.an
-an[4] <= display_controller:display_ctrl.an
-an[5] <= display_controller:display_ctrl.an
-an[6] <= display_controller:display_ctrl.an
-an[7] <= display_controller:display_ctrl.an
 
 
 |top|dht:u1|divisor:aat
@@ -218,203 +142,6 @@ clkd => count[21].CLK
 clkd => count[22].CLK
 clkd => clk2~reg0.CLK
 clk2 <= clk2~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|dht:u1|display_controller:display_ctrl
-clk => sel[0].CLK
-clk => sel[1].CLK
-clk => sel[2].CLK
-clk => timer[0].CLK
-clk => timer[1].CLK
-clk => timer[2].CLK
-clk => timer[3].CLK
-clk => timer[4].CLK
-clk => timer[5].CLK
-clk => timer[6].CLK
-clk => timer[7].CLK
-clk => timer[8].CLK
-clk => timer[9].CLK
-clk => timer[10].CLK
-clk => timer[11].CLK
-clk => timer[12].CLK
-clk => timer[13].CLK
-clk => timer[14].CLK
-clk => timer[15].CLK
-clk => timer[16].CLK
-clk => timer[17].CLK
-clk => timer[18].CLK
-clk => timer[19].CLK
-clk => timer[20].CLK
-clk => timer[21].CLK
-clk => timer[22].CLK
-clk => timer[23].CLK
-clk => timer[24].CLK
-clk => timer[25].CLK
-clk => timer[26].CLK
-clk => timer[27].CLK
-clk => timer[28].CLK
-clk => timer[29].CLK
-clk => timer[30].CLK
-clk => timer[31].CLK
-value1[0] => value1[0].IN1
-value1[1] => value1[1].IN1
-value1[2] => value1[2].IN1
-value1[3] => value1[3].IN1
-value1[4] => value1[4].IN1
-value1[5] => value1[5].IN1
-value1[6] => value1[6].IN1
-value1[7] => value1[7].IN1
-value1[8] => value1[8].IN1
-value1[9] => value1[9].IN1
-value1[10] => value1[10].IN1
-value1[11] => value1[11].IN1
-value1[12] => value1[12].IN1
-value1[13] => value1[13].IN1
-value1[14] => value1[14].IN1
-value1[15] => value1[15].IN1
-value2[0] => value2[0].IN1
-value2[1] => value2[1].IN1
-value2[2] => value2[2].IN1
-value2[3] => value2[3].IN1
-value2[4] => value2[4].IN1
-value2[5] => value2[5].IN1
-value2[6] => value2[6].IN1
-value2[7] => value2[7].IN1
-value2[8] => value2[8].IN1
-value2[9] => value2[9].IN1
-value2[10] => value2[10].IN1
-value2[11] => value2[11].IN1
-value2[12] => value2[12].IN1
-value2[13] => value2[13].IN1
-value2[14] => value2[14].IN1
-value2[15] => value2[15].IN1
-an[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-an[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-an[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-an[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-an[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-an[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-an[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-an[7] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-seg[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|dht:u1|display_controller:display_ctrl|bcd_to_7seg:bcd0
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|dht:u1|display_controller:display_ctrl|bcd_to_7seg:bcd1
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|dht:u1|display_controller:display_ctrl|bcd_to_7seg:bcd2
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|dht:u1|display_controller:display_ctrl|bcd_to_7seg:bcd3
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|dht:u1|display_controller:display_ctrl|bcd_to_7seg:bcd4
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|dht:u1|display_controller:display_ctrl|bcd_to_7seg:bcd5
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|dht:u1|display_controller:display_ctrl|bcd_to_7seg:bcd6
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|dht:u1|display_controller:display_ctrl|bcd_to_7seg:bcd7
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|contador:u2
@@ -473,6 +200,89 @@ Salida_contador <= Salida_contador~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|contador:u2|divisor:aat
+clkd => count[0].CLK
+clkd => count[1].CLK
+clkd => count[2].CLK
+clkd => count[3].CLK
+clkd => count[4].CLK
+clkd => count[5].CLK
+clkd => count[6].CLK
+clkd => count[7].CLK
+clkd => count[8].CLK
+clkd => count[9].CLK
+clkd => count[10].CLK
+clkd => count[11].CLK
+clkd => count[12].CLK
+clkd => count[13].CLK
+clkd => count[14].CLK
+clkd => count[15].CLK
+clkd => count[16].CLK
+clkd => count[17].CLK
+clkd => count[18].CLK
+clkd => count[19].CLK
+clkd => count[20].CLK
+clkd => count[21].CLK
+clkd => count[22].CLK
+clkd => clk2~reg0.CLK
+clk2 <= clk2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|contadorFR:u3
+clk => clk.IN1
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => Salida_contadorFR~reg0.ENA
+FR => Salida_contadorFR.DATAA
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+FR => counter.OUTPUTSELECT
+Salida_contadorFR <= Salida_contadorFR~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|contadorFR:u3|divisor:aat
 clkd => count[0].CLK
 clkd => count[1].CLK
 clkd => count[2].CLK

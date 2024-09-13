@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE10E22) Path("C:/Users/usuario/Documents/Prueba_2/output_files/") File("ili9341_top.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE10E22) Path("C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/output_files/") File("ili9341_top.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -3,34 +3,46 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -13.795
-TNS   : -945.099
+Slack : -5.615
+TNS   : -425.032
 
 Type  : Slow 1200mV 85C Model Setup 'contador:u2|divisor:aat|clk2'
-Slack : -3.697
-TNS   : -81.880
+Slack : -3.986
+TNS   : -88.030
+
+Type  : Slow 1200mV 85C Model Setup 'contadorFR:u3|divisor:aat|clk2'
+Slack : -3.826
+TNS   : -87.341
 
 Type  : Slow 1200mV 85C Model Setup 'dht:u1|divisor:aat|clk2'
-Slack : -2.784
-TNS   : -55.329
+Slack : -2.557
+TNS   : -53.230
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.452
+Slack : 0.453
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'contador:u2|divisor:aat|clk2'
-Slack : 0.613
+Slack : 0.644
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'contadorFR:u3|divisor:aat|clk2'
+Slack : 0.705
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'dht:u1|divisor:aat|clk2'
-Slack : 0.737
+Slack : 0.736
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -254.303
+TNS   : -156.161
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'contador:u2|divisor:aat|clk2'
+Slack : -1.487
+TNS   : -37.175
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'contadorFR:u3|divisor:aat|clk2'
 Slack : -1.487
 TNS   : -37.175
 
@@ -39,34 +51,46 @@ Slack : -1.487
 TNS   : -37.175
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -12.466
-TNS   : -865.004
+Slack : -5.175
+TNS   : -386.113
 
 Type  : Slow 1200mV 0C Model Setup 'contador:u2|divisor:aat|clk2'
-Slack : -3.417
-TNS   : -75.250
+Slack : -3.669
+TNS   : -80.434
+
+Type  : Slow 1200mV 0C Model Setup 'contadorFR:u3|divisor:aat|clk2'
+Slack : -3.488
+TNS   : -79.091
 
 Type  : Slow 1200mV 0C Model Setup 'dht:u1|divisor:aat|clk2'
-Slack : -2.499
-TNS   : -49.683
+Slack : -2.292
+TNS   : -46.656
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.401
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'contador:u2|divisor:aat|clk2'
-Slack : 0.548
+Slack : 0.580
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'contadorFR:u3|divisor:aat|clk2'
+Slack : 0.635
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'dht:u1|divisor:aat|clk2'
-Slack : 0.684
+Slack : 0.683
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -254.303
+TNS   : -156.161
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'contador:u2|divisor:aat|clk2'
+Slack : -1.487
+TNS   : -37.175
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'contadorFR:u3|divisor:aat|clk2'
 Slack : -1.487
 TNS   : -37.175
 
@@ -75,34 +99,46 @@ Slack : -1.487
 TNS   : -37.175
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -5.414
-TNS   : -304.038
+Slack : -1.914
+TNS   : -127.079
 
 Type  : Fast 1200mV 0C Model Setup 'contador:u2|divisor:aat|clk2'
+Slack : -1.090
+TNS   : -22.328
+
+Type  : Fast 1200mV 0C Model Setup 'contadorFR:u3|divisor:aat|clk2'
 Slack : -1.008
-TNS   : -21.086
+TNS   : -21.968
 
 Type  : Fast 1200mV 0C Model Setup 'dht:u1|divisor:aat|clk2'
-Slack : -0.591
-TNS   : -9.897
+Slack : -0.552
+TNS   : -9.572
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.186
+Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'contador:u2|divisor:aat|clk2'
-Slack : 0.255
+Slack : 0.268
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'contadorFR:u3|divisor:aat|clk2'
+Slack : 0.272
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'dht:u1|divisor:aat|clk2'
-Slack : 0.293
+Slack : 0.292
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -183.464
+TNS   : -112.644
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'contador:u2|divisor:aat|clk2'
+Slack : -1.000
+TNS   : -25.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'contadorFR:u3|divisor:aat|clk2'
 Slack : -1.000
 TNS   : -25.000
 

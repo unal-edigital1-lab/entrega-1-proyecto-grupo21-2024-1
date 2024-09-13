@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ili9341_top
-Mon Sep  9 11:44:22 2024
+Mon Sep  9 12:45:25 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -51,15 +51,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep  9 11:44:22 2024          ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep  9 12:45:25 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ili9341_top                                    ;
 ; Top-level Entity Name              ; ili9341_top                                    ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 3,263                                          ;
-;     Total combinational functions  ; 3,252                                          ;
-;     Dedicated logic registers      ; 98                                             ;
-; Total registers                    ; 98                                             ;
+; Total logic elements               ; 3,268                                          ;
+;     Total combinational functions  ; 3,267                                          ;
+;     Dedicated logic registers      ; 97                                             ;
+; Total registers                    ; 97                                             ;
 ; Total pins                         ; 6                                              ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -171,17 +171,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                           ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                             ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
-; freq_divider.v                   ; yes             ; User Verilog HDL File  ; C:/Users/usuario/Documents/Prueba_2/freq_divider.v       ;         ;
-; spi_master.v                     ; yes             ; User Verilog HDL File  ; C:/Users/usuario/Documents/Prueba_2/spi_master.v         ;         ;
-; ili9341_top.v                    ; yes             ; User Verilog HDL File  ; C:/Users/usuario/Documents/Prueba_2/ili9341_top.v        ;         ;
-; ili9341_controller.v             ; yes             ; User Verilog HDL File  ; C:/Users/usuario/Documents/Prueba_2/ili9341_controller.v ;         ;
-; red_prueba.txt                   ; yes             ; Auto-Found File        ; C:/Users/usuario/Documents/Prueba_2/red_prueba.txt       ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                              ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+; freq_divider.v                   ; yes             ; User Verilog HDL File  ; C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/freq_divider.v       ;         ;
+; spi_master.v                     ; yes             ; User Verilog HDL File  ; C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/spi_master.v         ;         ;
+; ili9341_top.v                    ; yes             ; User Verilog HDL File  ; C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_top.v        ;         ;
+; ili9341_controller.v             ; yes             ; User Verilog HDL File  ; C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_controller.v ;         ;
+; red_prueba.txt                   ; yes             ; Auto-Found File        ; C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/red_prueba.txt       ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------+
@@ -189,20 +189,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------+
 ; Resource                                    ; Usage            ;
 +---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 3,263            ;
+; Estimated Total logic elements              ; 3,268            ;
 ;                                             ;                  ;
-; Total combinational functions               ; 3252             ;
+; Total combinational functions               ; 3267             ;
 ; Logic element usage by number of LUT inputs ;                  ;
 ;     -- 4 input functions                    ; 2901             ;
-;     -- 3 input functions                    ; 223              ;
-;     -- <=2 input functions                  ; 128              ;
+;     -- 3 input functions                    ; 226              ;
+;     -- <=2 input functions                  ; 140              ;
 ;                                             ;                  ;
 ; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 3212             ;
+;     -- normal mode                          ; 3227             ;
 ;     -- arithmetic mode                      ; 40               ;
 ;                                             ;                  ;
-; Total registers                             ; 98               ;
-;     -- Dedicated logic registers            ; 98               ;
+; Total registers                             ; 97               ;
+;     -- Dedicated logic registers            ; 97               ;
 ;     -- I/O registers                        ; 0                ;
 ;                                             ;                  ;
 ; I/O pins                                    ; 6                ;
@@ -210,9 +210,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                ;
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; pixel_counter[0] ;
-; Maximum fan-out                             ; 1247             ;
-; Total fan-out                               ; 12878            ;
-; Average fan-out                             ; 3.83             ;
+; Maximum fan-out                             ; 1250             ;
+; Total fan-out                               ; 12896            ;
+; Average fan-out                             ; 3.82             ;
 +---------------------------------------------+------------------+
 
 
@@ -221,10 +221,10 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                    ; Entity Name        ; Library Name ;
 +-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------------+--------------+
-; |ili9341_top                        ; 3252 (2994)         ; 98 (23)                   ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |ili9341_top                                           ; ili9341_top        ; work         ;
-;    |freq_divider:freq_divider20MHz| ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ili9341_top|freq_divider:freq_divider20MHz            ; freq_divider       ; work         ;
-;    |ili9341_controller:ili9341|     ; 255 (242)           ; 72 (55)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ili9341_top|ili9341_controller:ili9341                ; ili9341_controller ; work         ;
-;       |spi_master:spi|              ; 13 (13)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ili9341_top|ili9341_controller:ili9341|spi_master:spi ; spi_master         ; work         ;
+; |ili9341_top                        ; 3267 (2995)         ; 97 (23)                   ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |ili9341_top                                           ; ili9341_top        ; work         ;
+;    |freq_divider:freq_divider20MHz| ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ili9341_top|freq_divider:freq_divider20MHz            ; freq_divider       ; work         ;
+;    |ili9341_controller:ili9341|     ; 270 (242)           ; 72 (55)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ili9341_top|ili9341_controller:ili9341                ; ili9341_controller ; work         ;
+;       |spi_master:spi|              ; 28 (28)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ili9341_top|ili9341_controller:ili9341|spi_master:spi ; spi_master         ; work         ;
 +-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -268,12 +268,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 98    ;
-; Number of registers using Synchronous Clear  ; 63    ;
+; Total registers                              ; 97    ;
+; Number of registers using Synchronous Clear  ; 69    ;
 ; Number of registers using Synchronous Load   ; 4     ;
-; Number of registers using Asynchronous Clear ; 20    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 57    ;
+; Number of registers using Clock Enable       ; 56    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -283,25 +283,27 @@ Encoding Type:  One-Hot
 +---------------------------------------------------+---------+
 ; Inverted Register                                 ; Fan out ;
 +---------------------------------------------------+---------+
-; ili9341_controller:ili9341|spi_master:spi|sck_reg ; 6       ;
-; ili9341_controller:ili9341|spi_master:spi|spi_dc  ; 1       ;
-; ili9341_controller:ili9341|spi_master:spi|idle    ; 34      ;
+; ili9341_controller:ili9341|spi_master:spi|sck_reg ; 9       ;
+; ili9341_controller:ili9341|spi_master:spi|spi_dc  ; 2       ;
+; ili9341_controller:ili9341|spi_master:spi|idle    ; 35      ;
 ; ili9341_controller:ili9341|data_byte_flag         ; 29      ;
 ; Total number of inverted registers = 4            ;         ;
 +---------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ili9341_top|ili9341_controller:ili9341|config_counter[2] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ili9341_top|current_pixel[0]                             ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |ili9341_top|ili9341_controller:ili9341|delay_counter[12] ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |ili9341_top|ili9341_controller:ili9341|next_config[1]    ;
-; 28:1               ; 4 bits    ; 72 LEs        ; 32 LEs               ; 40 LEs                 ; Yes        ; |ili9341_top|ili9341_controller:ili9341|spi_data[6]       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |ili9341_top|ili9341_controller:ili9341|spi_master:spi|data_reg[7]         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |ili9341_top|ili9341_controller:ili9341|spi_master:spi|data_bit_counter[0] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ili9341_top|ili9341_controller:ili9341|config_counter[2]                  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ili9341_top|current_pixel[0]                                              ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |ili9341_top|ili9341_controller:ili9341|delay_counter[7]                   ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |ili9341_top|ili9341_controller:ili9341|next_config[2]                     ;
+; 28:1               ; 4 bits    ; 72 LEs        ; 32 LEs               ; 40 LEs                 ; Yes        ; |ili9341_top|ili9341_controller:ili9341|spi_data[6]                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------+
@@ -320,7 +322,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------------------------------------------------+
 ; Parameter Name ; Value ; Type                                               ;
 +----------------+-------+----------------------------------------------------+
-; DIVIDER        ; 4     ; Signed Integer                                     ;
+; DIVIDER        ; 2     ; Signed Integer                                     ;
 +----------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -353,26 +355,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 6                           ;
-; cycloneiii_ff         ; 98                          ;
-;     CLR               ; 7                           ;
-;     ENA               ; 3                           ;
-;     ENA CLR           ; 13                          ;
-;     ENA SCLR          ; 37                          ;
+; cycloneiii_ff         ; 97                          ;
+;     ENA               ; 12                          ;
+;     ENA SCLR          ; 40                          ;
 ;     ENA SCLR SLD      ; 4                           ;
-;     SCLR              ; 22                          ;
-;     plain             ; 12                          ;
-; cycloneiii_lcell_comb ; 3254                        ;
+;     SCLR              ; 25                          ;
+;     plain             ; 16                          ;
+; cycloneiii_lcell_comb ; 3269                        ;
 ;     arith             ; 40                          ;
 ;         2 data inputs ; 38                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 3214                        ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 85                          ;
-;         3 data inputs ; 221                         ;
+;     normal            ; 3229                        ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 99                          ;
+;         3 data inputs ; 224                         ;
 ;         4 data inputs ; 2901                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 7.79                        ;
+; Average LUT depth     ; 7.77                        ;
 +-----------------------+-----------------------------+
 
 
@@ -381,7 +381,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:08     ;
+; Top            ; 00:01:02     ;
 +----------------+--------------+
 
 
@@ -391,51 +391,49 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Mon Sep  9 11:42:38 2024
+    Info: Processing started: Mon Sep  9 12:44:02 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ili9341 -c ili9341_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file freq_divider.v
-    Info (12023): Found entity 1: freq_divider File: C:/Users/usuario/Documents/Prueba_2/freq_divider.v Line: 1
+    Info (12023): Found entity 1: freq_divider File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/freq_divider.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ili9341_tb.v
-    Info (12023): Found entity 1: ili9341_TB File: C:/Users/usuario/Documents/Prueba_2/ili9341_TB.v Line: 4
+    Info (12023): Found entity 1: ili9341_TB File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_TB.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file spi_master.v
-    Info (12023): Found entity 1: spi_master File: C:/Users/usuario/Documents/Prueba_2/spi_master.v Line: 1
+    Info (12023): Found entity 1: spi_master File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/spi_master.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ili9341_top.v
-    Info (12023): Found entity 1: ili9341_top File: C:/Users/usuario/Documents/Prueba_2/ili9341_top.v Line: 5
+    Info (12023): Found entity 1: ili9341_top File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_top.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file ili9341_controller.v
-    Info (12023): Found entity 1: ili9341_controller File: C:/Users/usuario/Documents/Prueba_2/ili9341_controller.v Line: 3
-Warning (10236): Verilog HDL Implicit Net warning at ili9341_controller.v(55): created implicit net for "idle" File: C:/Users/usuario/Documents/Prueba_2/ili9341_controller.v Line: 55
+    Info (12023): Found entity 1: ili9341_controller File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_controller.v Line: 3
+Warning (10236): Verilog HDL Implicit Net warning at ili9341_controller.v(55): created implicit net for "idle" File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_controller.v Line: 55
 Info (12127): Elaborating entity "ili9341_top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at ili9341_top.v(43): truncated value with size 32 to match size of target (14) File: C:/Users/usuario/Documents/Prueba_2/ili9341_top.v Line: 43
-Warning (10030): Net "pixel_data_mem.data_a" at ili9341_top.v(18) has no driver or initial value, using a default initial value '0' File: C:/Users/usuario/Documents/Prueba_2/ili9341_top.v Line: 18
-Warning (10030): Net "pixel_data_mem.waddr_a" at ili9341_top.v(18) has no driver or initial value, using a default initial value '0' File: C:/Users/usuario/Documents/Prueba_2/ili9341_top.v Line: 18
-Warning (10030): Net "pixel_data_mem.we_a" at ili9341_top.v(18) has no driver or initial value, using a default initial value '0' File: C:/Users/usuario/Documents/Prueba_2/ili9341_top.v Line: 18
-Info (12128): Elaborating entity "freq_divider" for hierarchy "freq_divider:freq_divider20MHz" File: C:/Users/usuario/Documents/Prueba_2/ili9341_top.v Line: 34
-Warning (10230): Verilog HDL assignment warning at freq_divider.v(18): truncated value with size 32 to match size of target (2) File: C:/Users/usuario/Documents/Prueba_2/freq_divider.v Line: 18
-Info (12128): Elaborating entity "ili9341_controller" for hierarchy "ili9341_controller:ili9341" File: C:/Users/usuario/Documents/Prueba_2/ili9341_top.v Line: 60
-Warning (10230): Verilog HDL assignment warning at ili9341_controller.v(241): truncated value with size 32 to match size of target (22) File: C:/Users/usuario/Documents/Prueba_2/ili9341_controller.v Line: 241
-Warning (10230): Verilog HDL assignment warning at ili9341_controller.v(296): truncated value with size 32 to match size of target (7) File: C:/Users/usuario/Documents/Prueba_2/ili9341_controller.v Line: 296
-Warning (10030): Net "INIT_SEQ.data_a" at ili9341_controller.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/usuario/Documents/Prueba_2/ili9341_controller.v Line: 25
-Warning (10030): Net "INIT_SEQ.waddr_a" at ili9341_controller.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/usuario/Documents/Prueba_2/ili9341_controller.v Line: 25
-Warning (10030): Net "INIT_SEQ.we_a" at ili9341_controller.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/usuario/Documents/Prueba_2/ili9341_controller.v Line: 25
-Info (12128): Elaborating entity "spi_master" for hierarchy "ili9341_controller:ili9341|spi_master:spi" File: C:/Users/usuario/Documents/Prueba_2/ili9341_controller.v Line: 56
-Critical Warning (127005): Memory depth (128) in the design file differs from memory depth (84) in the Memory Initialization File "C:/Users/usuario/Documents/Prueba_2/db/ili9341_top.ram0_ili9341_controller_660e8849.hdl.mif" -- setting initial value for remaining addresses to 0
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/usuario/Documents/Prueba_2/db/ili9341_top.ram0_ili9341_controller_660e8849.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Info (13000): Registers with preset signals will power-up high File: C:/Users/usuario/Documents/Prueba_2/spi_master.v Line: 15
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (10230): Verilog HDL assignment warning at ili9341_top.v(42): truncated value with size 32 to match size of target (14) File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_top.v Line: 42
+Warning (10030): Net "pixel_data_mem.data_a" at ili9341_top.v(17) has no driver or initial value, using a default initial value '0' File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_top.v Line: 17
+Warning (10030): Net "pixel_data_mem.waddr_a" at ili9341_top.v(17) has no driver or initial value, using a default initial value '0' File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_top.v Line: 17
+Warning (10030): Net "pixel_data_mem.we_a" at ili9341_top.v(17) has no driver or initial value, using a default initial value '0' File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_top.v Line: 17
+Info (12128): Elaborating entity "freq_divider" for hierarchy "freq_divider:freq_divider20MHz" File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_top.v Line: 33
+Warning (10230): Verilog HDL assignment warning at freq_divider.v(18): truncated value with size 32 to match size of target (1) File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/freq_divider.v Line: 18
+Info (12128): Elaborating entity "ili9341_controller" for hierarchy "ili9341_controller:ili9341" File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_top.v Line: 59
+Warning (10230): Verilog HDL assignment warning at ili9341_controller.v(241): truncated value with size 32 to match size of target (22) File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_controller.v Line: 241
+Warning (10230): Verilog HDL assignment warning at ili9341_controller.v(296): truncated value with size 32 to match size of target (7) File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_controller.v Line: 296
+Warning (10030): Net "INIT_SEQ.data_a" at ili9341_controller.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_controller.v Line: 25
+Warning (10030): Net "INIT_SEQ.waddr_a" at ili9341_controller.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_controller.v Line: 25
+Warning (10030): Net "INIT_SEQ.we_a" at ili9341_controller.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_controller.v Line: 25
+Info (12128): Elaborating entity "spi_master" for hierarchy "ili9341_controller:ili9341|spi_master:spi" File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/ili9341_controller.v Line: 56
+Critical Warning (127005): Memory depth (128) in the design file differs from memory depth (84) in the Memory Initialization File "C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/db/ili9341_top.ram0_ili9341_controller_660e8849.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Prueba_2/db/ili9341_top.ram0_ili9341_controller_660e8849.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3270 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3274 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 3264 logic cells
+    Info (21061): Implemented 3268 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 4762 megabytes
-    Info: Processing ended: Mon Sep  9 11:44:22 2024
-    Info: Elapsed time: 00:01:44
-    Info: Total CPU time (on all processors): 00:02:12
+    Info: Peak virtual memory: 4769 megabytes
+    Info: Processing ended: Mon Sep  9 12:45:26 2024
+    Info: Elapsed time: 00:01:24
+    Info: Total CPU time (on all processors): 00:01:49
 
 
