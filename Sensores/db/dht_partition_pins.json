@@ -8,67 +8,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "seg[0]",
-					"strict" : false
-				},
-				{
-					"name" : "seg[1]",
-					"strict" : false
-				},
-				{
-					"name" : "seg[2]",
-					"strict" : false
-				},
-				{
-					"name" : "seg[3]",
-					"strict" : false
-				},
-				{
-					"name" : "seg[4]",
-					"strict" : false
-				},
-				{
-					"name" : "seg[5]",
-					"strict" : false
-				},
-				{
-					"name" : "seg[6]",
-					"strict" : false
-				},
-				{
-					"name" : "an[0]",
-					"strict" : false
-				},
-				{
-					"name" : "an[1]",
-					"strict" : false
-				},
-				{
-					"name" : "an[2]",
-					"strict" : false
-				},
-				{
-					"name" : "an[3]",
-					"strict" : false
-				},
-				{
-					"name" : "an[4]",
-					"strict" : false
-				},
-				{
-					"name" : "an[5]",
-					"strict" : false
-				},
-				{
-					"name" : "an[6]",
-					"strict" : false
-				},
-				{
-					"name" : "an[7]",
-					"strict" : false
-				},
-				{
 					"name" : "Salida_contador",
+					"strict" : false
+				},
+				{
+					"name" : "Salida_contadorFR",
 					"strict" : false
 				},
 				{
@@ -80,11 +24,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "IR",
 					"strict" : false
 				},
 				{
-					"name" : "IR",
+					"name" : "FR",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
 					"strict" : false
 				}
 			]

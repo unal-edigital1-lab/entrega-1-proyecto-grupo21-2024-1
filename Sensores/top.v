@@ -5,11 +5,13 @@ module top (
     output wire valid_data,         // Indicador de datos válidos
     output wire led,
     //--------------------------- 7 segmentos----------------------
-    output wire [6:0] seg,        // Conectar a los pines del display de 7 segmentos
-    output [7:0] an,
+    //output wire [6:0] seg,        // Conectar a los pines del display de 7 segmentos
+    //output [7:0] an,
 	 
 	 input wire IR,
-	 output wire Salida_contador
+	 output wire Salida_contador,
+	 input wire FR,
+	 output wire Salida_contadorFR
 
 );
 
@@ -18,10 +20,7 @@ dht u1(
 	.rst(rst),
 	.dht11(dht11),
 	.valid_data(valid_data),
-	.led(led),
-	.seg(seg),
-	.an(an)
-
+	.led(led)
 );
 
 contador u2(
@@ -29,6 +28,13 @@ contador u2(
 	.rst(rst),
 	.IR(IR),
 	.Salida_contador(Salida_contador)
+);
+
+contadorFR u3(
+	.clk(clk),
+	.rst(rst),
+	.FR(FR),
+	.Salida_contadorFR(Salida_contadorFR)
 );
 
 endmodule
