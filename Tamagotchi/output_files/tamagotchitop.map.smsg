@@ -1,2 +1,2 @@
-Warning (10268): Verilog HDL information at bancoregistro.v(67): always construct contains both blocking and non-blocking assignments File: C:/Users/nicol/Documents/Quartus/Tamagotchi/bancoregistro.v Line: 67
-Info (10281): Verilog HDL Declaration information at bancoregistro.v(26): object "state" differs only in case from object "STATE" in the same scope File: C:/Users/nicol/Documents/Quartus/Tamagotchi/bancoregistro.v Line: 26
+Warning (10268): Verilog HDL information at bancoregistro.v(67): always construct contains both blocking and non-blocking assignments File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Tamagotchi/bancoregistro.v Line: 67
+Info (10281): Verilog HDL Declaration information at bancoregistro.v(26): object "state" differs only in case from object "STATE" in the same scope File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Tamagotchi/bancoregistro.v Line: 26

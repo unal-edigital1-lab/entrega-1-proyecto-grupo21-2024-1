@@ -1,5 +1,5 @@
 Fitter report for tamagotchitop
-Thu Sep 12 09:24:29 2024
+Mon Sep 16 09:49:42 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Sep 12 09:24:29 2024          ;
+; Fitter Status                      ; Successful - Mon Sep 16 09:49:42 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; tamagotchitop                                  ;
 ; Top-level Entity Name              ; tamagotchitop                                  ;
@@ -154,13 +154,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.04        ;
+; Average used               ; 1.03        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   1.2%      ;
-;     Processors 3-4         ;   1.2%      ;
+;     Processors 3-4         ;   1.1%      ;
 +----------------------------+-------------+
 
 
@@ -202,7 +202,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Tamagotchi/output_files/tamagotchitop.pin.
+The pin-out file can be found in C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Tamagotchi/output_files/tamagotchitop.pin.
 
 
 +---------------------------------------------------------------------+
@@ -1145,16 +1145,16 @@ Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176353): Automatically promoted node clk~input (placed in PIN 23 (CLK1, DIFFCLK_0n)) File: C:/Users/nicol/Documents/Quartus/Tamagotchi/tamagotchitop.v Line: 2
+Info (176353): Automatically promoted node clk~input (placed in PIN 23 (CLK1, DIFFCLK_0n)) File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Tamagotchi/tamagotchitop.v Line: 2
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
-Info (176353): Automatically promoted node BancoRegistro:registros|divisor:div1|clk2  File: C:/Users/nicol/Documents/Quartus/Tamagotchi/divisor.v Line: 4
+Info (176353): Automatically promoted node BancoRegistro:registros|divisor:div1|clk2  File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Tamagotchi/divisor.v Line: 4
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node BancoRegistro:registros|divisor:div1|clk2~0 File: C:/Users/nicol/Documents/Quartus/Tamagotchi/divisor.v Line: 4
-Info (176353): Automatically promoted node display:displayh|cfreq[16]  File: C:/Users/nicol/Documents/Quartus/Tamagotchi/display.v Line: 33
+        Info (176357): Destination node BancoRegistro:registros|divisor:div1|clk2~0 File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Tamagotchi/divisor.v Line: 4
+Info (176353): Automatically promoted node display:displayh|cfreq[16]  File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Tamagotchi/display.v Line: 33
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node display:displayh|cfreq[16]~49 File: C:/Users/nicol/Documents/Quartus/Tamagotchi/display.v Line: 33
+        Info (176357): Destination node display:displayh|cfreq[16]~49 File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Tamagotchi/display.v Line: 33
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -1171,7 +1171,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  9 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has 2.5V VCCIO pins. 7 total pin(s) used --  6 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has 2.5V VCCIO pins. 8 total pin(s) used --  4 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1184,23 +1184,23 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.48 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.50 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
-Info (144001): Generated suppressed messages file C:/Users/nicol/Documents/Quartus/Tamagotchi/output_files/tamagotchitop.fit.smsg
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (144001): Generated suppressed messages file C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Tamagotchi/output_files/tamagotchitop.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5482 megabytes
-    Info: Processing ended: Thu Sep 12 09:24:30 2024
+    Info: Peak virtual memory: 5474 megabytes
+    Info: Processing ended: Mon Sep 16 09:49:42 2024
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/nicol/Documents/Quartus/Tamagotchi/output_files/tamagotchitop.fit.smsg.
+The suppressed messages can be found in C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Tamagotchi/output_files/tamagotchitop.fit.smsg.
 
 

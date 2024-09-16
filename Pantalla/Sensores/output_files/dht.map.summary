@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Sep  4 21:20:06 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : dht
+Top-level Entity Name : top
+Family : Cyclone IV E
+Total logic elements : 648
+    Total combinational functions : 607
+    Dedicated logic registers : 219
+Total registers : 219
+Total pins : 22
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
