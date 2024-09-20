@@ -60,19 +60,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "rst",
-					"strict" : false
-				},
-				{
-					"name" : "sns_luz",
-					"strict" : false
-				},
-				{
-					"name" : "sns_prox",
-					"strict" : false
-				},
-				{
 					"name" : "sns_temp",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
 					"strict" : false
 				},
 				{
@@ -80,11 +72,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "btn_comer_inc",
+					"name" : "btn_curar_dec",
 					"strict" : false
 				},
 				{
-					"name" : "btn_curar_dec",
+					"name" : "btn_comer_inc",
 					"strict" : false
 				},
 				{
@@ -93,6 +85,22 @@
 				},
 				{
 					"name" : "btn_next",
+					"strict" : false
+				},
+				{
+					"name" : "sns_active",
+					"strict" : false
+				},
+				{
+					"name" : "sns_FR",
+					"strict" : false
+				},
+				{
+					"name" : "test",
+					"strict" : false
+				},
+				{
+					"name" : "sns_IR",
 					"strict" : false
 				}
 			]

@@ -1,5 +1,5 @@
 Fitter report for dht
-Fri Sep 13 08:53:05 2024
+Wed Sep 18 10:01:46 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Sep 13 08:53:05 2024          ;
+; Fitter Status                      ; Successful - Wed Sep 18 10:01:46 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; dht                                            ;
 ; Top-level Entity Name              ; top                                            ;
@@ -154,15 +154,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
-; Maximum used               ; 2           ;
+; Average used               ; 1.05        ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.7%      ;
+;     Processor 2            ;   1.6%      ;
+;     Processors 3-4         ;   1.5%      ;
 +----------------------------+-------------+
 
 
@@ -227,7 +228,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/output_files/dht.pin.
+The pin-out file can be found in C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/output_files/dht.pin.
 
 
 +--------------------------------------------------------------------+
@@ -1023,7 +1024,7 @@ Note: This table only shows the top 3 path(s) that have the largest delay added 
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (119006): Selected device EP4CE10E22C8 for design "dht"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -1046,33 +1047,33 @@ Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176353): Automatically promoted node clk~input (placed in PIN 23 (CLK1, DIFFCLK_0n)) File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/top.v Line: 2
+Info (176353): Automatically promoted node clk~input (placed in PIN 23 (CLK1, DIFFCLK_0n)) File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/top.v Line: 2
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
-Info (176353): Automatically promoted node contador:u2|divisor:aat|clk2  File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
+Info (176353): Automatically promoted node contador:u2|divisor:aat|clk2  File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node contador:u2|divisor:aat|clk2~0 File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
-Info (176353): Automatically promoted node contadorFR:u3|divisor:aat|clk2  File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
+        Info (176357): Destination node contador:u2|divisor:aat|clk2~0 File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
+Info (176353): Automatically promoted node contadorFR:u3|divisor:aat|clk2  File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node contadorFR:u3|divisor:aat|clk2~0 File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
-Info (176353): Automatically promoted node dht:u1|divisor:aat|clk2  File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
+        Info (176357): Destination node contadorFR:u3|divisor:aat|clk2~0 File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
+Info (176353): Automatically promoted node dht:u1|divisor:aat|clk2  File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node dht:u1|divisor:aat|clk2~0 File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
-Info (176353): Automatically promoted node rst~input (placed in PIN 68 (DIFFIO_B20n, DQS0B/CQ1B,DPCLK3)) File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/top.v Line: 3
+        Info (176357): Destination node dht:u1|divisor:aat|clk2~0 File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/divisor.v Line: 4
+Info (176353): Automatically promoted node rst~input (placed in PIN 68 (DIFFIO_B20n, DQS0B/CQ1B,DPCLK3)) File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/top.v Line: 3
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G9
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node contador:u2|Salida_contador File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/contador.v Line: 8
-        Info (176357): Destination node contadorFR:u3|Salida_contadorFR File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/contadorFR.v Line: 8
-        Info (176357): Destination node dht:u1|counter[4] File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
-        Info (176357): Destination node dht:u1|counter[5] File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
-        Info (176357): Destination node dht:u1|counter[6] File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
-        Info (176357): Destination node dht:u1|counter[7] File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
-        Info (176357): Destination node dht:u1|counter[8] File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
-        Info (176357): Destination node dht:u1|counter[9] File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
-        Info (176357): Destination node dht:u1|counter[10] File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
-        Info (176357): Destination node dht:u1|counter[11] File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
+        Info (176357): Destination node contador:u2|Salida_contador File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/contador.v Line: 8
+        Info (176357): Destination node contadorFR:u3|Salida_contadorFR File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/contadorFR.v Line: 8
+        Info (176357): Destination node dht:u1|counter[4] File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
+        Info (176357): Destination node dht:u1|counter[5] File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
+        Info (176357): Destination node dht:u1|counter[6] File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
+        Info (176357): Destination node dht:u1|counter[7] File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
+        Info (176357): Destination node dht:u1|counter[8] File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
+        Info (176357): Destination node dht:u1|counter[9] File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
+        Info (176357): Destination node dht:u1|counter[10] File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
+        Info (176357): Destination node dht:u1|counter[11] File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
         Info (176358): Non-global destination nodes limited to 10 nodes
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -1119,24 +1120,24 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.60 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.55 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info (144001): Generated suppressed messages file C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/output_files/dht.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/output_files/dht.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 5226 megabytes
-    Info: Processing ended: Fri Sep 13 08:53:05 2024
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Peak virtual memory: 5505 megabytes
+    Info: Processing ended: Wed Sep 18 10:01:46 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/output_files/dht.fit.smsg.
+The suppressed messages can be found in C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/output_files/dht.fit.smsg.
 
 

@@ -1,2 +1,2 @@
-Warning (10268): Verilog HDL information at dht.v(72): always construct contains both blocking and non-blocking assignments File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
-Warning (10268): Verilog HDL information at dht.v(88): always construct contains both blocking and non-blocking assignments File: C:/Users/crist/OneDrive/Documentos/GitHub/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 88
+Warning (10268): Verilog HDL information at dht.v(72): always construct contains both blocking and non-blocking assignments File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 72
+Warning (10268): Verilog HDL information at dht.v(88): always construct contains both blocking and non-blocking assignments File: C:/Users/nicol/Documents/Github/entrega-1-proyecto-grupo21-2024-1/Sensores/dht.v Line: 88

@@ -1,4 +1,4 @@
-module BCDtoSSeg (BCD, SSeg);
+	module BCDtoSSeg (BCD, SSeg);
 
   input [3:0] BCD;
   output reg [6:0] SSeg;

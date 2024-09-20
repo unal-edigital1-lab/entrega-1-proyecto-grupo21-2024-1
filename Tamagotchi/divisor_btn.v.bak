@@ -1,0 +1,27 @@
+module divisor_btn(
+   input           clk_in,     // reloj entrante de 50MHz
+   output reg      clk_out      // reloj salida
+);
+
+parameter frecuencia = 50000000 ;
+parameter freq_out = 5;
+parameter max_count = frecuencia/(2*freq_out);
+
+reg [22:0] count; // contador de flancos
+
+initial begin
+    count = 0;
+    clk_out = 0;
+end
+
+always @(posedge clk_in) begin
+    if (count == (max_count))begin
+        clk_out= ~clk_out;
+        count = 0;
+    end
+    else begin
+        count = count+1;
+    end
+end
+
+endmodule

@@ -1,27 +1,32 @@
 module divisor(
-   input           clkd,     // reloj entrante de 50MHz
-   output reg      clk2      // reloj salida
+   input           clk_in,     // reloj entrante de 50MHz
+	input  [31:0]   freq_out,   												
+   output reg      clk_out      // reloj salida
 );
 
-parameter frecuencia = 50000000 ;
-parameter freq_out = 5;
-parameter max_count = frecuencia/(2*freq_out);
+	parameter frecuencia = 50000000 ;
 
-reg [22:0] count; // contador de flancos
+	reg [31:0] max_count; 															
+	reg [22:0] count; // contador de flancos
 
-initial begin
-    count = 0;
-    clk2 = 0;
-end
+	initial begin
+		count = 0;
+		clk_out = 0;
+	end
 
-always @(posedge clkd) begin
-    if (count == (max_count))begin
-        clk2= ~clk2;
-        count = 0;
-    end
-    else begin
-        count = count+1;
-    end
-end
+	always @(posedge clk_in) begin												
+
+		if (freq_out > 0) begin
+			max_count <= (frecuencia / (2 * freq_out)) - 1;
+		end
+
+		if (count == max_count) begin
+			clk_out <= ~clk_out;  // Invertir el reloj de salida
+			count <= 0;
+		end else begin
+			count <= count + 1;
+		end
+
+	end
 
 endmodule

@@ -1,7 +1,10 @@
 
-State Machine - |tamagotchitop|BancoRegistro:registros|reg_stat
-Name reg_stat.011 reg_stat.010 reg_stat.000 reg_stat.001 
-reg_stat.001 0 0 0 0 
-reg_stat.000 0 0 1 1 
-reg_stat.010 0 1 0 1 
-reg_stat.011 1 0 0 1 
+State Machine - |tamagotchitop|Sensores:sensores|dht:temp|state
+Name state.PROCESS_DATA state.WAIT state.READ_DATA state.WAIT_RESPONSE_LOW state.WAIT_RESPONSE_HIGH state.START_SIGNAL state.ENABLE 
+state.ENABLE 0 0 0 0 0 0 0 
+state.START_SIGNAL 0 0 0 0 0 1 1 
+state.WAIT_RESPONSE_HIGH 0 0 0 0 1 0 1 
+state.WAIT_RESPONSE_LOW 0 0 0 1 0 0 1 
+state.READ_DATA 0 0 1 0 0 0 1 
+state.WAIT 0 1 0 0 0 0 1 
+state.PROCESS_DATA 1 0 0 0 0 0 1 
