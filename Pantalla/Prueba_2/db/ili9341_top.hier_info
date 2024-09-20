@@ -1,6 +1,16 @@
 |ili9341_top
 clk => clk.IN1
 rst => rst.IN2
+test => ~NO_FANOUT~
+salud => ~NO_FANOUT~
+animo => ~NO_FANOUT~
+comida => ~NO_FANOUT~
+energia => ~NO_FANOUT~
+jugar => ~NO_FANOUT~
+comer => ~NO_FANOUT~
+curar => ~NO_FANOUT~
+dormir => ~NO_FANOUT~
+calor => ~NO_FANOUT~
 spi_mosi <= ili9341_controller:ili9341.spi_mosi
 spi_cs <= ili9341_controller:ili9341.spi_cs
 spi_sck <= ili9341_controller:ili9341.spi_sck

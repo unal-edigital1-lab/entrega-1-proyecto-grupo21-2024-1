@@ -1,5 +1,5 @@
 Flow report for ili9341_top
-Mon Sep 16 10:00:34 2024
+Fri Sep 20 16:45:10 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Mon Sep 16 10:00:34 2024          ;
+; Flow Status                        ; Successful - Fri Sep 20 16:45:10 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ili9341_top                                    ;
 ; Top-level Entity Name              ; ili9341_top                                    ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE10E22C8                                   ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 9,551 / 10,320 ( 93 % )                        ;
-;     Total combinational functions  ; 9,548 / 10,320 ( 93 % )                        ;
+; Total logic elements               ; 9,625 / 10,320 ( 93 % )                        ;
+;     Total combinational functions  ; 9,624 / 10,320 ( 93 % )                        ;
 ;     Dedicated logic registers      ; 106 / 10,320 ( 1 % )                           ;
 ; Total registers                    ; 106                                            ;
-; Total pins                         ; 6 / 92 ( 7 % )                                 ;
+; Total pins                         ; 16 / 92 ( 17 % )                               ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 423,936 ( 0 % )                            ;
 ; Embedded Multiplier 9-bit elements ; 0 / 46 ( 0 % )                                 ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/16/2024 09:56:36 ;
+; Start date & time ; 09/20/2024 16:41:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ili9341_top         ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 253621757563923.172649859628308        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 253621757563923.172686848235376        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -98,12 +98,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:02:04     ; 1.0                     ; 4858 MB             ; 00:01:05                           ;
-; Fitter               ; 00:01:37     ; 1.1                     ; 5654 MB             ; 00:00:48                           ;
+; Analysis & Synthesis ; 00:02:02     ; 1.0                     ; 4828 MB             ; 00:02:07                           ;
+; Fitter               ; 00:01:29     ; 1.1                     ; 5683 MB             ; 00:01:14                           ;
 ; Assembler            ; 00:00:01     ; 1.0                     ; 4714 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.2                     ; 4916 MB             ; 00:00:04                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4668 MB             ; 00:00:01                           ;
-; Total                ; 00:03:51     ; --                      ; --                  ; 00:01:59                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.2                     ; 4919 MB             ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4668 MB             ; 00:00:02                           ;
+; Total                ; 00:03:41     ; --                      ; --                  ; 00:03:30                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
