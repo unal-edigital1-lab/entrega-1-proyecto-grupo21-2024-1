@@ -1,4 +1,84 @@
+# Entrega Final del proyecto Tamagotchi
+
+* Daniel Mauricio Pamplona Chaparro
+* Hernán Felipe Bernal Arévalo
+* Elton Nicolas Sanabria Osorio
+* Cristian Camilo Lopez Bernal
+
+## 1. Introducción
+
+### Contexto y motivación:
+
+Un Tamagotchi es una mascota virtual que vive dentro de un pequeño dispositivo electrónico. El usuario debe cuidar de esta mascota, alimentándola, jugando con ella, curándola si se enferma, etc.
+
+Crear un Tamagotchi en un curso de electrónica digital es interesante por varias razones:
+
+* Aplicación práctica de conceptos teóricos: Permite aplicar conocimientos sobre diseño de sistemas digitales, máquinas de estado, manejo de sensores y pantallas, y programación en HDL.
+* Desarrollo de habilidades: Fomenta el pensamiento lógico, la resolución de problemas y la creatividad al diseñar e implementar las diferentes funcionalidades del Tamagotchi.
+* Proyecto divertido y motivador: Es un proyecto atractivo que combina la electrónica con el entretenimiento, lo que puede aumentar la motivación y el interés de los estudiantes.
+* Demostración de capacidades: El resultado final es un dispositivo tangible que demuestra las habilidades adquiridas en el curso.
+
+### Objetivos del proyecto:
+
+* Desarrollar un sistema de Tamagotchi en FPGA que simule el cuidado de una mascota virtual.
+* Incorporarar una lógica de estados para reflejar las diversas necesidades y condiciones de la mascota.
+* Usar mecanismos de interacción a través de sensores y botones que permitan al usuario cuidar adecuadamente de la mascota.
+* Un sistema de visualización grafica para representar el estado actual y las necesidades de la mascota virtual.
+
+### Alcance del proyecto:
+
+Definir qué funcionalidades incluiste en tu Tamagotchi y cuáles quedaron fuera del alcance.
+
+## 2. Diseño General del Sistema
+
+### Diagrama de Bloques:
+Presentar el diagrama de caja negra que ya tienes, explicando cada bloque y cómo se relacionan entre sí.
+### Descripción de los Componentes:
+* Sensores: Explica cada sensor utilizado (infrarrojo, temperatura, luz), su funcionamiento y cómo se conecta a la FPGA.
+* Botones:
+    Usamos tres pulsadores como botones (que se conectan a los pines de la fpga) para las siguientes funciones:
+    * Alimentar: Permite al usuario alimentar a la mascota virtual.
+    * Curar: Permite al usuario dar medicina a la mascota virtual.
+    * Jugar: Permite juegar con la mascota.
+    Además, tenemos dos botones (los cuales seran usados directamente de nuestra FPGA).
+    * Reset: Se utiliza un botón de reset para reiniciar todas las estadísticas de la mascota y volver a su estado inicial.
+    * Test: Activa el modo de prueba al mantener pulsado por al menos 5 segundos, permitiendo al usuario navegar entre los diferentes estados del Tamagotchi con cada pulsación y permite cambiar el nivel de cada estado.
+* Pantalla TFT: Especifica las características de la pantalla, su protocolo de comunicación (SPI) y cómo se controla desde la FPGA.
+    La Pantalla TFT ILI9163 tiene tiene una resolucion 128x128 pxls. Se comunica mediante el protocolo SPI, lo que la hace compatible con microcontroladores como Arduino y PIC. Su tamaño es de 1.44 pulgadas, y su efecto visual es mucho mejor que otras pantallas pequeñas. Además, admite voltajes de entrada de 5V y 3.3V.
+* FPGA: Menciona la FPGA utilizada y su rol como cerebro del sistema.
+### Arquitectura General:
+Explicar cómo se organiza el sistema en términos de módulos HDL (ej: módulo sensor, módulo botón, módulo pantalla, máquina de estados).
+    * Modulo sensores:
+    * Modulo botones:
+    * Modulo maquina de estados:
+    * Modulo pantalla:
+
+## 3. Máquina de Estados
+
+### Diagrama de Estados:
+Presentar un diagrama detallado de la máquina de estados, mostrando todos los estados posibles del Tamagotchi y las transiciones entre ellos.
+### Descripción de los Estados:
+Explicar cada estado (hambriento, feliz, enfermo, etc.), qué significa y cómo se representa en la pantalla.
+### Transiciones entre Estados:
+Detallar cómo se producen las transiciones entre estados, qué eventos las desencadenan (botones, sensores, temporizadores) y cómo se implementan en la lógica de la FSM.
+
+## 4. Implementación en HDL
+
+### Descripción de los Módulos:
+Explicar cada módulo HDL creado (sensor, botón, pantalla, FSM, etc.), su funcionalidad y cómo se interconectan.
+### Código HDL:
+Incluir fragmentos de código relevantes para ilustrar la implementación de los módulos y la máquina de estados. No es necesario incluir todo el código, solo las partes más importantes o interesantes.
+
+## 5. Resultados y Conclusiones
+
+### Demostración del Funcionamiento:
+Describir cómo funciona el Tamagotchi y qué resultados se obuvieron. Puedes incluir fotos o videos del sistema en funcionamiento.
+### Conclusiones:
+Reflexionar sobre lo que se aprendio durante el proyecto, los desafíos que se enfrentastaton y cómo se superaron.
+
+
 # Entrega 1 del proyecto Tamagotchi
+
 
 * Daniel Mauricio Pamplona Chaparro
 * Hernán Felipe Bernal Arévalo
