@@ -13,7 +13,7 @@ Un Tamagotchi es una mascota virtual que vive dentro de un pequeño dispositivo 
 
 Crear un Tamagotchi en un curso de electrónica digital es interesante por varias razones:
 
-* Aplicación práctica de conceptos teóricos: Permite aplicar conocimientos sobre diseño de sistemas digitales, máquinas de estado, manejo de sensores y pantallas, y programación en HDL.
+* Aplicación práctica de conceptos teóricos: Permite aplicar conocimientos sobre diseño de sistemas digitales, máquinas de estado, manejo de sensores y pantallas, y programación en Verilog.
 * Desarrollo de habilidades: Fomenta el pensamiento lógico, la resolución de problemas y la creatividad al diseñar e implementar las diferentes funcionalidades del Tamagotchi.
 * Proyecto divertido y motivador: Es un proyecto atractivo que combina la electrónica con el entretenimiento, lo que puede aumentar la motivación y el interés de los estudiantes.
 * Demostración de capacidades: El resultado final es un dispositivo tangible que demuestra las habilidades adquiridas en el curso.
@@ -47,6 +47,21 @@ Presentar el diagrama de caja negra que ya tienes, explicando cada bloque y cóm
     La Pantalla TFT ILI9163 tiene tiene una resolucion 128x128 pxls. Se comunica mediante el protocolo SPI, lo que la hace compatible con microcontroladores como Arduino y PIC. Su tamaño es de 1.44 pulgadas, y su efecto visual es mucho mejor que otras pantallas pequeñas. Además, admite voltajes de entrada de 5V y 3.3V.
 * FPGA: Menciona la FPGA utilizada y su rol como cerebro del sistema.
 ### Arquitectura General:
+
+#### Modulo Sensores
+
+#### Sensor infrarojo (FC-51):
+
+El sensor FC-51 cumple la función de detectar la proximidad o presencia cuando se activa, lo que permite interactuar con las mascotas. A través de esta interacción, se modifican las estadísticas y los estados de la mascota, reflejando cambios en su comportamiento o necesidades según el entorno.
+
+#### Sensor fotoresistencia (LDR):
+
+El sensor LDR cumple la función de detectar los niveles de luz ambiental, y cuando se activa, permite interactuar con las mascotas. A través de esta interacción, se varían las estadísticas y los estados de la mascota, ajustándose a las condiciones de iluminación del entorno.
+
+#### Sensor de temperatura (DHT11):
+
+El sensor DHT11 cumple la función de medir la temperatura y la humedad. Cuando se activa, permite interactuar con las mascotas, variando las estadísticas y los estados de la mascota según las condiciones climáticas detectadas.
+
 Explicar cómo se organiza el sistema en términos de módulos HDL (ej: módulo sensor, módulo botón, módulo pantalla, máquina de estados).
     * Modulo sensores:
     * Modulo botones:
@@ -65,7 +80,70 @@ Detallar cómo se producen las transiciones entre estados, qué eventos las dese
 ## 4. Implementación en HDL
 
 ### Descripción de los Módulos:
-Explicar cada módulo HDL creado (sensor, botón, pantalla, FSM, etc.), su funcionalidad y cómo se interconectan.
+
+### Modulo sensores 
+
+#### Sensor infrarojo (FC-51):
+
+```verilog
+always @(posedge clk2) begin
+        if (test_enable == 0) begin
+            if (IR == 0) begin
+                prox_out <= 1;   
+            end else begin
+                prox_out <= 0; 
+            end
+        end
+    end
+```
+
+La parte clave de este sensor es que actúa como un interruptor, donde test_enable funciona como un botón que permite al sensor infrarrojo leer datos de entrada siempre que su valor sea 0. Adicionalmente, si el sensor infrarrojo detecta alguna interacción, se activa al nivel 0 y produce una salida en prox_out, indicando que hay movimiento o que algo se ha aproximado. Si no hay detección, prox_out se establece en 0, lo que significa que no hay reacción ante el sensor.
+
+#### Sensor fotoresistencia (FC-51):
+
+```verilog
+always @(posedge clk2) begin
+        if (test_enable == 0) begin
+            if (FR == 0) begin
+                luz_out <= 1;   
+            end else begin
+                luz_out <= 0;   
+            end
+        end
+    end
+```
+
+Este sensor actúa como un interruptor, con test_enable funcionando como un botón que permite leer datos de entrada únicamente cuando su valor es 0. Cuando la fotoresistencia detecta luz (FR = 0), se activa y genera una salida en luz_out, indicando la presencia de luz. En ausencia de luz, luz_out se establece en 0, señalando que no hay actividad.
+
+#### Sensor de temperatura y humedad (DHT11):
+
+```verilog
+// Registros internos
+    reg [31:0] timer;              // Temporizador para generar pulsos de tiempo
+    reg [3:0] state;               // Estado del FSM
+    reg [39:0] data;               // Datos leídos del sensor
+    reg dht11_out;                 // Señal de salida para el pin bidireccional
+    reg dht11_dir;                 // Dirección del pin (0: entrada, 1: salida)
+    reg [5:0] bit_index;           // Índice del bit a leer
+    reg [15:0] temperature;        // Temperatura leída
+    reg [7:0] aju_t;               // Ajuste temperatura
+    reg [$clog2(MAX_COUNT)-1:0] counter; // Contador
+```
+
+* Se crean registros para almacenar la información de las mediciones del sensor. El registro timer se utiliza para contar los pulsos cada vez que se actualiza un estado, lo que permite variar el funcionamiento del sensor.
+
+* El registro state indica en qué estado se encuentra el sensor, ya sea en lectura, procesamiento o en la inicialización.
+
+* El registro data almacena 40 bits de información, donde los primeros 16 bits corresponden a la temperatura y los siguientes 16 bits a la humedad.
+
+* El registro dht11_out indica cuándo el sensor está en modo de salida, informando si está leyendo datos o enviando información.
+
+* El registro dht11_dir señala si el sensor está en modo de entrada o salida.
+
+* El registro bit_index muestra la posición de cada bit dentro de los datos leídos, permitiendo identificar cuál es el bit actual que se está procesando.
+
+* Finalmente, el registro temperature almacena los datos relacionados exclusivamente con la temperatura, mientras que aju_t actúa como un calibrador, proporcionando una temperatura más precisa. Esto es importante, ya que las temperaturas pueden variar según la ubicación donde se realiza la medición.
+
 ### Código HDL:
 Incluir fragmentos de código relevantes para ilustrar la implementación de los módulos y la máquina de estados. No es necesario incluir todo el código, solo las partes más importantes o interesantes.
 
@@ -221,11 +299,3 @@ Módulo de Temporización: Implementará los temporizadores necesarios para cont
 * Modelo de la Mascota: Definirá las características de la mascota, como su especie, edad y personalidad. Este modelo se utilizará para personalizar el comportamiento de la mascota.
 * Modelo del Ambiente: Simulará el entorno de la mascota, incluyendo la temperatura, la luz y la presencia de otros objetos.
 * Modelo de Interacción: Describirá cómo el usuario interactúa con la mascota y cómo estas interacciones afectan el estado de la mascota.
-
-
-
-
-
-
-
-
