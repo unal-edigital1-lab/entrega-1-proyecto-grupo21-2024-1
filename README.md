@@ -32,7 +32,13 @@ Definir qué funcionalidades incluiste en tu Tamagotchi y cuáles quedaron fuera
 ## 2. Diseño General del Sistema
 
 ### Diagrama de Bloques:
-Presentar el diagrama de caja negra que ya tienes, explicando cada bloque y cómo se relacionan entre sí.
+![Imagen](/pictures/Tamagotchi_CajaNegra.png)
+* MODULE_TEST: Se encarga de comparar si entamos en modo test, configura sus parametros y devuelve una señal de 1 bit.
+* SENSORES: se encarga de instanciar los tres sensores a utilizar, maneja la logica interna pa cada uno y devuelve una salida de 1bit de acuerdo a los parametros establecidos en cada sensor. Este modulo cuenta con una cuarta señal bidireccional "dht11" correspondiente al sensor de temperatura, se encarga de enviar un impulso como señal de salida para activar la recepcion del entorno y posteriormente actua como señal de entrada para recibir los datos correspondientes.
+* BANCO REGISTRO: Recibe todas las señales de los botones dispuestos al igual que las de los sensores, interpreta dichas señales, las almacena y devuelve los valores de las estadisticas de la mascota para poder visualizarlas junto con la interaccion que se tenga con la mascota.
+* DISPLAY: Controla la logica para la visualizacion en el display 7 segmentos integrado en la tarjeta, se tiene como metodo de visulaizacion alternativo.
+* ILI9361: Este modulo se encarga de recibir los valores de cada estadistica asi como las señales de interaccion para posteriormente mostrar las animaciones respectivas en la pantalla.
+
 ### Descripción de los Componentes:
 * Sensores: Explica cada sensor utilizado (infrarrojo, temperatura, luz), su funcionamiento y cómo se conecta a la FPGA.
 * Botones:
