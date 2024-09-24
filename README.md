@@ -195,9 +195,6 @@ Este modulo se encarga de visualizar ciertas señales en el display 7 segmentos 
 
 De esta manera en el display se mostrará una estadistica (stat_name), su respectivo valor (stat_value), y por ultimo los 4 bits de state para poder verificar los cambios de estados cuando se cumplan las condiciones necesarias. 
 
-### Código HDL:
-Incluir fragmentos de código relevantes para ilustrar la implementación de los módulos y la máquina de estados. No es necesario incluir todo el código, solo las partes más importantes o interesantes.
-
 ## 5. Resultados y Conclusiones
 
 ### Demostración del Funcionamiento:
