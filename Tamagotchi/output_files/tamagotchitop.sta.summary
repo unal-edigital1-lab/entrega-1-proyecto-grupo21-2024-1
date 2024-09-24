@@ -3,51 +3,51 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'display:displayh|cfreq[16]'
-Slack : -8.518
-TNS   : -42.117
+Slack : -9.538
+TNS   : -45.645
 
 Type  : Slow 1200mV 85C Model Setup 'BancoRegistro:registros|divisor:div_btn|clk_out'
-Slack : -6.006
-TNS   : -454.284
+Slack : -6.665
+TNS   : -464.538
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -5.245
-TNS   : -622.400
+Slack : -5.662
+TNS   : -694.248
 
 Type  : Slow 1200mV 85C Model Setup 'Sensores:sensores|dht:temp|divisor:div_dht|clk_out'
-Slack : -2.511
-TNS   : -46.431
-
-Type  : Slow 1200mV 85C Model Setup 'Sensores:sensores|Fotoresistencia:luz|divisor:div_FR|clk_out'
-Slack : -1.391
-TNS   : -1.391
+Slack : -2.716
+TNS   : -48.266
 
 Type  : Slow 1200mV 85C Model Setup 'Sensores:sensores|Infrarojo:prox|divisor:div_IR|clk_out'
-Slack : -1.238
-TNS   : -1.238
+Slack : -1.712
+TNS   : -1.712
+
+Type  : Slow 1200mV 85C Model Setup 'Sensores:sensores|Fotoresistencia:luz|divisor:div_FR|clk_out'
+Slack : -1.623
+TNS   : -1.623
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.434
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'BancoRegistro:registros|divisor:div_btn|clk_out'
-Slack : 0.452
+Slack : 0.432
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'display:displayh|cfreq[16]'
 Slack : 0.453
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'Sensores:sensores|dht:temp|divisor:div_dht|clk_out'
-Slack : 0.737
+Type  : Slow 1200mV 85C Model Hold 'BancoRegistro:registros|divisor:div_btn|clk_out'
+Slack : 0.454
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'Sensores:sensores|Infrarojo:prox|divisor:div_IR|clk_out'
-Slack : 1.849
+Type  : Slow 1200mV 85C Model Hold 'Sensores:sensores|dht:temp|divisor:div_dht|clk_out'
+Slack : 0.736
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'Sensores:sensores|Fotoresistencia:luz|divisor:div_FR|clk_out'
-Slack : 2.014
+Slack : 2.256
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Sensores:sensores|Infrarojo:prox|divisor:div_IR|clk_out'
+Slack : 2.339
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
@@ -75,51 +75,51 @@ Slack : -1.487
 TNS   : -1.487
 
 Type  : Slow 1200mV 0C Model Setup 'display:displayh|cfreq[16]'
-Slack : -7.777
-TNS   : -38.036
+Slack : -8.722
+TNS   : -41.418
 
 Type  : Slow 1200mV 0C Model Setup 'BancoRegistro:registros|divisor:div_btn|clk_out'
-Slack : -5.505
-TNS   : -413.735
+Slack : -6.163
+TNS   : -428.025
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -4.908
-TNS   : -567.307
+Slack : -5.181
+TNS   : -632.457
 
 Type  : Slow 1200mV 0C Model Setup 'Sensores:sensores|dht:temp|divisor:div_dht|clk_out'
-Slack : -2.124
-TNS   : -39.619
-
-Type  : Slow 1200mV 0C Model Setup 'Sensores:sensores|Fotoresistencia:luz|divisor:div_FR|clk_out'
-Slack : -1.180
-TNS   : -1.180
+Slack : -2.439
+TNS   : -41.671
 
 Type  : Slow 1200mV 0C Model Setup 'Sensores:sensores|Infrarojo:prox|divisor:div_IR|clk_out'
-Slack : -0.994
-TNS   : -0.994
+Slack : -1.483
+TNS   : -1.483
+
+Type  : Slow 1200mV 0C Model Setup 'Sensores:sensores|Fotoresistencia:luz|divisor:div_FR|clk_out'
+Slack : -1.388
+TNS   : -1.388
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.383
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'BancoRegistro:registros|divisor:div_btn|clk_out'
-Slack : 0.401
+Slack : 0.381
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'display:displayh|cfreq[16]'
-Slack : 0.401
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'BancoRegistro:registros|divisor:div_btn|clk_out'
+Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'Sensores:sensores|dht:temp|divisor:div_dht|clk_out'
-Slack : 0.685
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'Sensores:sensores|Infrarojo:prox|divisor:div_IR|clk_out'
-Slack : 1.656
+Slack : 0.684
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'Sensores:sensores|Fotoresistencia:luz|divisor:div_FR|clk_out'
-Slack : 1.771
+Slack : 1.993
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Sensores:sensores|Infrarojo:prox|divisor:div_IR|clk_out'
+Slack : 2.074
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
@@ -147,31 +147,31 @@ Slack : -1.487
 TNS   : -1.487
 
 Type  : Fast 1200mV 0C Model Setup 'display:displayh|cfreq[16]'
-Slack : -3.016
-TNS   : -12.044
+Slack : -3.523
+TNS   : -13.728
 
 Type  : Fast 1200mV 0C Model Setup 'BancoRegistro:registros|divisor:div_btn|clk_out'
-Slack : -2.115
-TNS   : -131.081
+Slack : -2.268
+TNS   : -136.959
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.672
-TNS   : -166.293
+Slack : -1.940
+TNS   : -197.519
 
 Type  : Fast 1200mV 0C Model Setup 'Sensores:sensores|dht:temp|divisor:div_dht|clk_out'
 Slack : -0.551
-TNS   : -6.587
-
-Type  : Fast 1200mV 0C Model Setup 'Sensores:sensores|Fotoresistencia:luz|divisor:div_FR|clk_out'
-Slack : -0.188
-TNS   : -0.188
+TNS   : -7.195
 
 Type  : Fast 1200mV 0C Model Setup 'Sensores:sensores|Infrarojo:prox|divisor:div_IR|clk_out'
-Slack : -0.050
-TNS   : -0.050
+Slack : -0.276
+TNS   : -0.276
+
+Type  : Fast 1200mV 0C Model Setup 'Sensores:sensores|Fotoresistencia:luz|divisor:div_FR|clk_out'
+Slack : -0.250
+TNS   : -0.250
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.179
+Slack : 0.178
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'BancoRegistro:registros|divisor:div_btn|clk_out'
@@ -183,20 +183,20 @@ Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Sensores:sensores|dht:temp|divisor:div_dht|clk_out'
-Slack : 0.294
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'Sensores:sensores|Infrarojo:prox|divisor:div_IR|clk_out'
-Slack : 0.847
+Slack : 0.292
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Sensores:sensores|Fotoresistencia:luz|divisor:div_FR|clk_out'
-Slack : 0.926
+Slack : 1.007
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Sensores:sensores|Infrarojo:prox|divisor:div_IR|clk_out'
+Slack : 1.031
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -188.002
+TNS   : -187.813
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BancoRegistro:registros|divisor:div_btn|clk_out'
 Slack : -1.000

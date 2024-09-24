@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Fri Sep 20 00:54:51 2024
+Analysis & Synthesis Status : Successful - Mon Sep 23 08:33:15 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : tamagotchitop
 Top-level Entity Name : tamagotchitop
 Family : Cyclone IV E
-Total logic elements : 801
-    Total combinational functions : 776
+Total logic elements : 837
+    Total combinational functions : 812
     Dedicated logic registers : 319
 Total registers : 319
 Total pins : 26

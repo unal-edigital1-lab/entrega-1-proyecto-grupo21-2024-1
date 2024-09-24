@@ -266,7 +266,7 @@ module BancoRegistro #(
 					ANIMO <= (ANIMO > 3'd0) ? ANIMO - 1 : ANIMO; 
 				end 
 				
-				if (sns_luz == 0 && && luz_enable) begin
+				if (sns_luz == 0 && luz_enable) begin
 					SALUD <= (SALUD < 3'd5) ? SALUD + 1 : SALUD;
 					ANIMO <= (ANIMO < 3'd5) ? ANIMO + 1 : ANIMO;
 					COMIDA <= (COMIDA > 3'd0) ? COMIDA - 1 : COMIDA;

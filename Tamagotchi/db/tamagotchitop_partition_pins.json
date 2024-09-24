@@ -88,19 +88,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "sns_active",
-					"strict" : false
-				},
-				{
-					"name" : "sns_FR",
-					"strict" : false
-				},
-				{
 					"name" : "test",
 					"strict" : false
 				},
 				{
 					"name" : "sns_IR",
+					"strict" : false
+				},
+				{
+					"name" : "sns_active",
+					"strict" : false
+				},
+				{
+					"name" : "sns_FR",
 					"strict" : false
 				}
 			]
