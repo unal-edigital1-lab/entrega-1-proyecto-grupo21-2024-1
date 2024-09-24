@@ -42,11 +42,12 @@ Definir qué funcionalidades incluiste en tu Tamagotchi y cuáles quedaron fuera
 ### Descripción de los Componentes:
 * Sensores: Explica cada sensor utilizado (infrarrojo, temperatura, luz), su funcionamiento y cómo se conecta a la FPGA.
 * Botones:
-    Usamos tres pulsadores como botones (que se conectan a los pines de la fpga) para las siguientes funciones:
-    * Alimentar: Permite al usuario alimentar a la mascota virtual.
-    * Curar: Permite al usuario dar medicina a la mascota virtual.
-    * Jugar: Permite juegar con la mascota.
-    Además, tenemos dos botones (los cuales seran usados directamente de nuestra FPGA).
+    Se implementaron pulsadores 4 como botones, los cuales se conectan a los pines de la fpga, para las siguientes funciones:
+    * Pulsador 1: Permite al usuario alimentar a la mascota virtual en modo de juego normal e incrementar la estadisiticas de la mascota en modo test.
+    * Pulsador 2: Permite al usuario dar medicina a la mascota virtual en modo normal y disminuri las estadisiticas de la mascota en modo test.
+    * Pulsador 3: Permite navegar entre las estadisitcas de manera incremental.
+    * Pulsador 4: Permite navegar entre las estadisitcas de manera decremental.
+    Además, tenemos dos botones,los cuales seran usados directamente de nuestra FPGA.
     * Reset: Se utiliza un botón de reset para reiniciar todas las estadísticas de la mascota y volver a su estado inicial.
     * Test: Activa el modo de prueba al mantener pulsado por al menos 5 segundos, permitiendo al usuario navegar entre los diferentes estados del Tamagotchi con cada pulsación y permite cambiar el nivel de cada estado.
 * Pantalla TFT: Especifica las características de la pantalla, su protocolo de comunicación (SPI) y cómo se controla desde la FPGA.
@@ -81,7 +82,7 @@ Presentar un diagrama detallado de la máquina de estados, mostrando todos los e
 ### Descripción de los Estados:
 Explicar cada estado (hambriento, feliz, enfermo, etc.), qué significa y cómo se representa en la pantalla.
 ### Transiciones entre Estados:
-Detallar cómo se producen las transiciones entre estados, qué eventos las desencadenan (botones, sensores, temporizadores) y cómo se implementan en la lógica de la FSM.
+Los estados de la mascota van a estar controlados por una señal "state" de 4 bits, estos bits representan, del mas significativo al menos significativo, la salud, el animo, la comida y la energia respectivamente. Así, state nos da la opción de representar los 6 estados basicos y la combinación entre ellos. La visualizacion de la combinación entre los estados será posible ya que cada estado se visualiza en una zona distina a los demas. Estas transiciones se desencadenan cuando alguna de las estadisticas de la mascota disminuyen por debajo de 2.
 
 ## 4. Implementación en HDL
 
@@ -149,6 +150,50 @@ Este sensor actúa como un interruptor, con test_enable funcionando como un bot�
 * El registro bit_index muestra la posición de cada bit dentro de los datos leídos, permitiendo identificar cuál es el bit actual que se está procesando.
 
 * Finalmente, el registro temperature almacena los datos relacionados exclusivamente con la temperatura, mientras que aju_t actúa como un calibrador, proporcionando una temperatura más precisa. Esto es importante, ya que las temperaturas pueden variar según la ubicación donde se realiza la medición.
+
+### Modulo Module_test  
+El Module_test se encarga de verificar si se cumplen las condiciones necesarias para entrar a dicho modo, tiene una señal de salida de 1 bit.
+    
+    always @(posedge clk) begin	
+		if (test==0) begin
+			if (counter >= ciclos_segs) begin
+				counter <= 0;  
+				test_active <= ~test_active;  
+				test_enable <= test_active;  
+			end else begin
+				counter <= counter + 1;  
+			end
+		end else begin
+			counter <= 0;  
+		end
+	end
+Este modulo primero verifica si el boton de test se esta presionando, si el boton dura presionado por mas de "ciclo_segs" (5 segundos) se invierte la señal test_active y su valor se almacena en test_enable, la cual será la señal de salida del mudulo. La logica de invertir test_active permite tener un control en el codigo para entrar y salir del modo test facilmente.
+
+### Modulo Display  
+
+Este modulo se encarga de visualizar ciertas señales en el display 7 segmentos incluidos en la tarjeta FPGA. 
+
+    always @(posedge enable) begin
+		if(rst==0) begin
+			count<= 0;
+			an<=9'b111111111; 
+		end else begin 
+			count<= count+1;
+			an<=9'b111111111; 
+			case (count) 
+				3'h0: begin bcd <= (stat_value % 10); an<=9'b111111110; end
+				3'h1: begin bcd <= ((stat_value / 10) % 10); an<=9'b111111101; end
+				3'h2: begin bcd <= (stat_name); an<=9'b111110111; end
+				3'h3: begin bcd <= state[0]; an<=9'b111101111; end
+				3'h4: begin bcd <= state[1]; an<=9'b111011111; end 
+				3'h5: begin bcd <= state[2]; an<=9'b110111111; end
+				3'h6: begin bcd <= state[3]; an<=9'b101111111; end
+				3'h7: begin bcd <= (4'd5); an<=9'b101111111; end 
+			endcase
+		end
+	end
+
+De esta manera en el display se mostrará una estadistica (stat_name), su respectivo valor (stat_value), y por ultimo los 4 bits de state para poder verificar los cambios de estados cuando se cumplan las condiciones necesarias. 
 
 ### Código HDL:
 Incluir fragmentos de código relevantes para ilustrar la implementación de los módulos y la máquina de estados. No es necesario incluir todo el código, solo las partes más importantes o interesantes.
