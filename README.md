@@ -245,6 +245,13 @@ En caso afirmativo, se incrementará un contador.
 Al alcanzar un número predefinido de ciclos (aproximadamente 50,000 ciclos o 5 segundos), el contador se activará permanentemente.
 Esta activación permanente enviará una señal continua, lo que podría afectar la salud y el estado de ánimo de la mascota.
 
+![Imagen](/pictures/TB.png)
+
+
+En el Test Bench podemos observar que, al alcanzarse los 5 ciclos (simulados con una frecuencia más baja para facilitar la simulación), se activa de forma permanente una señal que, en este caso, afecta los estados de la mascota.
+
+Esta activación simula el comportamiento del sistema en condiciones reales, donde el contador debería llegar a 50,000 ciclos (aproximadamente 5 segundos en tiempo real). Dado que en la simulación usamos una frecuencia reducida, solo se requieren 5 ciclos para emular el mismo efecto. Al alcanzarse este umbral, la señal se activa de manera permanente, replicando la situación en la que la temperatura supera los 22°C de forma prolongada, lo que podría alterar el estado de la mascota.
+
 ### Modulo Banco  
 
 Este modulo Mantiene registros para la salud, ánimo, comida, energía, días de vida y el estado general y procesa las señales de los botones y sensores, actualizando los estados internos según las interacciones del usuario y las condiciones ambientales.
