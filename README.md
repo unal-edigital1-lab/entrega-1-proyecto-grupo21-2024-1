@@ -214,6 +214,42 @@ Este sensor actúa como un interruptor, con test_enable funcionando como un bot�
 
 * Finalmente, el registro temperature almacena los datos relacionados exclusivamente con la temperatura, mientras que aju_t actúa como un calibrador, proporcionando una temperatura más precisa. Esto es importante, ya que las temperaturas pueden variar según la ubicación donde se realiza la medición.
 
+```verilog
+always @(posedge clk2) begin // Sensado en cada flanco positivo del reloj `clk2`
+    
+    if (test_enable == 0) begin // Si test_enable está desactivado, comienza el control de temperatura.
+        if (sns_active) begin // Si el sensor está activo (sns_active = 1)
+            counter <= 0; // Reinicia el contador a cero.
+        end else if (aju_t >= 8'b00010110) begin // Si la temperatura es mayor o igual a 22°C (aju_t >= 22 en binario)
+            counter <= counter + 1; // Incrementa el contador en cada ciclo.
+            temp_out = 0; // Mantiene la salida de temperatura `temp_out` en 0.
+        end else begin
+            temp_out = 1; // Si la temperatura es inferior a 22°C, activa `temp_out`.
+        end
+        // Si el contador alcanza o supera los 50,000 ciclos (~5 segundos de espera)
+        if(counter >= 50000) begin
+            temp_out = 0; // Desactiva permanentemente la salida de temperatura.
+        end
+    end
+end 
+
+```
+
+El control de temperatura se lleva a cabo cuando test_enable está activado, lo que significa que el sensor está activo.
+
+Si el sensor está activo, el contador se reiniciará.
+Si el sensor está inactivo, se analizará si la lectura de temperatura supera los 22°C.
+En caso afirmativo, se incrementará un contador.
+Al alcanzar un número predefinido de ciclos (aproximadamente 50,000 ciclos o 5 segundos), el contador se activará permanentemente.
+Esta activación permanente enviará una señal continua, lo que podría afectar la salud y el estado de ánimo de la mascota.
+
+![Imagen](/pictures/TB.png)
+
+
+En el Test Bench podemos observar que, al alcanzarse los 5 ciclos (simulados con una frecuencia más baja para facilitar la simulación), se activa de forma permanente una señal que, en este caso, afecta los estados de la mascota.
+
+Esta activación simula el comportamiento del sistema en condiciones reales, donde el contador debería llegar a 50,000 ciclos (aproximadamente 5 segundos en tiempo real). Dado que en la simulación usamos una frecuencia reducida, solo se requieren 5 ciclos para emular el mismo efecto. Al alcanzarse este umbral, la señal se activa de manera permanente, replicando la situación en la que la temperatura supera los 22°C de forma prolongada, lo que podría alterar el estado de la mascota.
+
 ### Modulo Banco  
 
 Este modulo Mantiene registros para la salud, ánimo, comida, energía, días de vida y el estado general y procesa las señales de los botones y sensores, actualizando los estados internos según las interacciones del usuario y las condiciones ambientales.
