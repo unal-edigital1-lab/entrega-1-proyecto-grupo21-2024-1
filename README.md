@@ -77,7 +77,8 @@ Realizaremos el uso del siguiente periférico como sistema de visualización, do
     * Test: Activa el modo de prueba al mantener pulsado por al menos 5 segundos, permitiendo al usuario navegar entre los diferentes estados del Tamagotchi con cada pulsación y permite cambiar el nivel de cada estado.
 * Pantalla TFT: Especifica las características de la pantalla, su protocolo de comunicación (SPI) y cómo se controla desde la FPGA.
     La Pantalla TFT ILI9163 tiene tiene una resolucion 128x128 pxls. Se comunica mediante el protocolo SPI, lo que la hace compatible con microcontroladores como Arduino y PIC. Su tamaño es de 1.44 pulgadas, y su efecto visual es mucho mejor que otras pantallas pequeñas. Además, admite voltajes de entrada de 5V y 3.3V.
-* FPGA: Menciona la FPGA utilizada y su rol como cerebro del sistema.
+* FPGA: La FPGA utilizada en este proyecto es la Altera Cyclone IV EP4CE6E22C8N y es la que recibe y procesa las señales de los sensores (infrarrojo, temperatura, luz) y los botones (reset, test, interacciones), implementa la máquina de estados finita que define el comportamiento del Tamagotchi, controlando las transiciones entre sus diferentes estados y genera las señales necesarias para controlar la pantalla TFT, mostrando la interfaz gráfica y los indicadores del Tamagotchi.
+
 ### Arquitectura General:
 
 #### Modulo Sensores
@@ -105,7 +106,35 @@ Explicar cómo se organiza el sistema en términos de módulos HDL (ej: módulo 
 ### Diagrama de Estados:
 Presentar un diagrama detallado de la máquina de estados, mostrando todos los estados posibles del Tamagotchi y las transiciones entre ellos.
 ### Descripción de los Estados:
-Explicar cada estado (hambriento, feliz, enfermo, etc.), qué significa y cómo se representa en la pantalla.
+
+* Hambriento:
+
+    * Significado: La mascota virtual necesita ser alimentada. Si se ignora esta necesidad por mucho tiempo, puede enfermarse.
+    * Representación en pantalla:
+        * Le cambian los ojos por > <.
+        * Expresión facial de la mascota mostrando tristeza o malestar.
+
+* Triste/Ánimo bajo:
+
+    * Significado: La mascota está contenta y satisfecha, indicando que sus necesidades básicas están cubiertas.
+    * Representación en pantalla:
+        * Boca con los extremos hacia abajo triste.
+        * Expresión facial de la mascota mostrando tristeza o insatisfacción.
+
+* Enfermo/Salud baja:
+
+    * Significado: La mascota está enferma debido a la falta de cuidado o atención a sus necesidades. Requiere atención médica (botón "curar").
+    * Representación en pantalla:
+         * Mejillas verdes
+         * Expresión facial de la mascota mostrando  malestar
+
+* Cansado:
+
+    * Significado: La mascota necesita descansar para recuperar energía. Esto puede ocurrir después de jugar mucho o durante la noche.
+    * Representación en pantalla:
+        * Gota de sudor en la frente
+        * Expresión facial de la mascota cansada.
+
 ### Transiciones entre Estados:
 Los estados de la mascota van a estar controlados por una señal "state" de 4 bits, estos bits representan, del mas significativo al menos significativo, la salud, el animo, la comida y la energia respectivamente. Así, state nos da la opción de representar los 6 estados basicos y la combinación entre ellos. La visualizacion de la combinación entre los estados será posible ya que cada estado se visualiza en una zona distina a los demas. Estas transiciones se desencadenan cuando alguna de las estadisticas de la mascota disminuyen por debajo de 2.
 
@@ -176,6 +205,52 @@ Este sensor actúa como un interruptor, con test_enable funcionando como un bot�
 
 * Finalmente, el registro temperature almacena los datos relacionados exclusivamente con la temperatura, mientras que aju_t actúa como un calibrador, proporcionando una temperatura más precisa. Esto es importante, ya que las temperaturas pueden variar según la ubicación donde se realiza la medición.
 
+### Modulo Banco  
+
+Este modulo Mantiene registros para la salud, ánimo, comida, energía, días de vida y el estado general y procesa las señales de los botones y sensores, actualizando los estados internos según las interacciones del usuario y las condiciones ambientales.
+
+```verilog
+module BancoRegistro #(
+	parameter SECONDS_IN_MINUTE = 60,
+	parameter MINUTES_TO_INCREMENT_DAYS = 2,
+	parameter TAU = 50
+)
+	input clk,
+	input rst,
+	input test,
+
+	input btn_back,
+	input btn_next,
+	input btn_comer_inc,     		   
+	input btn_curar_dec,
+	
+	input sns_prox,
+	input sns_temp,
+	input sns_luz,	 
+
+if (SALUD < 3'd2 && STATE[3] == 1'b1) begin
+				STATE <= {1'b0, STATE[2:0]}; 
+			end else if (SALUD >= 3'd2 && STATE[3] == 1'b0) begin
+				STATE <= {1'b1, STATE[2:0]};
+			end
+			
+			if (ANIMO < 3'd2 && STATE[2] == 1'b1) begin
+				STATE <= {STATE[3], 1'b0, STATE[1:0]}; 
+			end else if (ANIMO >= 3'd2 && STATE[2] == 1'b0) begin
+				STATE <= {STATE[3], 1'b1, STATE[1:0]};
+			end
+			
+			if (COMIDA < 3'd2 && STATE[1] == 1'b1) begin
+				STATE <= {STATE[3:2], 1'b0, STATE[0]}; 
+			end else if (COMIDA >= 3'd2 && STATE[1] == 1'b0) begin
+				STATE <= {STATE[3:2], 1'b1, STATE[0]};
+			end
+			
+			if (ENERGIA < 3'd2 && STATE[0] == 1'b1) begin
+				STATE <= {STATE[3:1],1'b0}; 
+			end else if (ENERGIA >= 3'd2 && STATE[0] == 1'b0) begin
+				STATE <= {STATE[3:1], 1'b1};
+			end
 
 
 ### Modulo Module_test  
