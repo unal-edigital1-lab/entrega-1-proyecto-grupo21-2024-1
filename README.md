@@ -27,7 +27,15 @@ Crear un Tamagotchi en un curso de electrónica digital es interesante por varia
 
 ### Alcance del proyecto:
 
-Definir qué funcionalidades incluiste en tu Tamagotchi y cuáles quedaron fuera del alcance.
+### Alcance del proyecto
+
+El alcance de nuestro proyecto tamagotchi esta pensado en varias etapas
+ * Primeramente en como través de la implementación de descripción de hardware en Verilog realizaremos toda la lógica necesaria para gestionar el funcionamiento de nuestra mascota virtual. Para ello haremos uso de Máquinas de Estado finitas que nos ayudarán a modificar los comportamientos de nuestra mascota a través de los botones y sensores (además de un reloj interno de la misma)
+ * En segunda instancia tendriamos que definir que acciones esperamos que sucedan con la interacción de botones y sensores, estas acciones serían comer, jugar, curar, etc.
+ * En tercer lugar desarrollariamos una comunicación con una pantalla TFT ILI9163 en la cual se tendría pensado mostrar a nuestra mascota virtual, incluyendo sus respectivos estados y sus animaciones relacionadas con las acciones. 
+ * En cuarto lugar realizariamos un temporizador (con uso de lógica secuencial, dependiendo del reloj que definamso del sistema) que determine cada cuanto cambian las necesidades de la mascota.
+ * En quinto lugar realizaremos pruebas de funcionamiento, asegurando que la interacción entre el usuario y los estados del tamagotchi es correcta, además de su respectiva visualización en nuestra pantalla ILI9163.
+
 
 ## 2. Diseño General del Sistema
 
@@ -65,7 +73,6 @@ Sera utilizado con el fin de simular los ciclos de día y noche, influyendo en l
 
 Realizaremos el uso del siguiente periférico como sistema de visualización, donde podremos representar visualmente nuestro Tamagotchi, además de los niveles de cada estado del mismo.
 
-* La Pantalla TFT ILI9163 tiene tiene una resolucion 128x128 pxls. Se comunica mediante el protocolo SPI, lo que la hace compatible con microcontroladores como Arduino y PIC. Su tamaño es de 1.44 pulgadas, y su efecto visual es mucho mejor que otras pantallas pequeñas. Además, admite voltajes de entrada de 5V y 3.3V.
 * Botones:
     Se implementaron pulsadores 4 como botones, los cuales se conectan a los pines de la fpga, para las siguientes funciones:
     * Pulsador 1: Permite al usuario alimentar a la mascota virtual en modo de juego normal e incrementar la estadisiticas de la mascota en modo test.
@@ -308,6 +315,39 @@ always @(posedge enable) begin
 
 De esta manera en el display se mostrará una estadistica (stat_name), su respectivo valor (stat_value), y por ultimo los 4 bits de state para poder verificar los cambios de estados cuando se cumplan las condiciones necesarias. 
 
+### Modulo Pantalla ILI9163
+
+Primeramente hablaremos de un divisor de frecuencia utilizado para nuestra pantalla (la cual debe de ser máximo de 25Mhz), muy importante para el funcionamiento de la misma. 
+
+```verilog
+module freq_divider #(parameter DIVIDER = 1)(
+    input wire clk,
+    input wire rst,
+    output reg clk_out
+);
+
+    reg [$clog2(DIVIDER)-10] counter; 
+
+    always @(posedge clk) begin
+        if (rst==0) begin
+            counter = 'b0;
+            clk_out = 'b0;
+        end else begin
+            if (counter == (DIVIDER - 1)) begin
+                clk_out = ~clk_out;
+                counter = 'b0;
+            end else begin
+                counter = counter + 'b1;
+            end
+        end
+    end
+endmodule
+```
+
+También, usamos un protocolo SPI para que nuestra pantalla pueda ser contralada con nuestra FPGA. Por lo general
+
+Las modificaciones mas relevantes para comentar son
+
 ## 5. Resultados y Conclusiones
 
 ### Demostración del Funcionamiento:
@@ -321,8 +361,13 @@ Al implementar el sensor de luz, se modifican estadísticas como el aumento de l
 https://github.com/user-attachments/assets/f75ead13-7bcf-4ca9-b386-a98144390d02
 
 
-### Conclusiones:
-Reflexionar sobre lo que se aprendio durante el proyecto, los desafíos que se enfrentastaton y cómo se superaron.
+### Conclusiones
+Al finalizar nuestro proyecto, podemos sacar varias conclusiones respecto al mismo.
+
+ * Logramos que se simulace el comportamiento de un tamagotchi utilizando nuestra FPGA y nuestro sistema de interacción a través de botones y sensores.
+ * El proyecto nos permitió aplicar todos los conocimientos adquiridos en la asignatura, incluyendo el diseño de varias maquinas de estado, el manejo del lenguaje Verilog y la interracción con hardware externo (Pantalla y botonessensores).
+ * Nos enfrentamos a varias complicaciones debido a las limitaciones de la FPGA Cyclone IV E utilizada, especialmente en cuanto a almacenamiento, llevandonos a editar en varias ocasiones la imágen de nuestro tamagotchi. 
+ * Se logró mostrar animaciones en nuestra pantalla ILI, sin embargo no se logró una sincronización de la misma con nuestra maquina de estados. 
 
 
 # Entrega 1 del proyecto Tamagotchi
