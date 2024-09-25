@@ -104,7 +104,11 @@ Explicar cómo se organiza el sistema en términos de módulos HDL (ej: módulo 
 ## 3. Máquina de Estados
 
 ### Diagrama de Estados:
-Presentar un diagrama detallado de la máquina de estados, mostrando todos los estados posibles del Tamagotchi y las transiciones entre ellos.
+![Imagen](/pictures/Estados1.png)
+![Imagen](/pictures/Estados2.png)
+![Imagen](/pictures/Estados3.png)
+![Imagen](/pictures/Estados4.png)
+![Imagen](/pictures/Estados5.png)
 ### Descripción de los Estados:
 
 * Hambriento:
