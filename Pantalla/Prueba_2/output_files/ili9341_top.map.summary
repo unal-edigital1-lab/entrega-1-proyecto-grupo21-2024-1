@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Fri Sep 20 16:43:24 2024
+Analysis & Synthesis Status : Successful - Tue Sep 24 22:12:39 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : ili9341_top
 Top-level Entity Name : ili9341_top
 Family : Cyclone IV E
-Total logic elements : 9,625
-    Total combinational functions : 9,624
+Total logic elements : 4,908
+    Total combinational functions : 4,907
     Dedicated logic registers : 106
 Total registers : 106
 Total pins : 16

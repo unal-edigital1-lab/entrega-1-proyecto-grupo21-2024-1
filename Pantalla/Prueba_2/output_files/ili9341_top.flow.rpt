@@ -1,5 +1,5 @@
 Flow report for ili9341_top
-Fri Sep 20 16:45:10 2024
+Tue Sep 24 22:14:16 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Fri Sep 20 16:45:10 2024          ;
+; Flow Status                        ; Successful - Tue Sep 24 22:14:16 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ili9341_top                                    ;
 ; Top-level Entity Name              ; ili9341_top                                    ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE10E22C8                                   ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 9,625 / 10,320 ( 93 % )                        ;
-;     Total combinational functions  ; 9,624 / 10,320 ( 93 % )                        ;
+; Total logic elements               ; 4,909 / 10,320 ( 48 % )                        ;
+;     Total combinational functions  ; 4,907 / 10,320 ( 48 % )                        ;
 ;     Dedicated logic registers      ; 106 / 10,320 ( 1 % )                           ;
 ; Total registers                    ; 106                                            ;
 ; Total pins                         ; 16 / 92 ( 17 % )                               ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/20/2024 16:41:22 ;
+; Start date & time ; 09/24/2024 22:05:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ili9341_top         ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 253621757563923.172686848235376        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 264840318850353.172723355607320        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -98,12 +98,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:02:02     ; 1.0                     ; 4828 MB             ; 00:02:07                           ;
-; Fitter               ; 00:01:29     ; 1.1                     ; 5683 MB             ; 00:01:14                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4714 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.2                     ; 4919 MB             ; 00:00:06                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4668 MB             ; 00:00:02                           ;
-; Total                ; 00:03:41     ; --                      ; --                  ; 00:03:30                           ;
+; Analysis & Synthesis ; 00:06:43     ; 1.0                     ; 4839 MB             ; 00:06:45                           ;
+; Fitter               ; 00:01:07     ; 1.1                     ; 5287 MB             ; 00:01:18                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4698 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:09     ; 1.1                     ; 4810 MB             ; 00:00:09                           ;
+; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 4649 MB             ; 00:00:03                           ;
+; Total                ; 00:08:06     ; --                      ; --                  ; 00:08:17                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -112,11 +112,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; LAPTOP-D54JFS2L  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; LAPTOP-D54JFS2L  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; LAPTOP-D54JFS2L  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; LAPTOP-D54JFS2L  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; LAPTOP-D54JFS2L  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-3CVG05U  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-3CVG05U  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-3CVG05U  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-3CVG05U  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-3CVG05U  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

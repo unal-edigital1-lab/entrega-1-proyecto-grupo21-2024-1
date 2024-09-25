@@ -1,5 +1,5 @@
 Fitter report for ili9341_top
-Fri Sep 20 16:44:55 2024
+Tue Sep 24 22:13:50 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -69,15 +69,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Sep 20 16:44:54 2024          ;
+; Fitter Status                      ; Successful - Tue Sep 24 22:13:50 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ili9341_top                                    ;
 ; Top-level Entity Name              ; ili9341_top                                    ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE10E22C8                                   ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 9,625 / 10,320 ( 93 % )                        ;
-;     Total combinational functions  ; 9,624 / 10,320 ( 93 % )                        ;
+; Total logic elements               ; 4,909 / 10,320 ( 48 % )                        ;
+;     Total combinational functions  ; 4,907 / 10,320 ( 48 % )                        ;
 ;     Dedicated logic registers      ; 106 / 10,320 ( 1 % )                           ;
 ; Total registers                    ; 106                                            ;
 ; Total pins                         ; 16 / 92 ( 17 % )                               ;
@@ -152,17 +152,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.08        ;
-; Maximum used               ; 4           ;
+; Average used               ; 1.05        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.8%      ;
-;     Processor 3            ;   2.7%      ;
-;     Processor 4            ;   2.6%      ;
+;     Processor 2            ;   5.5%      ;
 +----------------------------+-------------+
 
 
@@ -172,8 +170,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 9776 ) ; 0.00 % ( 0 / 9776 )        ; 0.00 % ( 0 / 9776 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 9776 ) ; 0.00 % ( 0 / 9776 )        ; 0.00 % ( 0 / 9776 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 5059 ) ; 0.00 % ( 0 / 5059 )        ; 0.00 % ( 0 / 5059 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 5059 ) ; 0.00 % ( 0 / 5059 )        ; 0.00 % ( 0 / 5059 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -196,7 +194,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 9766 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 5049 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -204,7 +202,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/output_files/ili9341_top.pin.
+The pin-out file can be found in C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/output_files/ili9341_top.pin.
 
 
 +-----------------------------------------------------------------------+
@@ -212,26 +210,26 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 9,625 / 10,320 ( 93 % ) ;
-;     -- Combinational with no register       ; 9519                    ;
-;     -- Register only                        ; 1                       ;
-;     -- Combinational with a register        ; 105                     ;
+; Total logic elements                        ; 4,909 / 10,320 ( 48 % ) ;
+;     -- Combinational with no register       ; 4803                    ;
+;     -- Register only                        ; 2                       ;
+;     -- Combinational with a register        ; 104                     ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 8568                    ;
-;     -- 3 input functions                    ; 796                     ;
-;     -- <=2 input functions                  ; 260                     ;
-;     -- Register only                        ; 1                       ;
+;     -- 4 input functions                    ; 4088                    ;
+;     -- 3 input functions                    ; 578                     ;
+;     -- <=2 input functions                  ; 241                     ;
+;     -- Register only                        ; 2                       ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 9584                    ;
+;     -- normal mode                          ; 4867                    ;
 ;     -- arithmetic mode                      ; 40                      ;
 ;                                             ;                         ;
 ; Total registers*                            ; 106 / 10,732 ( < 1 % )  ;
 ;     -- Dedicated logic registers            ; 106 / 10,320 ( 1 % )    ;
 ;     -- I/O registers                        ; 0 / 412 ( 0 % )         ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 618 / 645 ( 96 % )      ;
+; Total LABs:  partially or completely used   ; 328 / 645 ( 51 % )      ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 16 / 92 ( 17 % )        ;
 ;     -- Clock pins                           ; 2 / 3 ( 67 % )          ;
@@ -249,12 +247,12 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 24.3% / 23.2% / 25.9%   ;
-; Peak interconnect usage (total/H/V)         ; 31.6% / 31.3% / 33.8%   ;
-; Maximum fan-out                             ; 3301                    ;
-; Highest non-global fan-out                  ; 3301                    ;
-; Total fan-out                               ; 37555                   ;
-; Average fan-out                             ; 3.84                    ;
+; Average interconnect usage (total/H/V)      ; 11.5% / 10.7% / 12.5%   ;
+; Peak interconnect usage (total/H/V)         ; 20.6% / 18.8% / 23.9%   ;
+; Maximum fan-out                             ; 1445                    ;
+; Highest non-global fan-out                  ; 1445                    ;
+; Total fan-out                               ; 18945                   ;
+; Average fan-out                             ; 3.74                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -267,26 +265,26 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 9625 / 10320 ( 93 % ) ; 0 / 10320 ( 0 % )              ;
-;     -- Combinational with no register       ; 9519                  ; 0                              ;
-;     -- Register only                        ; 1                     ; 0                              ;
-;     -- Combinational with a register        ; 105                   ; 0                              ;
+; Total logic elements                        ; 4909 / 10320 ( 48 % ) ; 0 / 10320 ( 0 % )              ;
+;     -- Combinational with no register       ; 4803                  ; 0                              ;
+;     -- Register only                        ; 2                     ; 0                              ;
+;     -- Combinational with a register        ; 104                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 8568                  ; 0                              ;
-;     -- 3 input functions                    ; 796                   ; 0                              ;
-;     -- <=2 input functions                  ; 260                   ; 0                              ;
-;     -- Register only                        ; 1                     ; 0                              ;
+;     -- 4 input functions                    ; 4088                  ; 0                              ;
+;     -- 3 input functions                    ; 578                   ; 0                              ;
+;     -- <=2 input functions                  ; 241                   ; 0                              ;
+;     -- Register only                        ; 2                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 9584                  ; 0                              ;
+;     -- normal mode                          ; 4867                  ; 0                              ;
 ;     -- arithmetic mode                      ; 40                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Total registers                             ; 106                   ; 0                              ;
 ;     -- Dedicated logic registers            ; 106 / 10320 ( 1 % )   ; 0 / 10320 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 618 / 645 ( 96 % )    ; 0 / 645 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 328 / 645 ( 51 % )    ; 0 / 645 ( 0 % )                ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 16                    ; 0                              ;
@@ -302,8 +300,8 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 37550                 ; 5                              ;
-;     -- Registered Connections               ; 25713                 ; 0                              ;
+;     -- Total Connections                    ; 18940                 ; 5                              ;
+;     -- Registered Connections               ; 11785                 ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -335,18 +333,18 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 +---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; animo   ; 121   ; 7        ; 23           ; 24           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; calor   ; 135   ; 8        ; 11           ; 24           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; animo   ; 70    ; 4        ; 32           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; calor   ; 121   ; 7        ; 23           ; 24           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; clk     ; 23    ; 1        ; 0            ; 11           ; 7            ; 3                     ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; comer   ; 133   ; 8        ; 13           ; 24           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; comida  ; 3     ; 1        ; 0            ; 23           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; curar   ; 74    ; 5        ; 34           ; 2            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; dormir  ; 59    ; 4        ; 23           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; energia ; 72    ; 4        ; 32           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; jugar   ; 55    ; 4        ; 18           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; rst     ; 90    ; 6        ; 34           ; 12           ; 7            ; 88                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; salud   ; 113   ; 7        ; 28           ; 24           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; test    ; 142   ; 8        ; 3            ; 24           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; comer   ; 49    ; 3        ; 13           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; comida  ; 58    ; 4        ; 21           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; curar   ; 55    ; 4        ; 18           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; dormir  ; 100   ; 6        ; 34           ; 17           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; energia ; 87    ; 5        ; 34           ; 10           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; jugar   ; 133   ; 8        ; 13           ; 24           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; rst     ; 90    ; 6        ; 34           ; 12           ; 7            ; 91                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; salud   ; 67    ; 4        ; 30           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; test    ; 68    ; 4        ; 30           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 +---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -374,13 +372,14 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 ; 13       ; DATA0                       ; As input tri-stated      ; ~ALTERA_DATA0~          ; Dual Purpose Pin          ;
 ; 14       ; nCONFIG                     ; -                        ; -                       ; Dedicated Programming Pin ;
 ; 21       ; nCE                         ; -                        ; -                       ; Dedicated Programming Pin ;
+; 87       ; DIFFIO_R7p, DEV_CLRn        ; Use as regular IO        ; energia                 ; Dual Purpose Pin          ;
 ; 92       ; CONF_DONE                   ; -                        ; -                       ; Dedicated Programming Pin ;
 ; 94       ; MSEL0                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; 96       ; MSEL1                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; 97       ; MSEL2                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; 97       ; MSEL3                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; 101      ; DIFFIO_R3n, nCEO            ; Use as programming pin   ; ~ALTERA_nCEO~           ; Dual Purpose Pin          ;
-; 133      ; DIFFIO_T10p, DATA3          ; Use as regular IO        ; comer                   ; Dual Purpose Pin          ;
+; 133      ; DIFFIO_T10p, DATA3          ; Use as regular IO        ; jugar                   ; Dual Purpose Pin          ;
 +----------+-----------------------------+--------------------------+-------------------------+---------------------------+
 
 
@@ -389,14 +388,14 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 +----------+-----------------+---------------+--------------+
 ; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
 +----------+-----------------+---------------+--------------+
-; 1        ; 6 / 11 ( 55 % ) ; 2.5V          ; --           ;
+; 1        ; 5 / 11 ( 45 % ) ; 2.5V          ; --           ;
 ; 2        ; 3 / 8 ( 38 % )  ; 2.5V          ; --           ;
-; 3        ; 1 / 11 ( 9 % )  ; 2.5V          ; --           ;
-; 4        ; 3 / 14 ( 21 % ) ; 2.5V          ; --           ;
+; 3        ; 2 / 11 ( 18 % ) ; 2.5V          ; --           ;
+; 4        ; 5 / 14 ( 36 % ) ; 2.5V          ; --           ;
 ; 5        ; 1 / 13 ( 8 % )  ; 2.5V          ; --           ;
-; 6        ; 2 / 10 ( 20 % ) ; 2.5V          ; --           ;
-; 7        ; 2 / 13 ( 15 % ) ; 2.5V          ; --           ;
-; 8        ; 3 / 12 ( 25 % ) ; 2.5V          ; --           ;
+; 6        ; 3 / 10 ( 30 % ) ; 2.5V          ; --           ;
+; 7        ; 1 / 13 ( 8 % )  ; 2.5V          ; --           ;
+; 8        ; 1 / 12 ( 8 % )  ; 2.5V          ; --           ;
 +----------+-----------------+---------------+--------------+
 
 
@@ -407,7 +406,7 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 +----------+------------+----------+-----------------------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 ; 1        ; 0          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 2        ; 1          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; 3        ; 2          ; 1        ; comida                                                    ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 3        ; 2          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 4        ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 5        ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 6        ; 5          ; 1        ; ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP     ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
@@ -453,17 +452,17 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 ; 46       ; 58         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; 47       ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; 48       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 49       ; 68         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 49       ; 68         ; 3        ; comer                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 50       ; 69         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 51       ; 70         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 52       ; 72         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 53       ; 73         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 54       ; 74         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 55       ; 75         ; 4        ; jugar                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; 55       ; 75         ; 4        ; curar                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 56       ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; 57       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 58       ; 80         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 59       ; 83         ; 4        ; dormir                                                    ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; 58       ; 80         ; 4        ; comida                                                    ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; 59       ; 83         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 60       ; 84         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 61       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 62       ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -471,14 +470,14 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 ; 64       ; 89         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 65       ; 90         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; 66       ; 93         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 67       ; 94         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 68       ; 96         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 67       ; 94         ; 4        ; salud                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; 68       ; 96         ; 4        ; test                                                      ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 69       ; 97         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 70       ; 98         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 70       ; 98         ; 4        ; animo                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 71       ; 99         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 72       ; 100        ; 4        ; energia                                                   ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; 72       ; 100        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 73       ; 102        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; 74       ; 103        ; 5        ; curar                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 74       ; 103        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 75       ; 104        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 76       ; 106        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 77       ; 107        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -491,7 +490,7 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 ; 84       ; 118        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 85       ; 119        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 86       ; 120        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; 87       ; 121        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 87       ; 121        ; 5        ; energia                                                   ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 88       ; 125        ; 5        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; 89       ; 126        ; 5        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; 90       ; 127        ; 6        ; rst                                                       ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
@@ -505,7 +504,7 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 ; 97       ; 133        ; 6        ; ^MSEL3                                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; 98       ; 136        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 99       ; 137        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; 100      ; 138        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 100      ; 138        ; 6        ; dormir                                                    ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 101      ; 139        ; 6        ; ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN                ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 102      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 103      ; 140        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -518,7 +517,7 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 ; 110      ; 152        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 111      ; 154        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 112      ; 155        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 113      ; 156        ; 7        ; salud                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; 113      ; 156        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 114      ; 157        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 115      ; 158        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 116      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -526,7 +525,7 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 ; 118      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 119      ; 163        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; 120      ; 164        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 121      ; 165        ; 7        ; animo                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; 121      ; 165        ; 7        ; calor                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 122      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; 123      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 124      ; 173        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -538,16 +537,16 @@ The pin-out file can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueb
 ; 130      ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; 131      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 132      ; 181        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 133      ; 182        ; 8        ; comer                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; 133      ; 182        ; 8        ; jugar                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 134      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; 135      ; 185        ; 8        ; calor                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; 135      ; 185        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 136      ; 187        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; 137      ; 190        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 138      ; 191        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 139      ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; 140      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 141      ; 195        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; 142      ; 201        ; 8        ; test                                                      ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; 142      ; 201        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 143      ; 202        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; 144      ; 203        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; EPAD     ;            ;          ; GND                                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
@@ -594,10 +593,10 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node          ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                    ; Entity Name        ; Library Name ;
 +-------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------+--------------------+--------------+
-; |ili9341_top                        ; 9625 (9345) ; 106 (31)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 16   ; 0            ; 9519 (9314)  ; 1 (0)             ; 105 (31)         ; |ili9341_top                                           ; ili9341_top        ; work         ;
+; |ili9341_top                        ; 4909 (4622) ; 106 (31)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 16   ; 0            ; 4803 (4591)  ; 2 (0)             ; 104 (32)         ; |ili9341_top                                           ; ili9341_top        ; work         ;
 ;    |freq_divider:freq_divider20MHz| ; 4 (4)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 2 (2)            ; |ili9341_top|freq_divider:freq_divider20MHz            ; freq_divider       ; work         ;
-;    |ili9341_controller:ili9341|     ; 276 (248)   ; 72 (55)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 204 (193)    ; 0 (0)             ; 72 (55)          ; |ili9341_top|ili9341_controller:ili9341                ; ili9341_controller ; work         ;
-;       |spi_master:spi|              ; 28 (28)     ; 17 (17)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 17 (17)          ; |ili9341_top|ili9341_controller:ili9341|spi_master:spi ; spi_master         ; work         ;
+;    |ili9341_controller:ili9341|     ; 283 (254)   ; 72 (55)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 211 (199)    ; 1 (1)             ; 71 (54)          ; |ili9341_top|ili9341_controller:ili9341                ; ili9341_controller ; work         ;
+;       |spi_master:spi|              ; 29 (29)     ; 17 (17)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 17 (17)          ; |ili9341_top|ili9341_controller:ili9341|spi_master:spi ; spi_master         ; work         ;
 +-------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -652,29 +651,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                            ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; clk                                                             ; PIN_23             ; 3       ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; current_pixel[6]~53                                             ; LCCOMB_X33_Y16_N30 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; freq_divider:freq_divider20MHz|clk_out                          ; FF_X2_Y6_N21       ; 72      ; Clock        ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; ili9341_controller:ili9341|config_counter[4]~11                 ; LCCOMB_X30_Y18_N2  ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ili9341_controller:ili9341|data_byte_flag                       ; FF_X29_Y16_N13     ; 31      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; ili9341_controller:ili9341|delay_counter[1]~39                  ; LCCOMB_X32_Y18_N0  ; 22      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; ili9341_controller:ili9341|delay_counter[1]~40                  ; LCCOMB_X33_Y16_N2  ; 22      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ili9341_controller:ili9341|next_config[2]~4                     ; LCCOMB_X30_Y16_N30 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ili9341_controller:ili9341|spi_data[4]~20                       ; LCCOMB_X29_Y16_N24 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ili9341_controller:ili9341|spi_master:spi|data_bit_counter[0]~0 ; LCCOMB_X32_Y18_N12 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ili9341_controller:ili9341|spi_master:spi|data_reg[2]~1         ; LCCOMB_X31_Y18_N6  ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; rst                                                             ; PIN_90             ; 88      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; current_pixel[5]~61                                             ; LCCOMB_X31_Y10_N12 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; freq_divider:freq_divider20MHz|clk_out                          ; FF_X14_Y2_N1       ; 72      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; ili9341_controller:ili9341|config_counter[5]~11                 ; LCCOMB_X33_Y8_N4   ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ili9341_controller:ili9341|data_byte_flag                       ; FF_X31_Y11_N9      ; 31      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; ili9341_controller:ili9341|delay_counter[15]~39                 ; LCCOMB_X33_Y6_N26  ; 22      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; ili9341_controller:ili9341|delay_counter[15]~40                 ; LCCOMB_X32_Y10_N2  ; 22      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ili9341_controller:ili9341|next_config[2]~4                     ; LCCOMB_X33_Y10_N2  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ili9341_controller:ili9341|spi_data[6]~21                       ; LCCOMB_X31_Y10_N22 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ili9341_controller:ili9341|spi_master:spi|data_bit_counter[0]~0 ; LCCOMB_X29_Y7_N28  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ili9341_controller:ili9341|spi_master:spi|data_reg[8]~1         ; LCCOMB_X30_Y7_N22  ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; rst                                                             ; PIN_90             ; 91      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
 +-----------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                       ;
-+-------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                                      ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; clk                                       ; PIN_23         ; 3       ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
-; freq_divider:freq_divider20MHz|clk_out    ; FF_X2_Y6_N21   ; 72      ; 6                                    ; Global Clock         ; GCLK0            ; --                        ;
-; ili9341_controller:ili9341|data_byte_flag ; FF_X29_Y16_N13 ; 31      ; 11                                   ; Global Clock         ; GCLK6            ; --                        ;
-+-------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                      ;
++-------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                                      ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; clk                                       ; PIN_23        ; 3       ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
+; freq_divider:freq_divider20MHz|clk_out    ; FF_X14_Y2_N1  ; 72      ; 6                                    ; Global Clock         ; GCLK3            ; --                        ;
+; ili9341_controller:ili9341|data_byte_flag ; FF_X31_Y11_N9 ; 31      ; 5                                    ; Global Clock         ; GCLK6            ; --                        ;
++-------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +---------------------------------+
@@ -682,131 +681,131 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------+-------------+
 ; Name              ; Fan-Out     ;
 +-------------------+-------------+
-; pixel_counter[8]  ; 3301        ;
-; pixel_counter[7]  ; 3260        ;
-; pixel_counter[0]  ; 3178        ;
-; pixel_counter[1]  ; 2772        ;
-; pixel_counter[9]  ; 2420        ;
-; pixel_counter[10] ; 2136        ;
-; pixel_counter[2]  ; 2053        ;
-; pixel_counter[11] ; 1429        ;
-; pixel_counter[12] ; 1161        ;
-; pixel_counter[3]  ; 1146        ;
-; pixel_counter[13] ; 1071        ;
-; pixel_counter[4]  ; 709         ;
+; pixel_counter[8]  ; 1445        ;
+; pixel_counter[7]  ; 1310        ;
+; pixel_counter[0]  ; 1280        ;
+; pixel_counter[9]  ; 1087        ;
+; pixel_counter[1]  ; 1042        ;
+; pixel_counter[10] ; 941         ;
+; pixel_counter[11] ; 885         ;
+; pixel_counter[2]  ; 839         ;
+; pixel_counter[12] ; 694         ;
+; pixel_counter[13] ; 617         ;
 +-------------------+-------------+
 
 
-+--------------------------------------------------+
-; Routing Usage Summary                            ;
-+-----------------------+--------------------------+
-; Routing Resource Type ; Usage                    ;
-+-----------------------+--------------------------+
-; Block interconnects   ; 10,849 / 32,401 ( 33 % ) ;
-; C16 interconnects     ; 327 / 1,326 ( 25 % )     ;
-; C4 interconnects      ; 4,772 / 21,816 ( 22 % )  ;
-; Direct links          ; 524 / 32,401 ( 2 % )     ;
-; Global clocks         ; 3 / 10 ( 30 % )          ;
-; Local interconnects   ; 7,430 / 10,320 ( 72 % )  ;
-; R24 interconnects     ; 357 / 1,289 ( 28 % )     ;
-; R4 interconnects      ; 5,335 / 28,186 ( 19 % )  ;
-+-----------------------+--------------------------+
++-------------------------------------------------+
+; Routing Usage Summary                           ;
++-----------------------+-------------------------+
+; Routing Resource Type ; Usage                   ;
++-----------------------+-------------------------+
+; Block interconnects   ; 5,900 / 32,401 ( 18 % ) ;
+; C16 interconnects     ; 95 / 1,326 ( 7 % )      ;
+; C4 interconnects      ; 2,535 / 21,816 ( 12 % ) ;
+; Direct links          ; 356 / 32,401 ( 1 % )    ;
+; Global clocks         ; 3 / 10 ( 30 % )         ;
+; Local interconnects   ; 3,777 / 10,320 ( 37 % ) ;
+; R24 interconnects     ; 115 / 1,289 ( 9 % )     ;
+; R4 interconnects      ; 2,707 / 28,186 ( 10 % ) ;
++-----------------------+-------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 15.57) ; Number of LABs  (Total = 618) ;
+; Number of Logic Elements  (Average = 14.97) ; Number of LABs  (Total = 328) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 3                             ;
-; 2                                           ; 1                             ;
-; 3                                           ; 0                             ;
+; 1                                           ; 1                             ;
+; 2                                           ; 2                             ;
+; 3                                           ; 2                             ;
 ; 4                                           ; 1                             ;
-; 5                                           ; 0                             ;
-; 6                                           ; 3                             ;
-; 7                                           ; 2                             ;
-; 8                                           ; 0                             ;
-; 9                                           ; 1                             ;
-; 10                                          ; 2                             ;
-; 11                                          ; 4                             ;
-; 12                                          ; 3                             ;
-; 13                                          ; 5                             ;
-; 14                                          ; 14                            ;
-; 15                                          ; 50                            ;
-; 16                                          ; 529                           ;
+; 5                                           ; 1                             ;
+; 6                                           ; 1                             ;
+; 7                                           ; 1                             ;
+; 8                                           ; 1                             ;
+; 9                                           ; 2                             ;
+; 10                                          ; 4                             ;
+; 11                                          ; 8                             ;
+; 12                                          ; 16                            ;
+; 13                                          ; 8                             ;
+; 14                                          ; 11                            ;
+; 15                                          ; 32                            ;
+; 16                                          ; 237                           ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 0.12) ; Number of LABs  (Total = 618) ;
+; LAB-wide Signals  (Average = 0.19) ; Number of LABs  (Total = 328) ;
 +------------------------------------+-------------------------------+
-; 1 Clock                            ; 32                            ;
-; 1 Clock enable                     ; 20                            ;
-; 1 Sync. clear                      ; 25                            ;
+; 1 Clock                            ; 26                            ;
+; 1 Clock enable                     ; 17                            ;
+; 1 Sync. clear                      ; 18                            ;
+; 2 Clocks                           ; 1                             ;
 +------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 15.75) ; Number of LABs  (Total = 618) ;
+; Number of Signals Sourced  (Average = 15.29) ; Number of LABs  (Total = 328) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 3                             ;
-; 2                                            ; 1                             ;
-; 3                                            ; 0                             ;
+; 1                                            ; 1                             ;
+; 2                                            ; 2                             ;
+; 3                                            ; 2                             ;
 ; 4                                            ; 1                             ;
-; 5                                            ; 0                             ;
-; 6                                            ; 3                             ;
-; 7                                            ; 2                             ;
-; 8                                            ; 0                             ;
-; 9                                            ; 1                             ;
-; 10                                           ; 2                             ;
-; 11                                           ; 4                             ;
-; 12                                           ; 3                             ;
-; 13                                           ; 5                             ;
-; 14                                           ; 14                            ;
-; 15                                           ; 46                            ;
-; 16                                           ; 503                           ;
-; 17                                           ; 16                            ;
-; 18                                           ; 3                             ;
-; 19                                           ; 1                             ;
-; 20                                           ; 2                             ;
-; 21                                           ; 2                             ;
-; 22                                           ; 0                             ;
-; 23                                           ; 1                             ;
-; 24                                           ; 1                             ;
-; 25                                           ; 0                             ;
-; 26                                           ; 2                             ;
-; 27                                           ; 1                             ;
+; 5                                            ; 1                             ;
+; 6                                            ; 0                             ;
+; 7                                            ; 1                             ;
+; 8                                            ; 1                             ;
+; 9                                            ; 2                             ;
+; 10                                           ; 4                             ;
+; 11                                           ; 7                             ;
+; 12                                           ; 16                            ;
+; 13                                           ; 8                             ;
+; 14                                           ; 9                             ;
+; 15                                           ; 33                            ;
+; 16                                           ; 217                           ;
+; 17                                           ; 9                             ;
+; 18                                           ; 2                             ;
+; 19                                           ; 5                             ;
+; 20                                           ; 1                             ;
+; 21                                           ; 1                             ;
+; 22                                           ; 1                             ;
+; 23                                           ; 0                             ;
+; 24                                           ; 0                             ;
+; 25                                           ; 1                             ;
+; 26                                           ; 0                             ;
+; 27                                           ; 2                             ;
 ; 28                                           ; 0                             ;
-; 29                                           ; 1                             ;
+; 29                                           ; 0                             ;
+; 30                                           ; 1                             ;
 +----------------------------------------------+-------------------------------+
 
 
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +-------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 4.02) ; Number of LABs  (Total = 618) ;
+; Number of Signals Sourced Out  (Average = 4.19) ; Number of LABs  (Total = 328) ;
 +-------------------------------------------------+-------------------------------+
 ; 0                                               ; 0                             ;
-; 1                                               ; 89                            ;
-; 2                                               ; 91                            ;
-; 3                                               ; 115                           ;
-; 4                                               ; 94                            ;
-; 5                                               ; 80                            ;
-; 6                                               ; 64                            ;
-; 7                                               ; 37                            ;
-; 8                                               ; 18                            ;
-; 9                                               ; 12                            ;
-; 10                                              ; 11                            ;
+; 1                                               ; 33                            ;
+; 2                                               ; 53                            ;
+; 3                                               ; 73                            ;
+; 4                                               ; 44                            ;
+; 5                                               ; 40                            ;
+; 6                                               ; 33                            ;
+; 7                                               ; 20                            ;
+; 8                                               ; 13                            ;
+; 9                                               ; 5                             ;
+; 10                                              ; 8                             ;
 ; 11                                              ; 2                             ;
-; 12                                              ; 2                             ;
-; 13                                              ; 1                             ;
+; 12                                              ; 3                             ;
+; 13                                              ; 0                             ;
 ; 14                                              ; 0                             ;
-; 15                                              ; 1                             ;
+; 15                                              ; 0                             ;
 ; 16                                              ; 1                             ;
 +-------------------------------------------------+-------------------------------+
 
@@ -814,46 +813,46 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 14.34) ; Number of LABs  (Total = 618) ;
+; Number of Distinct Inputs  (Average = 15.62) ; Number of LABs  (Total = 328) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
 ; 2                                            ; 0                             ;
-; 3                                            ; 1                             ;
-; 4                                            ; 4                             ;
-; 5                                            ; 3                             ;
-; 6                                            ; 12                            ;
-; 7                                            ; 13                            ;
-; 8                                            ; 47                            ;
-; 9                                            ; 79                            ;
-; 10                                           ; 63                            ;
-; 11                                           ; 57                            ;
-; 12                                           ; 61                            ;
-; 13                                           ; 35                            ;
-; 14                                           ; 25                            ;
-; 15                                           ; 29                            ;
-; 16                                           ; 26                            ;
-; 17                                           ; 13                            ;
-; 18                                           ; 15                            ;
-; 19                                           ; 12                            ;
-; 20                                           ; 16                            ;
-; 21                                           ; 13                            ;
-; 22                                           ; 15                            ;
+; 3                                            ; 3                             ;
+; 4                                            ; 2                             ;
+; 5                                            ; 1                             ;
+; 6                                            ; 8                             ;
+; 7                                            ; 7                             ;
+; 8                                            ; 15                            ;
+; 9                                            ; 18                            ;
+; 10                                           ; 32                            ;
+; 11                                           ; 31                            ;
+; 12                                           ; 20                            ;
+; 13                                           ; 18                            ;
+; 14                                           ; 23                            ;
+; 15                                           ; 11                            ;
+; 16                                           ; 15                            ;
+; 17                                           ; 23                            ;
+; 18                                           ; 14                            ;
+; 19                                           ; 10                            ;
+; 20                                           ; 8                             ;
+; 21                                           ; 12                            ;
+; 22                                           ; 5                             ;
 ; 23                                           ; 8                             ;
-; 24                                           ; 8                             ;
-; 25                                           ; 5                             ;
-; 26                                           ; 12                            ;
-; 27                                           ; 4                             ;
-; 28                                           ; 7                             ;
+; 24                                           ; 3                             ;
+; 25                                           ; 8                             ;
+; 26                                           ; 3                             ;
+; 27                                           ; 0                             ;
+; 28                                           ; 3                             ;
 ; 29                                           ; 5                             ;
-; 30                                           ; 2                             ;
-; 31                                           ; 3                             ;
-; 32                                           ; 3                             ;
-; 33                                           ; 2                             ;
-; 34                                           ; 6                             ;
+; 30                                           ; 4                             ;
+; 31                                           ; 2                             ;
+; 32                                           ; 1                             ;
+; 33                                           ; 1                             ;
+; 34                                           ; 5                             ;
 ; 35                                           ; 1                             ;
-; 36                                           ; 5                             ;
-; 37                                           ; 8                             ;
+; 36                                           ; 6                             ;
+; 37                                           ; 2                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -978,9 +977,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------+----------------------------------------+-------------------+
 ; Source Clock(s)                                                                      ; Destination Clock(s)                   ; Delay Added in ns ;
 +--------------------------------------------------------------------------------------+----------------------------------------+-------------------+
-; freq_divider:freq_divider20MHz|clk_out,ili9341_controller:ili9341|data_byte_flag     ; freq_divider:freq_divider20MHz|clk_out ; 17.7              ;
-; freq_divider:freq_divider20MHz|clk_out                                               ; freq_divider:freq_divider20MHz|clk_out ; 7.5               ;
-; freq_divider:freq_divider20MHz|clk_out,ili9341_controller:ili9341|data_byte_flag,I/O ; freq_divider:freq_divider20MHz|clk_out ; 5.7               ;
+; freq_divider:freq_divider20MHz|clk_out,ili9341_controller:ili9341|data_byte_flag     ; freq_divider:freq_divider20MHz|clk_out ; 17.3              ;
+; freq_divider:freq_divider20MHz|clk_out                                               ; freq_divider:freq_divider20MHz|clk_out ; 12.8              ;
+; freq_divider:freq_divider20MHz|clk_out,ili9341_controller:ili9341|data_byte_flag,I/O ; freq_divider:freq_divider20MHz|clk_out ; 5.1               ;
 ; clk                                                                                  ; clk                                    ; 3.6               ;
 +--------------------------------------------------------------------------------------+----------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
@@ -992,88 +991,85 @@ This will disable optimization of problematic paths and expose them for further 
 +---------------------------------------------------+-------------------------------------------+-------------------+
 ; Source Register                                   ; Destination Register                      ; Delay Added in ns ;
 +---------------------------------------------------+-------------------------------------------+-------------------+
-; freq_divider:freq_divider20MHz|clk_out            ; freq_divider:freq_divider20MHz|clk_out    ; 3.615             ;
-; ili9341_controller:ili9341|data_byte_flag         ; ili9341_controller:ili9341|data_byte_flag ; 3.329             ;
-; ili9341_controller:ili9341|fsm_state.SET_ROTATION ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|next_config[1]         ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|next_config[2]         ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[19]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[20]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[17]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[16]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[15]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[14]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[13]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[12]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[11]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[10]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[9]       ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[8]       ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[7]       ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[6]       ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[5]       ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[4]       ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[3]       ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[2]       ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[1]       ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[0]       ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[18]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|fsm_state.WAIT3        ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|delay_counter[21]      ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|next_config[3]         ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|next_config[0]         ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|fsm_state.SET_ADRRESS  ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|fsm_state.FRAME_LOOP   ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|fsm_state.WAIT_FRAME   ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; transmission_done                                 ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; ili9341_controller:ili9341|spi_master:spi|idle    ; ili9341_controller:ili9341|spi_data[1]    ; 2.006             ;
-; current_pixel[0]                                  ; ili9341_controller:ili9341|spi_data[0]    ; 1.842             ;
-; current_pixel[8]                                  ; ili9341_controller:ili9341|spi_data[0]    ; 1.842             ;
-; current_pixel[7]                                  ; ili9341_controller:ili9341|spi_data[7]    ; 1.684             ;
-; current_pixel[15]                                 ; ili9341_controller:ili9341|spi_data[7]    ; 1.684             ;
-; current_pixel[3]                                  ; ili9341_controller:ili9341|spi_data[3]    ; 1.518             ;
-; current_pixel[11]                                 ; ili9341_controller:ili9341|spi_data[3]    ; 1.518             ;
-; rst                                               ; ili9341_controller:ili9341|data_byte_flag ; 1.505             ;
-; current_pixel[5]                                  ; ili9341_controller:ili9341|spi_data[5]    ; 1.383             ;
-; current_pixel[13]                                 ; ili9341_controller:ili9341|spi_data[5]    ; 1.383             ;
-; current_pixel[10]                                 ; ili9341_controller:ili9341|spi_data[2]    ; 1.335             ;
-; ili9341_controller:ili9341|config_counter[6]      ; ili9341_controller:ili9341|spi_data[2]    ; 1.335             ;
-; ili9341_controller:ili9341|config_counter[4]      ; ili9341_controller:ili9341|spi_data[2]    ; 1.335             ;
-; ili9341_controller:ili9341|config_counter[3]      ; ili9341_controller:ili9341|spi_data[2]    ; 1.335             ;
-; ili9341_controller:ili9341|config_counter[2]      ; ili9341_controller:ili9341|spi_data[2]    ; 1.335             ;
-; ili9341_controller:ili9341|config_counter[1]      ; ili9341_controller:ili9341|spi_data[2]    ; 1.335             ;
-; ili9341_controller:ili9341|config_counter[0]      ; ili9341_controller:ili9341|spi_data[2]    ; 1.335             ;
-; ili9341_controller:ili9341|config_counter[5]      ; ili9341_controller:ili9341|spi_data[2]    ; 1.335             ;
-; current_pixel[9]                                  ; ili9341_controller:ili9341|spi_data[1]    ; 1.237             ;
-; freq_divider:freq_divider20MHz|counter[0]         ; freq_divider:freq_divider20MHz|clk_out    ; 1.006             ;
-; freq_divider:freq_divider20MHz|counter[1]         ; freq_divider:freq_divider20MHz|clk_out    ; 1.006             ;
-; current_pixel[2]                                  ; ili9341_controller:ili9341|spi_data[2]    ; 0.956             ;
-; ili9341_controller:ili9341|spi_data[2]            ; ili9341_controller:ili9341|spi_data[2]    ; 0.956             ;
-; ili9341_controller:ili9341|fsm_state.WAIT1        ; ili9341_controller:ili9341|spi_data[1]    ; 0.939             ;
-; ili9341_controller:ili9341|fsm_state.SEND_CONFIG  ; ili9341_controller:ili9341|spi_data[1]    ; 0.939             ;
-; ili9341_controller:ili9341|spi_data[5]            ; ili9341_controller:ili9341|spi_data[5]    ; 0.922             ;
-; ili9341_controller:ili9341|fsm_state.WAIT2        ; ili9341_controller:ili9341|spi_data[5]    ; 0.922             ;
-; ili9341_controller:ili9341|fsm_state.DISPLAY_ON   ; ili9341_controller:ili9341|spi_data[5]    ; 0.922             ;
-; current_pixel[14]                                 ; ili9341_controller:ili9341|spi_data[6]    ; 0.839             ;
-; current_pixel[12]                                 ; ili9341_controller:ili9341|spi_data[4]    ; 0.812             ;
-; ili9341_controller:ili9341|spi_data[3]            ; ili9341_controller:ili9341|spi_data[3]    ; 0.759             ;
-; current_pixel[1]                                  ; ili9341_controller:ili9341|spi_data[1]    ; 0.665             ;
-; ili9341_controller:ili9341|spi_data[1]            ; ili9341_controller:ili9341|spi_data[1]    ; 0.665             ;
-; ili9341_controller:ili9341|fsm_state.SEND_INIT    ; ili9341_controller:ili9341|spi_data[0]    ; 0.614             ;
-; ili9341_controller:ili9341|fsm_state.START        ; ili9341_controller:ili9341|spi_data[0]    ; 0.614             ;
-; current_pixel[6]                                  ; ili9341_controller:ili9341|spi_data[6]    ; 0.455             ;
-; ili9341_controller:ili9341|spi_data[6]            ; ili9341_controller:ili9341|spi_data[6]    ; 0.455             ;
-; current_pixel[4]                                  ; ili9341_controller:ili9341|spi_data[4]    ; 0.451             ;
-; ili9341_controller:ili9341|spi_data[4]            ; ili9341_controller:ili9341|spi_data[4]    ; 0.451             ;
+; ili9341_controller:ili9341|data_byte_flag         ; ili9341_controller:ili9341|data_byte_flag ; 3.873             ;
+; freq_divider:freq_divider20MHz|clk_out            ; freq_divider:freq_divider20MHz|clk_out    ; 3.640             ;
+; current_pixel[5]                                  ; ili9341_controller:ili9341|spi_data[5]    ; 1.896             ;
+; current_pixel[13]                                 ; ili9341_controller:ili9341|spi_data[5]    ; 1.896             ;
+; transmission_done                                 ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|fsm_state.SET_ADRRESS  ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|fsm_state.SET_ROTATION ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|next_config[2]         ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|next_config[1]         ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[19]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[20]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[17]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[16]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[15]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[14]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[13]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[12]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[11]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[10]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[9]       ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[8]       ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[7]       ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[6]       ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[5]       ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[4]       ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[3]       ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[2]       ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[1]       ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[0]       ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[18]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|delay_counter[21]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|fsm_state.WAIT3        ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|next_config[0]         ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|fsm_state.FRAME_LOOP   ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|fsm_state.WAIT_FRAME   ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|next_config[3]         ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; ili9341_controller:ili9341|spi_master:spi|idle    ; ili9341_controller:ili9341|spi_data[4]    ; 1.879             ;
+; current_pixel[7]                                  ; ili9341_controller:ili9341|spi_data[7]    ; 1.652             ;
+; current_pixel[15]                                 ; ili9341_controller:ili9341|spi_data[7]    ; 1.652             ;
+; rst                                               ; ili9341_controller:ili9341|data_byte_flag ; 1.599             ;
+; current_pixel[3]                                  ; ili9341_controller:ili9341|spi_data[3]    ; 1.569             ;
+; current_pixel[11]                                 ; ili9341_controller:ili9341|spi_data[3]    ; 1.569             ;
+; current_pixel[0]                                  ; ili9341_controller:ili9341|spi_data[0]    ; 1.434             ;
+; current_pixel[8]                                  ; ili9341_controller:ili9341|spi_data[0]    ; 1.434             ;
+; current_pixel[12]                                 ; ili9341_controller:ili9341|spi_data[4]    ; 1.199             ;
+; ili9341_controller:ili9341|config_counter[6]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.199             ;
+; ili9341_controller:ili9341|config_counter[3]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.199             ;
+; ili9341_controller:ili9341|config_counter[2]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.199             ;
+; ili9341_controller:ili9341|config_counter[1]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.199             ;
+; ili9341_controller:ili9341|config_counter[0]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.199             ;
+; ili9341_controller:ili9341|config_counter[5]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.199             ;
+; ili9341_controller:ili9341|config_counter[4]      ; ili9341_controller:ili9341|spi_data[4]    ; 1.199             ;
+; current_pixel[10]                                 ; ili9341_controller:ili9341|spi_data[2]    ; 1.153             ;
+; ili9341_controller:ili9341|spi_data[3]            ; ili9341_controller:ili9341|spi_data[3]    ; 1.046             ;
+; ili9341_controller:ili9341|fsm_state.DISPLAY_ON   ; ili9341_controller:ili9341|spi_data[3]    ; 1.046             ;
+; ili9341_controller:ili9341|fsm_state.WAIT2        ; ili9341_controller:ili9341|spi_data[3]    ; 1.046             ;
+; ili9341_controller:ili9341|fsm_state.WAIT1        ; ili9341_controller:ili9341|spi_data[2]    ; 1.045             ;
+; ili9341_controller:ili9341|fsm_state.SEND_CONFIG  ; ili9341_controller:ili9341|spi_data[2]    ; 1.045             ;
+; freq_divider:freq_divider20MHz|counter[0]         ; freq_divider:freq_divider20MHz|clk_out    ; 1.010             ;
+; freq_divider:freq_divider20MHz|counter[1]         ; freq_divider:freq_divider20MHz|clk_out    ; 1.010             ;
+; current_pixel[9]                                  ; ili9341_controller:ili9341|spi_data[1]    ; 0.890             ;
+; current_pixel[14]                                 ; ili9341_controller:ili9341|spi_data[6]    ; 0.890             ;
+; current_pixel[4]                                  ; ili9341_controller:ili9341|spi_data[4]    ; 0.632             ;
+; ili9341_controller:ili9341|spi_data[4]            ; ili9341_controller:ili9341|spi_data[4]    ; 0.632             ;
+; current_pixel[2]                                  ; ili9341_controller:ili9341|spi_data[2]    ; 0.630             ;
+; ili9341_controller:ili9341|spi_data[2]            ; ili9341_controller:ili9341|spi_data[2]    ; 0.630             ;
+; current_pixel[1]                                  ; ili9341_controller:ili9341|spi_data[1]    ; 0.492             ;
+; ili9341_controller:ili9341|spi_data[1]            ; ili9341_controller:ili9341|spi_data[1]    ; 0.492             ;
+; current_pixel[6]                                  ; ili9341_controller:ili9341|spi_data[6]    ; 0.492             ;
+; ili9341_controller:ili9341|spi_data[6]            ; ili9341_controller:ili9341|spi_data[6]    ; 0.492             ;
 +---------------------------------------------------+-------------------------------------------+-------------------+
-Note: This table only shows the top 73 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 70 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (119006): Selected device EP4CE10E22C8 for design "ili9341_top"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -1096,21 +1092,22 @@ Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176353): Automatically promoted node clk~input (placed in PIN 23 (CLK1, DIFFCLK_0n)) File: C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/ili9341_top.v Line: 13
+Info (176353): Automatically promoted node clk~input (placed in PIN 23 (CLK1, DIFFCLK_0n)) File: C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/ili9341_top.v Line: 13
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
-Info (176353): Automatically promoted node freq_divider:freq_divider20MHz|clk_out  File: C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/freq_divider.v Line: 5
+Info (176353): Automatically promoted node freq_divider:freq_divider20MHz|clk_out  File: C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/freq_divider.v Line: 5
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node freq_divider:freq_divider20MHz|clk_out~0 File: C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/freq_divider.v Line: 5
-Info (176353): Automatically promoted node ili9341_controller:ili9341|data_byte_flag  File: C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/ili9341_controller.v Line: 20
+        Info (176357): Destination node freq_divider:freq_divider20MHz|clk_out~0 File: C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/freq_divider.v Line: 5
+Info (176353): Automatically promoted node ili9341_controller:ili9341|data_byte_flag  File: C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/ili9341_controller.v Line: 20
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node ili9341_controller:ili9341|spi_data[4]~10 File: C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/ili9341_controller.v Line: 265
-        Info (176357): Destination node ili9341_controller:ili9341|Selector29~5 File: C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/ili9341_controller.v Line: 273
-        Info (176357): Destination node ili9341_controller:ili9341|Selector32~1 File: C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/ili9341_controller.v Line: 273
-        Info (176357): Destination node ili9341_controller:ili9341|Selector27~3 File: C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/ili9341_controller.v Line: 273
-        Info (176357): Destination node ili9341_controller:ili9341|Selector25~1 File: C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/ili9341_controller.v Line: 273
-        Info (176357): Destination node ili9341_controller:ili9341|data_byte_flag~0 File: C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/ili9341_controller.v Line: 20
+        Info (176357): Destination node ili9341_controller:ili9341|spi_data[6]~11 File: C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/ili9341_controller.v Line: 265
+        Info (176357): Destination node ili9341_controller:ili9341|Selector29~6 File: C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/ili9341_controller.v Line: 273
+        Info (176357): Destination node ili9341_controller:ili9341|Selector32~5 File: C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/ili9341_controller.v Line: 273
+        Info (176357): Destination node ili9341_controller:ili9341|Selector27~2 File: C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/ili9341_controller.v Line: 273
+        Info (176357): Destination node ili9341_controller:ili9341|Selector25~1 File: C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/ili9341_controller.v Line: 273
+        Info (176357): Destination node ili9341_controller:ili9341|spi_data~38 File: C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/ili9341_controller.v Line: 18
+        Info (176357): Destination node ili9341_controller:ili9341|data_byte_flag~0 File: C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/ili9341_controller.v Line: 20
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -1127,36 +1124,36 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  8 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  13 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  12 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:04
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:06
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:03
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:18
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:21
 Info (170193): Fitter routing operations beginning
-Info (170195): Router estimated average interconnect usage is 20% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 28% of the available device resources in the region that extends from location X11_Y0 to location X22_Y11
+Info (170195): Router estimated average interconnect usage is 9% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 17% of the available device resources in the region that extends from location X11_Y12 to location X22_Y24
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:55
-Info (11888): Total time spent on timing analysis during the Fitter is 6.51 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:25
+Info (11888): Total time spent on timing analysis during the Fitter is 7.59 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:04
-Info (144001): Generated suppressed messages file C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/output_files/ili9341_top.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/output_files/ili9341_top.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5683 megabytes
-    Info: Processing ended: Fri Sep 20 16:44:57 2024
-    Info: Elapsed time: 00:01:32
-    Info: Total CPU time (on all processors): 00:01:16
+    Info: Peak virtual memory: 5287 megabytes
+    Info: Processing ended: Tue Sep 24 22:13:53 2024
+    Info: Elapsed time: 00:01:10
+    Info: Total CPU time (on all processors): 00:01:20
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/nicol/Documents/Quartus/Pantalla/Prueba_2/output_files/ili9341_top.fit.smsg.
+The suppressed messages can be found in C:/Users/usuario/Documents/entrega-1-proyecto-grupo21-2024-1/Pantalla/Prueba_2/output_files/ili9341_top.fit.smsg.
 
 
