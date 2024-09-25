@@ -27,8 +27,6 @@ Crear un Tamagotchi en un curso de electrónica digital es interesante por varia
 
 ### Alcance del proyecto:
 
-### Alcance del proyecto
-
 El alcance de nuestro proyecto tamagotchi esta pensado en varias etapas
  * Primeramente en como través de la implementación de descripción de hardware en Verilog realizaremos toda la lógica necesaria para gestionar el funcionamiento de nuestra mascota virtual. Para ello haremos uso de Máquinas de Estado finitas que nos ayudarán a modificar los comportamientos de nuestra mascota a través de los botones y sensores (además de un reloj interno de la misma)
  * En segunda instancia tendriamos que definir que acciones esperamos que sucedan con la interacción de botones y sensores, estas acciones serían comer, jugar, curar, etc.
@@ -344,9 +342,131 @@ module freq_divider #(parameter DIVIDER = 1)(
 endmodule
 ```
 
-También, usamos un protocolo SPI para que nuestra pantalla pueda ser contralada con nuestra FPGA. Por lo general
+También, usamos un protocolo SPI para que nuestra pantalla pueda ser contralada con nuestra FPGA. Por lo general, este protocolo para las pantallas ILI es universal (Ver en Carpeta Pantalla).
 
-Las modificaciones mas relevantes para comentar son
+Ahora, hablaremos del controlador de la pantalla. Este contiene el SPI master de nuestra pantalla, el cual se encarga de controlar como son los datos que se envian a la pantalla. 
+
+Las modificaciones mas relevantes para comentar son en la máquina de estados:
+
+```verilog
+
+SET_ADRRESS: begin
+     if(idle) begin
+                         available_data <= 1'b1;
+                        next_config <= 'b0;
+                        case(next_config)
+                            'd0: begin
+                                spi_data <= {1'b0, ILI9341_CASET}; 
+                                next_config <= 'd1;
+                            end
+                            'd1: begin
+                                spi_data <= {1'b1, 8'h00};
+                                next_config <= 'd2;
+                            end
+                            'd2: begin
+                                spi_data <= {1'b1, 8'h00};
+                                next_config <= 'd3;
+                            end
+                            'd3: begin
+                                spi_data <= {1'b1, 8'h00};
+                                next_config <= 'd4;
+                            end
+                            'd4: begin
+                                spi_data <= {1'b1, 8'h7F};
+                                next_config <= 'd5;
+                            end
+                            'd5: begin
+                                spi_data <= {1'b0, ILI9341_PASET}; 
+                                next_config <= 'd6;
+                            end
+                            'd6: begin
+                                spi_data <= {1'b1, 8'h00};
+                                next_config <= 'd7;
+                            end
+                            'd7: begin
+                                spi_data <= {1'b1, 8'h00};
+                                next_config <= 'd8;
+                            end
+                            'd8: begin
+                                spi_data <= {1'b1, 8'h00};
+                                next_config <= 'd9;
+                            end
+                            'd9: begin
+                                spi_data <= {1'b1, 8'h7F};
+                                next_config <= 'd10; 
+                            end
+                            'd10: begin
+                                spi_data <= {1'b0, ILI9341_RAMWR};
+                            end
+                        endcase
+                    end else begin
+                        available_data <= 1'b0;
+                    end
+                end 
+```
+
+En esta parte se modificó los valores de 'd1 a 'd9, que básicamente nos indican el tamaño que debe de tener nuestra imágen, el cual debe de coincidir con nuestra resolución (128*128)
+
+Por último, donde se realizan las mayores modificaciones es en nuestro archivo top. En él, es donde realizamos el diseño de cada una de nuestras imágenes. Para hacer el diseño de cada una de ellas realizamos lo siguiente:
+
+* Primero pasamos nuestra imágen base por un conversor, el cual nos dará nuestra imagen base en un formato de excel. Este formato nos dirá (con el uso de macros) el color de cada pixel además de su ubicación. 
+
+Ahora, realizamos el diseño de cada una de nuestras animaciones en nuestro archivo top. A continuación, mostraremos un estado como ejemplo:
+
+```verilog
+
+// HAMBRIENTO
+if (state_hambriento == 0) begin
+    if ((pixel_counter >= 7372) && (pixel_counter <= 7377)) begin // Ojo 1
+        current_pixel <= 16'hff14; // Color piel
+        if (pixel_counter == 7372) current_pixel <= 16'h0000; // Negro
+        else if (pixel_counter == 7377) current_pixel <= 16'h0000; // Negro
+    end else if ((pixel_counter >= 7500) && (pixel_counter <= 7505)) begin
+        current_pixel <= 16'hff14; // Color piel
+        if (pixel_counter == 7501) current_pixel <= 16'h0000; // Negro
+        else if (pixel_counter == 7504) current_pixel <= 16'h0000; // Negro
+    end else if ((pixel_counter >= 7628) && (pixel_counter <= 7633)) begin
+        current_pixel <= 16'hff14; // Color piel
+        if (pixel_counter == 7630) current_pixel <= 16'h0000; // Negro
+        else if (pixel_counter == 7631) current_pixel <= 16'h0000; // Negro
+    end else if ((pixel_counter >= 8780) && (pixel_counter <= 8785)) begin
+        current_pixel <= 16'hff14; // Color piel
+        if (pixel_counter == 8782) current_pixel <= 16'h0000; // Negro
+        else if (pixel_counter == 8783) current_pixel <= 16'h0000; // Negro
+    end else if ((pixel_counter >= 8908) && (pixel_counter <= 8913)) begin
+        current_pixel <= 16'hff14; // Color piel
+        if (pixel_counter == 8909) current_pixel <= 16'h0000; // Negro
+        else if (pixel_counter == 8912) current_pixel <= 16'h0000; // Negro
+    end else if ((pixel_counter >= 9036) && (pixel_counter <= 9041)) begin
+        current_pixel <= 16'hff14; // Color piel
+        if (pixel_counter == 9036) current_pixel <= 16'h0000; // Negro
+        else if (pixel_counter == 9041) current_pixel <= 16'h0000; // Negro
+    end
+end else if (state_hambriento) begin
+    if ((pixel_counter >= 7372) && (pixel_counter <= 7377)) begin
+        current_pixel <= 16'hff14; // Color piel
+        if ((pixel_counter >= 7373) && (pixel_counter <= 7376)) current_pixel <= 16'h0000; // Negro
+    end else if ((pixel_counter >= 7500) && (pixel_counter <= 7505)) begin
+        current_pixel <= 16'hff14; // Color piel
+        current_pixel <= 16'h0000; // Negro
+    end else if ((pixel_counter >= 7628) && (pixel_counter <= 7633)) begin
+        current_pixel <= 16'hff14; // Color piel
+        if ((pixel_counter >= 7629) && (pixel_counter <= 7632)) current_pixel <= 16'h0000; // Negro
+    end else if ((pixel_counter >= 8780) && (pixel_counter <= 8785)) begin
+        current_pixel <= 16'hff14; // Color piel
+        if ((pixel_counter >= 8781) && (pixel_counter <= 8784)) current_pixel <= 16'h0000; // Negro
+    end else if ((pixel_counter >= 8908) && (pixel_counter <= 8913)) begin
+        current_pixel <= 16'hff14; // Color piel
+        current_pixel <= 16'h0000; // Negro
+    end else if ((pixel_counter >= 9036) && (pixel_counter <= 9041)) begin
+        current_pixel <= 16'hff14; // Color piel
+        if ((pixel_counter >= 9037) && (pixel_counter <= 9040)) current_pixel <= 16'h0000; // Negro
+    end
+end
+
+```
+
+Lo que se realiza aqui, es que al conocer cada posicion de pixel que tenemos en nuestra imagen, dependiendo de cada uno de nuestros estados, le asignamos un color distinto. De esta manera, podemos realizar cada una de nuetras animaciones pintando pixel por pixel sin necesidad de cargar otra imagen. Esto en cuanto a optimización es muy bueno, ya que de esta forma reducimos el uso de almacenamiento de nuestra FPGA.
 
 ## 5. Resultados y Conclusiones
 
