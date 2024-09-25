@@ -237,6 +237,9 @@ Implementación de la pantalla que muestra la animación, donde se modifican los
 
 ![Imagen](/pictures/pantalla2.jpg)
 
+Al implementar el sensor de luz, se modifican estadísticas como el aumento de los indicadores de salud y ánimo, mientras que, por otro lado, disminuyen las estadísticas relacionadas con la alimentación y el cansancio.
+
+https://github.com/user-attachments/assets/f75ead13-7bcf-4ca9-b386-a98144390d02
 
 
 ### Conclusiones:
