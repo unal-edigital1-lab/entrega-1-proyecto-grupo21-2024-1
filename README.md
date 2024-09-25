@@ -232,7 +232,13 @@ De esta manera en el display se mostrará una estadistica (stat_name), su respec
 ## 5. Resultados y Conclusiones
 
 ### Demostración del Funcionamiento:
-Describir cómo funciona el Tamagotchi y qué resultados se obuvieron. Puedes incluir fotos o videos del sistema en funcionamiento.
+
+Implementación de la pantalla que muestra la animación, donde se modifican los aspectos del rostro a medida que se varían las estadísticas.
+
+![Imagen](/pictures/pantalla2.jpg)
+
+
+
 ### Conclusiones:
 Reflexionar sobre lo que se aprendio durante el proyecto, los desafíos que se enfrentastaton y cómo se superaron.
 
