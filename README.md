@@ -40,7 +40,32 @@ Definir qué funcionalidades incluiste en tu Tamagotchi y cuáles quedaron fuera
 * ILI9361: Este modulo se encarga de recibir los valores de cada estadistica asi como las señales de interaccion para posteriormente mostrar las animaciones respectivas en la pantalla.
 
 ### Descripción de los Componentes:
-* Sensores: Explica cada sensor utilizado (infrarrojo, temperatura, luz), su funcionamiento y cómo se conecta a la FPGA.
+### Sistema de Sensado
+
+Para nuestro proyecto de Tamagotchi, se implementó 3 sensores, para que de esta forma el usuario llegue a tener interacción con el juego. 
+
+
+* El sensor infrarrojo FC-51 es un dispositivo de proximidad que funciona mediante un transmisor que emite luz infrarroja (IR) y un receptor que detecta la energía reflejada por objetos cercanos. El sensor utiliza el comparador LM393 para proporcionar una lectura digital cuando se supera un rango predefinido. 
+
+![Imagen](/pictures/fc-51.jpg)
+![Imagen](/pictures/infrarrojo.png)
+
+* El sensor LDR (Light Dependent Resistor) es un componente que permite medir la intensidad de luz en su entorno. Funciona como una resistencia variable cuya conductividad cambia según la cantidad de luz que incide sobre él.
+![Imagen](/pictures/R.jpeg)
+![Imagen](/pictures/luz.png)
+
+Sera utilizado con el fin de simular los ciclos de día y noche, influyendo en las rutinas de actividad y descanso de la mascota.
+
+* El sensor de temperatura DHT11 es un dispositivo diseñado para medir la temperatura y humedad. 
+
+![Imagen](/pictures/temperatura.jpeg)
+![Imagen](/pictures/temp.png)
+
+### Sistema de Visualización
+
+Realizaremos el uso del siguiente periférico como sistema de visualización, donde podremos representar visualmente nuestro Tamagotchi, además de los niveles de cada estado del mismo.
+
+* La Pantalla TFT ILI9163 tiene tiene una resolucion 128x128 pxls. Se comunica mediante el protocolo SPI, lo que la hace compatible con microcontroladores como Arduino y PIC. Su tamaño es de 1.44 pulgadas, y su efecto visual es mucho mejor que otras pantallas pequeñas. Además, admite voltajes de entrada de 5V y 3.3V.
 * Botones:
     Se implementaron pulsadores 4 como botones, los cuales se conectan a los pines de la fpga, para las siguientes funciones:
     * Pulsador 1: Permite al usuario alimentar a la mascota virtual en modo de juego normal e incrementar la estadisiticas de la mascota en modo test.
@@ -151,10 +176,13 @@ Este sensor actúa como un interruptor, con test_enable funcionando como un bot�
 
 * Finalmente, el registro temperature almacena los datos relacionados exclusivamente con la temperatura, mientras que aju_t actúa como un calibrador, proporcionando una temperatura más precisa. Esto es importante, ya que las temperaturas pueden variar según la ubicación donde se realiza la medición.
 
+
+
 ### Modulo Module_test  
 El Module_test se encarga de verificar si se cumplen las condiciones necesarias para entrar a dicho modo, tiene una señal de salida de 1 bit.
-    
-    always @(posedge clk) begin	
+
+```verilog
+always @(posedge clk) begin	
 		if (test==0) begin
 			if (counter >= ciclos_segs) begin
 				counter <= 0;  
@@ -167,13 +195,17 @@ El Module_test se encarga de verificar si se cumplen las condiciones necesarias 
 			counter <= 0;  
 		end
 	end
+```
+
+    
 Este modulo primero verifica si el boton de test se esta presionando, si el boton dura presionado por mas de "ciclo_segs" (5 segundos) se invierte la señal test_active y su valor se almacena en test_enable, la cual será la señal de salida del mudulo. La logica de invertir test_active permite tener un control en el codigo para entrar y salir del modo test facilmente.
 
 ### Modulo Display  
 
 Este modulo se encarga de visualizar ciertas señales en el display 7 segmentos incluidos en la tarjeta FPGA. 
 
-    always @(posedge enable) begin
+```verilog
+always @(posedge enable) begin
 		if(rst==0) begin
 			count<= 0;
 			an<=9'b111111111; 
@@ -192,6 +224,8 @@ Este modulo se encarga de visualizar ciertas señales en el display 7 segmentos 
 			endcase
 		end
 	end
+```
+    
 
 De esta manera en el display se mostrará una estadistica (stat_name), su respectivo valor (stat_value), y por ultimo los 4 bits de state para poder verificar los cambios de estados cuando se cumplan las condiciones necesarias. 
 
