@@ -217,24 +217,24 @@ Este sensor actúa como un interruptor, con test_enable funcionando como un bot�
 * Finalmente, el registro temperature almacena los datos relacionados exclusivamente con la temperatura, mientras que aju_t actúa como un calibrador, proporcionando una temperatura más precisa. Esto es importante, ya que las temperaturas pueden variar según la ubicación donde se realiza la medición.
 
 ```verilog
-always @(posedge clk2) begin
-		if (test_enable==0) begin
-			  
-			  if (sns_active) begin
-					counter <= 0;
-			  end else if (aju_t >= 8'b00010110) begin //22
-					counter <= counter + 1;
-					temp_out=0;		
-			  end else begin
-					temp_out = 1;
-			  end
-			  
-			if(counter >= 50000)begin
-				temp_out = 0;
-			end
+always @(posedge clk2) begin // Sensado en cada flanco positivo del reloj `clk2`
+    
+    if (test_enable == 0) begin // Si test_enable está desactivado, comienza el control de temperatura.
+        if (sns_active) begin // Si el sensor está activo (sns_active = 1)
+            counter <= 0; // Reinicia el contador a cero.
+        end else if (aju_t >= 8'b00010110) begin // Si la temperatura es mayor o igual a 22°C (aju_t >= 22 en binario)
+            counter <= counter + 1; // Incrementa el contador en cada ciclo.
+            temp_out = 0; // Mantiene la salida de temperatura `temp_out` en 0.
+        end else begin
+            temp_out = 1; // Si la temperatura es inferior a 22°C, activa `temp_out`.
+        end
+        // Si el contador alcanza o supera los 50,000 ciclos (~5 segundos de espera)
+        if(counter >= 50000) begin
+            temp_out = 0; // Desactiva permanentemente la salida de temperatura.
+        end
+    end
+end 
 
-      end
-    end 
 ```
 
 El control de temperatura se lleva a cabo cuando test_enable está activado, lo que significa que el sensor está activo.
